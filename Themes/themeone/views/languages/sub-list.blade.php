@@ -12,7 +12,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_LANGUAGES_LIST}}">{{ getPhrase('languages')}}</a> </li>
+							<li><a href="{{URL_LANGUAGES_LIST}}">{{ __('messages.languages')}}</a> </li>
 							<li>{{ $title }}</li>
 						</ol>
 					</div>
@@ -23,7 +23,7 @@
 					<div class="panel-heading">
 						{{-- 
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_SETTINGS_ADD_SUBSETTINGS.$record->slug}}" class="btn  btn-primary button" >{{ getPhrase('update')}}</a>
+							<a href="{{URL_SETTINGS_ADD_SUBSETTINGS.$record->slug}}" class="btn  btn-primary button" >{{ __('messages.update')}}</a>
 							 
 						</div> --}}
 						<h1>{{ $title }}</h1>
@@ -50,7 +50,7 @@
 						  @endforeach
 
 						  @else
-							  <li class="list-group-item">{{ getPhrase('no_settings_available')}}</li>
+							  <li class="list-group-item">{{ __('messages.no_settings_available')}}</li>
 						  @endif
 						</ul>
 
@@ -59,7 +59,7 @@
 						@if($language_data)
 						<div class="buttons text-center">
 							<button class="btn btn-lg btn-success button" ng-disabled='!formTopics.$valid'
-							>{{ getPhrase('update') }}</button>
+							>{{ __('messages.update') }}</button>
 						</div>
 						@endif
 							{!! Form::close() !!}

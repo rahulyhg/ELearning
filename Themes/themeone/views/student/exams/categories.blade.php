@@ -3,11 +3,6 @@
 
 <div id="page-wrapper">
 			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-					<li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-					<li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-				</ul>
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12">
@@ -39,13 +34,10 @@
 										<img src="{{ PREFIX.$settings->categoryImagepath.$image}}" alt="">
 									</div>
 									<div class="item-details">
-{{--										<h3>{{ $c->category }}</h3>--}}
-										<h3>{{ trans("home.$c->category") }}</h3>
+										<h3>{{ $c->category }}</h3>
 										<ul>
-{{--											<li><i class="icon-bookmark"></i> {{ count($c->quizzes()).' '.getPhrase('quizzes')}}</li>--}}
-											<li><i class="icon-bookmark"></i> {{ count($c->quizzes()).' '.trans('home.Quizzes') }}</li>
-{{--											<li><i class="icon-eye"></i> {{getPhrase('view')}}</li>--}}
-											<li><i class="icon-eye"></i> {{ trans('home.View') }}</li>
+											<li><i class="icon-bookmark"></i> {{ count($c->quizzes()).' '.getPhrase('quizzes')}}</li>
+											<li><i class="icon-eye"></i> {{getPhrase('view')}}</li>
 										</ul>
 									
 									</div>

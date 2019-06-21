@@ -16,7 +16,7 @@
 
 	<meta name="keywords" content="{{getSetting('meta_keywords', 'seo_settings')}}">
 
-
+	 
 
 	<link rel="icon" href="{{IMAGE_PATH_SETTINGS.getSetting('site_favicon', 'site_settings')}}" type="image/x-icon" />
 
@@ -30,34 +30,34 @@
 	   <link href="{{themes('css/custom-fonts.css')}}" rel="stylesheet">
 	   <link href="{{themes('css/materialdesignicons.css')}}" rel="stylesheet">
 	   <link href="{{themes('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-
+	 
 	<link href="{{themes('css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
-
+	
 	<!-- Morris Charts CSS -->
 	<link href="{{themes('css/plugins/morris.css')}}" rel="stylesheet">
 
 	 <?php
     $theme_color  = getThemeColor();
     ?>
-    @if($theme_color == 'blueheader')
+    @if($theme_color == 'blueheader')      
 	 <link href="{{themes('css/theme-colors/header-blue.css')}}" rel="stylesheet">
-    @elseif($theme_color == 'bluenavbar')
+    @elseif($theme_color == 'bluenavbar')	 
 	 <link href="{{themes('css/theme-colors/blue-sidebar.css')}}" rel="stylesheet">
-    @elseif($theme_color == 'darkheader')
+    @elseif($theme_color == 'darkheader')	 
 	 <link href="{{themes('css/theme-colors/dark-header.css')}}" rel="stylesheet">
-    @elseif($theme_color == 'darktheme')
+    @elseif($theme_color == 'darktheme')	 
 	 <link href="{{themes('css/theme-colors/dark-theme.css')}}" rel="stylesheet">
-    @elseif($theme_color == 'whitecolor')
+    @elseif($theme_color == 'whitecolor')	 
 	 <link href="{{themes('css/theme-colors/white-theme.css')}}" rel="stylesheet">]
-	@endif
-
+	@endif 
+	
 
 	 @yield('header_scripts')
 
 
 </head>
 
-<?php
+<?php 
 
  $class = '';
 
@@ -95,7 +95,7 @@ if(isset($block_navigation))
 
 			<ul class="nav navbar-right top-nav">
 
-
+				 
 
 				<li class="dropdown profile-menu">
 
@@ -107,13 +107,13 @@ if(isset($block_navigation))
 
 							<h2>{{Auth::user()->name}}</h2>
 
-
+							 
 
 						</div>
 
 						@endif
 
-
+						
 
 						<div class="profile-img"> <img src="{{ getProfilePath(Auth::user()->image, 'thumb') }}" alt=""> </div>
 
@@ -127,7 +127,7 @@ if(isset($block_navigation))
 
 							<a href="{{URL_USERS_EDIT.Auth::user()->slug}}">
 
-								<sapn>{{ getPhrase('my_profile') }}</sapn>
+								<sapn>{{ __('messages.my_profile') }}</sapn>
 
 							</a>
 
@@ -137,17 +137,17 @@ if(isset($block_navigation))
 
 							<a href="{{URL_USERS_CHANGE_PASSWORD.Auth::user()->slug}}">
 
-								<sapn>{{ getPhrase('change_password') }}</sapn>
+								<sapn>{{ __('messages.change_password') }}</sapn>
 
 								</a>
 
 						</li>
-
+						
 						 <li>
 
 							<a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">
 
-								<sapn>{{ getPhrase('settings') }}</sapn>
+								<sapn>{{ __('messages.settings') }}</sapn>
 
 								</a>
 
@@ -157,19 +157,19 @@ if(isset($block_navigation))
 
 							<a href="{{URL_FEEDBACK_SEND}}">
 
-								<sapn>{{ getPhrase('feedback') }}</sapn>
+								<sapn>{{ __('messages.feedback') }}</sapn>
 
 							</a>
 
 						</li>
 
-
+						 
 
 						<li>
 
 							<a href="{{URL_USERS_LOGOUT}}">
 
-								<sapn>{{ getPhrase('logout') }}</sapn>
+								<sapn>{{ __('messages.logout') }}</sapn>
 
 							</a>
 
@@ -190,7 +190,7 @@ if(isset($block_navigation))
 		 @if(env('DEMO_MODE'))
 		<div class="alert alert-info demo-alert">
 		&nbsp;&nbsp;&nbsp;<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  			<strong>{{getPhrase('info')}}!</strong> CRUD {{getPhrase('operations_are_disabled_in_demo_version')}}
+  			<strong>{{__('messages.info')}}!</strong> CRUD {{__('messages.operations_are_disabled_in_demo_version')}}
 		</div>
 		@endif
 
@@ -200,35 +200,35 @@ if(isset($block_navigation))
 
 				<ul class="nav navbar-nav side-nav">
 
-					<li {{ isActive($active_class, 'dashboard') }}>
+					<li {{ isActive($active_class, 'dashboard') }}> 
 
 						<a href="{{PREFIX}}">
 
-							<i class="fa fa-fw fa-window-maximize"></i> {{ getPhrase('dashboard') }}
+							<i class="fa fa-fw fa-window-maximize"></i> {{ __('messages.dashboard') }} 
 
-						</a>
+						</a> 
 
 					</li>
 
 
 
-					<li {{ isActive($active_class, 'children') }} >
+					<li {{ isActive($active_class, 'children') }} > 
 
 
 
 					<a data-toggle="collapse" data-target="#children"><i class="fa fa-fw fa-user-circle"></i>
 
-					{{ getPhrase('children') }} </a>
+					{{ __('messages.children') }} </a> 
 
-
+					
 
 					<ul id="children" class="collapse sidemenu-dropdown">
 
-						<li><a href="{{URL_USERS_ADD}}"> <i class="fa fa-plus"></i>{{ getPhrase('add') }}</a></li>
+						<li><a href="{{URL_USERS_ADD}}"> <i class="fa fa-plus"></i>{{ __('messages.add') }}</a></li>
 
-						<li><a href="{{URL_PARENT_CHILDREN}}"> <i class="fa fa-th"></i>{{ getPhrase('list') }}</a></li>
+						<li><a href="{{URL_PARENT_CHILDREN}}"> <i class="fa fa-th"></i>{{ __('messages.list') }}</a></li>
 
-
+						
 
 					</ul>
 
@@ -236,32 +236,32 @@ if(isset($block_navigation))
 
 					</li>
 
-					<li {{ isActive($active_class, 'analysis') }} >
+					<li {{ isActive($active_class, 'analysis') }} > 
 
-					<a href="{{URL_PARENT_ANALYSIS_FOR_STUDENTS}}">
+					<a href="{{URL_PARENT_ANALYSIS_FOR_STUDENTS}}"> 
 					<i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
 
-					{{ getPhrase('analysis') }} </a>
+					{{ __('messages.analysis') }} </a> 
 
 					</li>
 
-					<li {{ isActive($active_class, 'exams') }} >
+					<li {{ isActive($active_class, 'exams') }} > 
 
 
 
-					<a data-toggle="collapse" data-target="#exams"><i class="fa fa-fw fa-desktop" ></i>
+					<a data-toggle="collapse" data-target="#exams"><i class="fa fa-fw fa-desktop" ></i> 
 
-					{{ getPhrase('exams') }} </a>
+					{{ __('messages.exams') }} </a> 
 
-
+					
 
 					<ul id="exams" class="collapse sidemenu-dropdown">
 
-						<li><a href="{{URL_STUDENT_EXAM_CATEGORIES}}"> <i class="fa fa-random"></i>{{ getPhrase('categories') }}</a></li>
+						<li><a href="{{URL_STUDENT_EXAM_CATEGORIES}}"> <i class="fa fa-random"></i>{{ __('messages.categories') }}</a></li>
 
-						<li><a href="{{URL_STUDENT_EXAM_SERIES_LIST}}"> <i class="fa fa-list-ol"></i>{{ getPhrase('exam_series') }}</a></li>
+						<li><a href="{{URL_STUDENT_EXAM_SERIES_LIST}}"> <i class="fa fa-list-ol"></i>{{ __('messages.exam_series') }}</a></li>
 
-
+						
 
 					</ul>
 
@@ -269,51 +269,51 @@ if(isset($block_navigation))
 
 					</li>
 
-					<li {{ isActive($active_class, 'lms') }} >
+					<li {{ isActive($active_class, 'lms') }} > 
 
 
 
-					<a data-toggle="collapse" data-target="#lms"><i class="fa fa-fw fa-tv" ></i>
+					<a data-toggle="collapse" data-target="#lms"><i class="fa fa-fw fa-tv" ></i> 
 
-					LMS </a>
+					LMS </a> 
 
-
+					
 
 					<ul id="lms" class="collapse sidemenu-dropdown">
 
-							<li><a href="{{ URL_STUDENT_LMS_CATEGORIES }}"> <i class="fa fa-random"></i>{{ getPhrase('categories') }}</a></li>
+							<li><a href="{{ URL_STUDENT_LMS_CATEGORIES }}"> <i class="fa fa-random"></i>{{ __('messages.categories') }}</a></li>
 
+							 
 
-
-							<li><a href="{{ URL_STUDENT_LMS_SERIES }}"> <i class="fa fa-list-ol"></i>{{ getPhrase('series') }}</a></li>
+							<li><a href="{{ URL_STUDENT_LMS_SERIES }}"> <i class="fa fa-list-ol"></i>{{ __('messages.series') }}</a></li>
 
 					</ul>
 
 					</li>
+				
 
-
-					<li {{ isActive($active_class, 'subscriptions') }} >
-					<a  href="{{URL_PAYMENTS_LIST.Auth::user()->slug}}"><i class="fa fa-fw fa-ticket" ></i>
-					{{ getPhrase('subscriptions') }} </a>
+					<li {{ isActive($active_class, 'subscriptions') }} > 
+					<a  href="{{URL_PAYMENTS_LIST.Auth::user()->slug}}"><i class="fa fa-fw fa-ticket" ></i> 
+					{{ __('messages.subscriptions') }} </a> 
 					</li>
 
 
 
-					<li {{ isActive($active_class, 'notifications') }} >
+					<li {{ isActive($active_class, 'notifications') }} > 
 
-						<a href="{{URL_NOTIFICATIONS}}" ><i class="fa fa-fw fa-bell" aria-hidden="true"></i>
+						<a href="{{URL_NOTIFICATIONS}}" ><i class="fa fa-fw fa-bell" aria-hidden="true"></i> 
 
-					{{ getPhrase('notifications') }} </a>
+					{{ __('messages.notifications') }} </a> 
 
-
+					
 
 					</li>
 
+				 
 
+					 
 
-
-
-
+					 
 
 				</ul>
 
@@ -323,7 +323,7 @@ if(isset($block_navigation))
 
 		@if(isset($right_bar))
 
-
+			
 
 		<aside class="right-sidebar" id="rightSidebar">
 
@@ -345,7 +345,7 @@ if(isset($block_navigation))
 
 		</aside>
 
-
+		
 
 	@endif
 
@@ -361,9 +361,9 @@ if(isset($block_navigation))
 	<script src="{{themes('js/bootstrap.min.js')}}"></script>
 	<script src="{{themes('js/main.js')}}"></script>
 	<script src="{{themes('js/sweetalert-dev.js')}}"></script>
+	
 
-
-
+	
 
 	 @yield('footer_scripts')
 
@@ -371,7 +371,7 @@ if(isset($block_navigation))
 
 	@include('errors.formMessages')
 
-
+ 	
 	{!!getSetting('google_analytics', 'seo_settings')!!}
 </body>
 

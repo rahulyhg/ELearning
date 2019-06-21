@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Locale
+class LangMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,12 +15,10 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        $language = \Session::get('website_language', config('app.locale'));
-        // Lấy dữ liệu lưu trong Session, không có thì trả về default lấy trong config
-
-        config(['app.locale' => $language]);
-        // Chuyển ứng dụng sang ngôn ngữ được chọn
-
+        if(\Session::has('locale'))
+        {
+            \App::setlocale(\Session::get('locale'));
+        }
         return $next($request);
     }
 }

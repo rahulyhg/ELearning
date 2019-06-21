@@ -1,48 +1,48 @@
-@extends($layout)
-@section('content')<div id="page-wrapper">
+<?php $__env->startSection('content'); ?><div id="page-wrapper">
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-                @if(checkRole(getUserGrade(2)))
-                <li><a href="{{URL_USERS}}">{{ __('messages.users')}}</a> </li>
-                <li class="active">{{isset($title) ? $title : ''}}</li>
-                @else
-                <li class="active">{{$title}}</li>
-                 @endif
+                <li><a href="<?php echo e(PREFIX); ?>"><i class="mdi mdi-home"></i></a> </li>
+                <?php if(checkRole(getUserGrade(2))): ?>
+                <li><a href="<?php echo e(URL_USERS); ?>"><?php echo e(__('messages.users')); ?></a> </li>
+                <li class="active"><?php echo e(isset($title) ? $title : ''); ?></li>
+                <?php else: ?>
+                <li class="active"><?php echo e($title); ?></li>
+                 <?php endif; ?>
             </ol>
         </div>
     </div>
-    @include('errors.errors')
+    <?php echo $__env->make('errors.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <!-- /.row -->
 
     <div class="panel panel-custom " ng-controller="users_controller">
         <div class="panel-heading">
-            @if(checkRole(getUserGrade(2))) 
-            <div class="pull-right messages-buttons"><a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a></div>
-            @endif
+            <?php if(checkRole(getUserGrade(2))): ?> 
+            <div class="pull-right messages-buttons"><a href="<?php echo e(URL_USERS); ?>" class="btn  btn-primary button" ><?php echo e(__('messages.list')); ?></a></div>
+            <?php endif; ?>
 
-<h1>{{ $title }}  </h1>
+<h1><?php echo e($title); ?>  </h1>
 </div>
 
 <div class="panel-body"> 
 
 
-{{ Form::model($record, 
+<?php echo e(Form::model($record, 
             array('url' => ['users/parent-details/'.$record->slug], 
-            'method'=>'patch')) }}
-        <h3>{{__('messages.parent_login_details')}}</h3>
+            'method'=>'patch'))); ?>
+
+        <h3><?php echo e(__('messages.parent_login_details')); ?></h3>
         <?php 
         $user_record = $record;
         ?>
         
-        @if(!$user_record->parent_id) 
+        <?php if(!$user_record->parent_id): ?> 
         
         <div class="row">
                 <fieldset class='col-sm-6'>
-                <label for="exampleInputEmail1">{{__('messages.is_parent_account_available')}}</label>
+                <label for="exampleInputEmail1"><?php echo e(__('messages.is_parent_account_available')); ?></label>
                 <div class="form-group row">
                     <div class="col-md-6">
                         <input type="radio" checked="checked" id="available" name="account" value="1" ng-model="account_available" ng-init="account_available=1; accountAvailable(1);" ng-click="accountAvailable(1)">
@@ -63,21 +63,23 @@
         <input  type="hidden" 
                 ng-model="current_user_id" 
                 name="current_user_id" 
-                value="{{$record->user_id}}">
+                value="<?php echo e($record->user_id); ?>">
         <input  type="hidden" 
                 ng-model="parent_user_id" 
                 name="parent_user_id" 
-                value="@{{parent_user_id}}">
+                value="{{parent_user_id}}">
             <fieldset class="form-group" ng-show="showSearch">
-            {{ Form::label('search', __('messages.search')) }}
+            <?php echo e(Form::label('search', __('messages.search'))); ?>
+
             <span class="text-red" >*</span>
-                {{ Form::text('search', $value = null , $attributes = array(
+                <?php echo e(Form::text('search', $value = null , $attributes = array(
                     'class'         => 'form-control', 
                     'placeholder'   => 'Jack',
                     'ng-model'      => 'search',
 
                     'ng-change'     => 'getParentRecords(search)',
-                    )) }}
+                    ))); ?>
+
             </fieldset>
             <div >
                 <p ng-if="parents.length==0 && showSearch">Please type any details for search</p>
@@ -89,9 +91,9 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in parents" ng-click="setAsCurrentItem(item)">
-                        <td>@{{item.name}}</td>
-                        <td>@{{item.email}}</td>
-                        <td>@{{item.phone}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phone}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -100,23 +102,31 @@
         </div>
         <div class="col-md-6" ng-show="userDetails" >
         <fieldset class="form-group ">
-            {{ Form::label('parent_name', __('messages.parent_name')) }}
+            <?php echo e(Form::label('parent_name', __('messages.parent_name'))); ?>
+
             <span class="text-red" >*</span>
-                {{ Form::text('parent_name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack', 'ng-model'=>'parent_name')) }}
+                <?php echo e(Form::text('parent_name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack', 'ng-model'=>'parent_name'))); ?>
+
             </fieldset>
 
             <fieldset class="form-group ">
-            {{ Form::label('parent_user_name', __('messages.parent_user_name')) }}
+            <?php echo e(Form::label('parent_user_name', __('messages.parent_user_name'))); ?>
+
             <span class="text-red" >*</span>
-                {{ Form::text('parent_user_name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack', 'ng-model'=>'parent_user_name')) }}
+                <?php echo e(Form::text('parent_user_name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack', 'ng-model'=>'parent_user_name'))); ?>
+
             </fieldset>
             <fieldset class="form-group ">
-            {{ Form::label('parent_email', __('messages.parent_email')) }}
-                {{ Form::text('parent_email', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jarvis', 'ng-model'=>'parent_email')) }}
+            <?php echo e(Form::label('parent_email', __('messages.parent_email'))); ?>
+
+                <?php echo e(Form::text('parent_email', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jarvis', 'ng-model'=>'parent_email'))); ?>
+
             </fieldset>
             <fieldset class="form-group ">
-                {{ Form::label('parent_password', __('messages.password')) }}
-                {{ Form::password('parent_password',$attributes = array('class'=>'form-control')) }}
+                <?php echo e(Form::label('parent_password', __('messages.password'))); ?>
+
+                <?php echo e(Form::password('parent_password',$attributes = array('class'=>'form-control'))); ?>
+
             </fieldset>
              
             <div class="col-md-12 clearfix"></div>
@@ -127,10 +137,11 @@
         </div>
         
                                 <div class="buttons text-center">
-                                <button type="submit" class="btn btn-lg btn-success button">{{__('messages.update')}}</button>
+                                <button type="submit" class="btn btn-lg btn-success button"><?php echo e(__('messages.update')); ?></button>
                                       </div>
-                                {!! Form::close() !!}
-                                @else
+                                <?php echo Form::close(); ?>
+
+                                <?php else: ?>
                                 <?php $parent_record = getUserRecord($user_record->parent_id); ?>
                                 <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
@@ -138,22 +149,22 @@
                                         <tbody>
                                         <tr>
                                             <td>Name</td>
-                                            <td>{{$parent_record->name}}</td>
+                                            <td><?php echo e($parent_record->name); ?></td>
                                         </tr>
                                         <tr>
                                             <td>Username</td>
-                                            <td>{{$parent_record->username}}</td>
+                                            <td><?php echo e($parent_record->username); ?></td>
                                         </tr>
                                         <tr>
                                             <td>Email</td>
-                                            <td>{{$parent_record->email}}</td>
+                                            <td><?php echo e($parent_record->email); ?></td>
                                         </tr>
 
                                         </tbody>
                                     </table>
                                 </div>
                                 </div>
-                                @endif
+                                <?php endif; ?>
 
 
 
@@ -163,11 +174,12 @@
 <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('footer_scripts')
-@include('common.validations')
-@include('common.alertify')
-@include('users.scripts.js-scripts')
+<?php $__env->startSection('footer_scripts'); ?>
+<?php echo $__env->make('common.validations', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('common.alertify', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('users.scripts.js-scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make($layout, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

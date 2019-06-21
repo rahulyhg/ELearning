@@ -11,10 +11,10 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 							@if(checkRole(getUserGrade(2)))
-							<li><a href="{{URL_USERS}}">{{ getPhrase('users')}}</a> </li>
-							<li class="active">{{isset($title) ? $title : ''}}</li>
+							<li><a href="{{URL_USERS}}">{{ __('messages.users')}}</a> </li>
+							<li class="active">{{ __('messages.change_password')}}</li>
 							@else
-							<li class="active">{{getphrase('change_password')}}</li>
+							<li class="active">{{__('messages.change_password')}}</li>
 							@endif
 						</ol>
 					</div>
@@ -24,14 +24,14 @@
 				
 	<div class="panel panel-custom col-lg-6 col-lg-offset-3">
 					<div class="panel-heading">
-					 	<h1>{{ $title }}  </h1>
+					 	<h1>{{ __('messages.change_password')}}  </h1>
 					</div>
 
 
 					<div class="panel-body form-auth-style">
-					<?php $button_name = getPhrase('create'); ?>
+					<?php $button_name = __('messages.create'); ?>
 					@if ($record)
-					 <?php $button_name = getPhrase('update'); ?>
+					 <?php $button_name = __('messages.update'); ?>
 						{{ Form::model($record, 
 						array('url' => ['users/change-password', $record->slug], 
 						'method'=>'patch', 'novalidate'=>'', 'name'=>"changePassword")) }}

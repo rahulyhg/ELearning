@@ -15,11 +15,6 @@
 <div id="page-wrapper">
 
 			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-					<li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-					<li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-				</ul>
 
 				<!-- Page Heading -->
 
@@ -49,9 +44,9 @@
 
 					<div class="panel-heading">
 
+						 
 
-
-						<h1>{{ trans('home.Quiz Attempts').' '.trans('home.Of').' '.$user->name }}</h1>
+						<h1>{{ $title.' '.getPhrase('of').' '.$user->name }}</h1>
 
 					</div>
 
@@ -67,31 +62,21 @@
 
 								 
 
-{{--									<th>{{ getPhrase('title')}}</th>--}}
+									<th>{{ getPhrase('title')}}</th>
 
-{{--									<th>{{ getPhrase('type')}}</th>--}}
+									<th>{{ getPhrase('type')}}</th>
 
-{{--								 --}}
+								 
 
-{{--									<th>{{ getPhrase('marks')}}</th>--}}
+									<th>{{ getPhrase('marks')}}</th>
 
-{{--								 	 --}}
+								 	 
 
-{{--									<th>{{ getPhrase('result')}}</th>--}}
+									<th>{{ getPhrase('result')}}</th>
 
-{{--									 --}}
+									 
 
-{{--									<th>{{ getPhrase('action')}}</th>--}}
-
-									<th>{{ trans('home.Title') }}</th>
-
-									<th>{{ trans('home.Type') }}</th>
-
-									<th>{{ trans('home.Marks') }}</th>
-
-									<th>{{ trans('home.Result') }}</th>
-
-									<th>{{ trans('home.Action') }}</th>
+									<th>{{ getPhrase('action')}}</th>
 
 								  
 

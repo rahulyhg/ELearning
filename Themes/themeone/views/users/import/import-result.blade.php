@@ -24,9 +24,9 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-							<li><a href="{{URL_USERS}}">{{getPhrase('users')}}</a> </li>
+							<li><a href="{{URL_USERS}}">{{__('messages.users')}}</a> </li>
 
-							<li><a href="{{URL_USERS_IMPORT}}">{{getPhrase('import_users')}}</a> </li>
+							<li><a href="{{URL_USERS_IMPORT}}">{{__('messages.import_users')}}</a> </li>
 
 							
 
@@ -52,11 +52,11 @@
 
 							 
 
-							<a href="{{URL_USERS_IMPORT}}" class="btn  btn-primary button" >{{ getPhrase('import_excel')}}</a>
+							<a href="{{URL_USERS_IMPORT}}" class="btn  btn-primary button" >{{ __('messages.import_excel')}}</a>
 
-							<a href="{{URL_USERS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('add_user')}}</a>
+							<a href="{{URL_USERS_ADD}}" class="btn  btn-primary button" >{{ __('messages.add_user')}}</a>
 
-							<a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 
 							 
 
@@ -80,11 +80,11 @@
 
 <ul class="nav nav-tabs add-studentlist-tabs">
 
-  <li class="active"><a data-toggle="tab" href="#home">{{getPhrase('success')}} <span class="badge badge-success">{{count($success_list)}}</span></a>
+  <li class="active"><a data-toggle="tab" href="#home">{{__('messages.success')}} <span class="badge badge-success">{{count($success_list)}}</span></a>
 
   </li>
 
-  <li><a data-toggle="tab" href="#menu1">{{getPhrase('failed')}}<span class="badge badge-error">{{count($failed_list)}}</span></a></li>
+  <li><a data-toggle="tab" href="#menu1">{{__('messages.failed')}}<span class="badge badge-error">{{count($failed_list)}}</span></a></li>
 
 </ul>
 
@@ -94,7 +94,7 @@
 
   <div id="home" class="tab-pane fade in active">
 
-     <h3>Success</h3>
+     <h3>{{__('messages.success')}} </h3>
 
     
 
@@ -106,15 +106,15 @@
 
 								<tr>
 
-								 	<th>{{ getPhrase('name')}}</th>
+								 	<th>{{ __('messages.name')}}</th>
 
-									<th>{{ getPhrase('email')}}</th>
+									<th>{{ __('messages.email')}}</th>
 
-									<th>{{ getPhrase('phone')}}</th>
+									<th>{{ __('messages.phone')}}</th>
 
-									<th>{{ getPhrase('address')}}</th>
+									<th>{{ __('messages.address')}}</th>
 
-									<th>{{ getPhrase('status')}}</th>
+									<th>{{ __('messages.status')}}</th>
 
 								</tr>
 
@@ -156,7 +156,7 @@
 
   <div id="menu1" class="tab-pane fade">
 
-    <h3>Failed</h3>
+    <h3>{{__('messages.failed')}}</h3>
 
     
 
@@ -168,15 +168,15 @@
 
 								<tr>
 
-								 	<th>{{ getPhrase('name')}}</th>
+								 	<th>{{ __('messages.name')}}</th>
 
-									<th>{{ getPhrase('email')}}</th>
+									<th>{{ __('messages.email')}}</th>
 
-									<th>{{ getPhrase('phone')}}</th>
+									<th>{{ __('messages.phone')}}</th>
 
-									<th>{{ getPhrase('address')}}</th>
+									<th>{{ __('messages.address')}}</th>
 
-									<th>{{ getPhrase('status')}}</th>
+									<th>{{ __('messages.status')}}</th>
 
 								</tr>
 

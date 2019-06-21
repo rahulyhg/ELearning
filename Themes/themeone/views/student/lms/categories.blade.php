@@ -3,27 +3,19 @@
 
 <div id="page-wrapper">
 			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-					<li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-					<li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-				</ul>
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-{{--							<li class="active"> {{$title}} </li>--}}
-							<li class="active"> {{ trans('home.LMS Categories') }} </li>
-
+							<li class="active"> {{$title}} </li>
 						</ol>
 					</div>
 				</div>
 				<!-- /.row -->
 				<div class="panel panel-custom">
 					<div class="panel-heading">
-{{--						<h1>{{$title}}</h1>--}}
-						<h1>{{ trans('home.LMS Categories') }}</h1>
+						<h1>{{$title}}</h1>
 					</div>
 					<div class="panel-body packages">
 						 
@@ -39,9 +31,7 @@
 							 $image = IMAGE_PATH_UPLOAD_LMS_CATEGORIES.$c->image;?>
                                     <div class="item-image"> <img src="{{ $image}}" alt=""> </div>
                                     <div class="item-details">
-{{--                                        <h3>{{$c->category}}</h3>--}}
-										<h3>{{ trans("home.$c->category") }}</h3>
-									</div>
+                                        <h3>{{$c->category}}</h3> </div>
                                </a>
 
 							</div>

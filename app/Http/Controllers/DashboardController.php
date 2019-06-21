@@ -12,7 +12,6 @@ use App\User;
 use SMS;
 use DB;
 use Artisan;
-use Illuminate\Support\Facades\Session;
 
 // use Illuminate\Support\Facades\App;
 
@@ -34,7 +33,7 @@ class DashboardController extends Controller
       
         $user = getUserRecord();
         $data['layout']         = getLayout();
-        $data['title']          = getPhrase('dashboard');
+        $data['title']          =  __('messages.dashboard');
         $role = getRole();
         if($role=='admin' || $role=='owner'){
            
@@ -68,7 +67,7 @@ class DashboardController extends Controller
                     );
                 
            $data['chart_data'][] = (object)$chart_data;
-           $data['chart_heading']         = getPhrase('user_statistics');
+           $data['chart_heading']         = __('messages.user_statistics');
            
            $data['payments_chart_data'] = (object)$this->getPaymentStats();
            $data['payments_monthly_data'] = (object)$this->getPaymentMonthlyStats();
@@ -85,9 +84,6 @@ class DashboardController extends Controller
 
            // return view('admin.dashboard', $data);
 
-            if (Session::has('locale')) {
-                App::setLocale(Session::get('locale'));
-            }
             $view_name = getTheme().'::admin.dashboard';
             
             return view($view_name, $data);
@@ -101,10 +97,6 @@ class DashboardController extends Controller
            $data['latest_series'] = $this->getLatestLmsSeries();
 
            // return view('parent.dashboard', $data);
-
-            if (Session::has('locale')) {
-                App::setLocale(Session::get('locale'));
-            }
            $view_name = getTheme().'::parent.dashboard';
             return view($view_name, $data);
         }
@@ -130,14 +122,14 @@ class DashboardController extends Controller
 
            } 
 
-            $labels = [getPhrase('correct'), getPhrase('wrong'), getPhrase('not_answered')];
+            $labels = [__('messages.correct.'), __('messages.wrong'), __('messages.not_answered')];
             $dataset = [$correct_answers, $wrong_answers, $not_answered];
             $dataset_label[] = 'lbl';
             $bgcolor  = [$color_correct,$color_wrong,$color_not_attempted];
             $border_color = [$color_correct,$color_wrong,$color_not_attempted];
             $chart_data['type'] = 'pie'; 
             //horizontalBar, bar, polarArea, line, doughnut, pie
-            $chart_data['title'] = getphrase('overall_performance');  
+            $chart_data['title'] = __('messages.overall_performance');  
 
             $chart_data['data']   = (object) array(
                     'labels'            => $labels,
@@ -167,12 +159,12 @@ class DashboardController extends Controller
 
             $labels = $labels;
             $dataset = $dataset;
-            $dataset_label = getPhrase('performance');
+            $dataset_label = __('messages.performance');
             $bgcolor  = $bgcolor;
             $border_color = $bordercolor;
             $chart_data['type'] = 'bar'; 
             //horizontalBar, bar, polarArea, line, doughnut, pie
-            $chart_data['title'] = getPhrase('best_performance_in_all_quizzes');
+            $chart_data['title'] = __('messages.best_performance_in_all_quizzes');
 
             $chart_data['data']   = (object) array(
                     'labels'            => $labels,
@@ -186,11 +178,7 @@ class DashboardController extends Controller
 
 
 
-           // return view('student.dashboard', $data);
-            //
-            if (Session::has('locale')) {
-                App::setLocale(Session::get('locale'));
-            }
+           // return view('student.dashboard', $data);   
             $view_name = getTheme().'::student.dashboard';
             return view($view_name, $data);         
         }
@@ -262,8 +250,8 @@ class DashboardController extends Controller
             
 
             $payment_dataset = [$payment_data->success_count, $payment_data->cancelled_count, $payment_data->pending_count];
-            $payment_labels = [getPhrase('success'), getPhrase('cancelled'), getPhrase('pending')];
-            $payment_dataset_labels = [getPhrase('total')];
+            $payment_labels = [__('messages.success'), __('messages.cancelled'), __('messages.pending')];
+            $payment_dataset_labels = [__('messages.total')];
 
             $payment_bgcolor = [getColor('',4),getColor('',9),getColor('',18)];
             $payment_border_color = [getColor('background',4),getColor('background',9),getColor('background',18)]; 
@@ -276,7 +264,7 @@ class DashboardController extends Controller
                                         'border_color'      => $payment_border_color
                                         );
            $payments_stats['type'] = 'bar'; 
-             $payments_stats['title'] = getPhrase('overall_statistics');
+             $payments_stats['title'] = __('messages.overall_statistics');
 
            return $payments_stats;
     }
@@ -293,7 +281,7 @@ class DashboardController extends Controller
 
             $payment_dataset = [];
             $payment_labels = [];
-            $payment_dataset_labels = [getPhrase('total')];
+            $payment_dataset_labels = [__('messages.total')];
             $payment_bgcolor = [];
             $payment_border_color = []; 
 
@@ -316,7 +304,7 @@ class DashboardController extends Controller
                                         'border_color'      => $payment_border_color
                                         );
            $payments_stats['type'] = 'line'; 
-           $payments_stats['title'] = getPhrase('payments_reports_in').' '.getCurrencyCode(); 
+           $payments_stats['title'] = __('messages.payments_reports_in').' '.getCurrencyCode(); 
 
            return $payments_stats;
     }
@@ -328,7 +316,7 @@ class DashboardController extends Controller
 
         $summary_dataset = [];
             $summary_labels = [];
-            $summary_dataset_labels = [getPhrase('total')];
+            $summary_dataset_labels = [__('messages.total')];
             $summary_bgcolor = [];
             $summary_border_color = []; 
 
@@ -351,9 +339,9 @@ class DashboardController extends Controller
                                         'border_color'      => $summary_border_color
                                         );
            $quiz_stats['type'] = 'doughnut'; 
-           $quiz_stats['title'] = getPhrase('demanding_quizzes'); 
+           $quiz_stats['title'] = __('messages.demanding_quizzes'); 
            if($type!='')
-           $quiz_stats['title'] = getPhrase('demanding').' '.$type.' '.getPhrase('quizzes'); 
+           $quiz_stats['title'] = __('messages.demanding').' '.$type.' '.__('messages.quizzes'); 
 
            return $quiz_stats;
     }

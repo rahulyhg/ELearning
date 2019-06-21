@@ -4,11 +4,12 @@
 
 						
 
-						{{ Form::label('name', __('messages.name')) }}
+						<?php echo e(Form::label('name', __('messages.name'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack',
+						<?php echo e(Form::text('name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack',
 
 							'ng-model'=>'name',
 
@@ -24,17 +25,22 @@
 
 
 
-						)) }}
+						))); ?>
+
 
 						<div class="validation-error" ng-messages="formUsers.name.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('minlength')!!}
 
-	    					{!! getValidationMessage('maxlength')!!}
+	    					<?php echo getValidationMessage('minlength'); ?>
 
-	    					{!! getValidationMessage('pattern')!!}
+
+	    					<?php echo getValidationMessage('maxlength'); ?>
+
+
+	    					<?php echo getValidationMessage('pattern'); ?>
+
 
 						</div>
 
@@ -64,11 +70,12 @@
 
 						
 
-						{{ Form::label('username', __('messages.username')) }}
+						<?php echo e(Form::label('username', __('messages.username'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('username', $value = $username_value , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack',
+						<?php echo e(Form::text('username', $value = $username_value , $attributes = array('class'=>'form-control', 'placeholder' => 'Jack',
 
 							'ng-model'=>'username',
 
@@ -86,23 +93,28 @@
 
 
 
-						)) }}
+						))); ?>
+
 
 						<div class="validation-error" ng-messages="formUsers.username.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('minlength')!!}
 
-	    					{!! getValidationMessage('maxlength')!!}
+	    					<?php echo getValidationMessage('minlength'); ?>
 
-	    					{!! getValidationMessage('pattern')!!}
+
+	    					<?php echo getValidationMessage('maxlength'); ?>
+
+
+	    					<?php echo getValidationMessage('pattern'); ?>
+
 
 						</div>
 
 					</fieldset>
 					
-					@if($record)
+					<?php if($record): ?>
 					 <fieldset class="form-group">
 
 						<?php $password_required = true; 
@@ -110,13 +122,14 @@
 							$password_required = false;
 						?>
 
-						{{ Form::label('password', __('messages.password')) }}
-						@if(!$record)
+						<?php echo e(Form::label('password', __('messages.password'))); ?>
+
+						<?php if(!$record): ?>
 
 						<span class="text-red">*</span>
-						@endif
+						<?php endif; ?>
 
-						{{ Form::password('password', $attributes = array('class'=>'form-control', 'placeholder' => 'Enter password',
+						<?php echo e(Form::password('password', $attributes = array('class'=>'form-control', 'placeholder' => 'Enter password',
 
 							'ng-model'=>'password',
 
@@ -130,21 +143,25 @@
 
 
 
-						)) }}
+						))); ?>
+
 
 						<div class="validation-error" ng-messages="formUsers.password.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('minlength')!!}
 
-	    					{!! getValidationMessage('maxlength')!!}
+	    					<?php echo getValidationMessage('minlength'); ?>
+
+
+	    					<?php echo getValidationMessage('maxlength'); ?>
+
 
 
 						</div>
 
 					</fieldset>
-					@endif
+					<?php endif; ?>
 
 					 <fieldset class="form-group">
 
@@ -168,11 +185,12 @@
 
 						?>
 
-						{{ Form::label('email', __('messages.email')) }}
+						<?php echo e(Form::label('email', __('messages.email'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::email('email', $value = null, $attributes = array('class'=>'form-control', 'placeholder' => 'jack@jarvis.com',
+						<?php echo e(Form::email('email', $value = null, $attributes = array('class'=>'form-control', 'placeholder' => 'jack@jarvis.com',
 
 							'ng-model'=>'email',
 
@@ -180,25 +198,29 @@
 
 							'ng-class'=>'{"has-error": formUsers.email.$touched && formUsers.email.$invalid}',
 
-						 $readonly)) }}
+						 $readonly))); ?>
+
 
 						 <div class="validation-error" ng-messages="formUsers.email.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('email')!!}
+
+	    					<?php echo getValidationMessage('email'); ?>
+
 
 						</div>
 
 					</fieldset>
 
-					@if(!$record)
+					<?php if(!$record): ?>
 					 <fieldset class="form-group">
-					 {{ Form::label('password', __('messages.password')) }}
+					 <?php echo e(Form::label('password', __('messages.password'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::password('password', $attributes = array('class'=>'form-control instruction-call',
+						<?php echo e(Form::password('password', $attributes = array('class'=>'form-control instruction-call',
 
 								'placeholder' => getPhrase("password"),
 
@@ -210,13 +232,16 @@
 
 								'ng-minlength' => 5
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formUsers.password.$error" >
 
-							{!! getValidationMessage()!!}
+							<?php echo getValidationMessage(); ?>
 
-							{!! getValidationMessage('password')!!}
+
+							<?php echo getValidationMessage('password'); ?>
+
 
 						</div>
 
@@ -224,11 +249,12 @@
 					</fieldset>
 
 					 <fieldset class="form-group">
-					 {{ Form::label('confirm_password', __('messages.confirm_password')) }}
+					 <?php echo e(Form::label('confirm_password', __('messages.confirm_password'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control instruction-call',
+						<?php echo e(Form::password('password_confirmation', $attributes = array('class'=>'form-control instruction-call',
 
 								'placeholder' => __("messages.confirm_password"),
 
@@ -240,32 +266,36 @@
 
 								'ng-minlength' => 5
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formUsers.password_confirmation.$error" >
 
-							{!! getValidationMessage()!!}
+							<?php echo getValidationMessage(); ?>
 
-							{!! getValidationMessage('password')!!}
+
+							<?php echo getValidationMessage('password'); ?>
+
 
 						</div>
 
 
 					</fieldset>
 
-                  @endif
+                  <?php endif; ?>
 
 
 
 
 
-					@if(!checkRole(['parent']))
+					<?php if(!checkRole(['parent'])): ?>
 
 					<fieldset class="form-group">
 
 
 
-						{{ Form::label('role', __('messages.role')) }}
+						<?php echo e(Form::label('role', __('messages.role'))); ?>
+
 
 						<span class="text-red">*</span>
 
@@ -281,7 +311,7 @@
 
 						?>
 
-						{{Form::select('role_id', $roles, $selected, ['placeholder' => __('messages.select_role'),'class'=>'form-control', $disabled,
+						<?php echo e(Form::select('role_id', $roles, $selected, ['placeholder' => __('messages.select_role'),'class'=>'form-control', $disabled,
 
 							'ng-model'=>'role_id',
 
@@ -289,11 +319,13 @@
 
 							'ng-class'=>'{"has-error": formUsers.role_id.$touched && formUsers.role_id.$invalid}'
 
-						 ])}}
+						 ])); ?>
+
 
 						  <div class="validation-error" ng-messages="formUsers.role_id.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
+
 
 	    					 
 
@@ -303,7 +335,7 @@
 
 					</fieldset>
 
-					@endif
+					<?php endif; ?>
 
 
 
@@ -311,11 +343,12 @@
 
 						
 
-						{{ Form::label('phone', __('messages.phone')) }}
+						<?php echo e(Form::label('phone', __('messages.phone'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('phone', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 
+						<?php echo e(Form::text('phone', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 
 						__('messages.please_enter_10-15_digit_mobile_number'),
 
 							'ng-model'=>'phone',
@@ -327,17 +360,21 @@
 							'ng-class'=>'{"has-error": formUsers.phone.$touched && formUsers.phone.$invalid}',
 
 
-						)) }}
+						))); ?>
+
 
 						 
 
 						<div class="validation-error" ng-messages="formUsers.phone.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('phone')!!}
 
-	    					{!! getValidationMessage('maxlength')!!}
+	    					<?php echo getValidationMessage('phone'); ?>
+
+
+	    					<?php echo getValidationMessage('maxlength'); ?>
+
 
 						</div>
 
@@ -349,15 +386,17 @@
 
 						
 
-						{{ Form::label('address', __('messages.billing_address')) }}
+						<?php echo e(Form::label('address', __('messages.billing_address'))); ?>
+
 
 					 
 
-						{{ Form::textarea('address', $value = null , $attributes = array('class'=>'form-control','rows'=>3, 'cols'=>'15', 'placeholder' => __('messages.please_enter_your_address'),
+						<?php echo e(Form::textarea('address', $value = null , $attributes = array('class'=>'form-control','rows'=>3, 'cols'=>'15', 'placeholder' => __('messages.please_enter_your_address'),
 
 							'ng-model'=>'address',
 
-							)) }}
+							))); ?>
+
 
 					</fieldset>
 
@@ -365,7 +404,8 @@
 
 					<fieldset class='col-sm-6'>
 
-						{{ Form::label('image', __('messages.image')) }}
+						<?php echo e(Form::label('image', __('messages.image'))); ?>
+
 
 						<div class="form-group row">
 
@@ -373,7 +413,8 @@
 
 						
 
-					{!! Form::file('image', array('id'=>'image_input', 'accept'=>'.png,.jpg,.jpeg')) !!}
+					<?php echo Form::file('image', array('id'=>'image_input', 'accept'=>'.png,.jpg,.jpeg')); ?>
+
 
 							</div>
 
@@ -385,7 +426,7 @@
 
 							<div class="col-md-6">
 
-								<img src="{{ getProfilePath($record->image) }}" />
+								<img src="<?php echo e(getProfilePath($record->image)); ?>" />
 
 
 
@@ -405,6 +446,6 @@
 
 							<button class="btn btn-lg btn-success button" 
 
-							ng-disabled='!formUsers.$valid'>{{ $button_name }}</button>
+							ng-disabled='!formUsers.$valid'><?php echo e($button_name); ?></button>
 
 						</div>

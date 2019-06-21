@@ -1,17 +1,19 @@
 @extends('layouts.admin.adminlayout')
-@section('content')
+@section('content') 
 
 <div id="page-wrapper">
 			<div class="container-fluid">
 			<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
-							 
-							<li><i class="fa fa-home"></i> {{ $title}}</li>
+						
+							<li><i class="fa fa-home"></i>
+								{{ $title}}
+							</li>
 						</ol>
 					</div>
 				</div>
-
+				</div>
 				 <div class="row">
 					<div class="col-md-3">
 						<div class="card card-blue text-xs-center">

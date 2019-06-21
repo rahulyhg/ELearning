@@ -31,7 +31,7 @@ class LanguageController extends Controller
       }
          
         $data['active_class']       = 'languages';
-        $data['title']              = getPhrase('languages');
+        $data['title']              = __('messages.languages');
         $data['layout']             = getLayout();
         // return view('languages.list', $data);
 

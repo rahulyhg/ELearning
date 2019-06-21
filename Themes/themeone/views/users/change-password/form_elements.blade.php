@@ -4,11 +4,11 @@
 
 						
 
-						{{ Form::label('old_password', getphrase('old_password')) }}
+						{{ Form::label('old_password', __('messages.old_password')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::password('old_password', $attributes = array('class'=>'form-control', 'placeholder' => getphrase('old_password'),
+						{{ Form::password('old_password', $attributes = array('class'=>'form-control', 'placeholder' => __('messages.old_password'),
 
 							'ng-model'=>'old_password',
 
@@ -36,11 +36,11 @@
 
 						
 
-						{{ Form::label('password', getphrase('new_password')) }}
+						{{ Form::label('password', __('messages.new_password')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::password('password', $attributes = array('class'=>'form-control', 'placeholder' => getphrase('new_password'),
+						{{ Form::password('password', $attributes = array('class'=>'form-control', 'placeholder' => __('messages.new_password'),
 
 						'ng-model'=>'password',
 
@@ -66,11 +66,11 @@
 
 						
 
-						{{ Form::label('password_confirmation', getphrase('retype_password')) }}
+						{{ Form::label('password_confirmation', __('messages.retype_password')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control', 'placeholder' => getphrase('retype_password'),
+						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control', 'placeholder' => __('messages.retype_password'),
 
 						'ng-model'=>'password_confirmation',
 
@@ -104,6 +104,6 @@
 
 							<button class="btn btn-lg btn-success button"
 
-							ng-disabled='!changePassword.$valid' >{{ $button_name }}</button>
+							ng-disabled='!changePassword.$valid' >{{ __('messages.update') }}</button>
 
 						</div>

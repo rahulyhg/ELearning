@@ -6,7 +6,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
-
+							 
 							<li>{{ $title}}</li>
 						</ol>
 					</div>
@@ -48,7 +48,7 @@
 						</div>
 					</div>
 
-
+				 
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -60,7 +60,7 @@
 					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
 					 	 @else
 
-					    	<table class="table">
+					    	<table class="table">	
 					    	<thead>
 					    		<tr>
 					    			<th>{{getPhrase('title')}}</th>
@@ -83,7 +83,7 @@
 					 				</td>
 					 				<td>
 					 				@if($quiz->is_paid)
-					 					<a href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a>
+					 					<a href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a> 
 				 					@else
 				 					-
 				 					@endif
@@ -92,13 +92,13 @@
 					 		@endforeach
 
 					    	</tbody>
-					    	</table>
+					    	</table>  
 					    @endif
-
+					     
 					    </div>
-
-
-
+					 
+					 	
+					 
 					</div>
 
 						<div class="col-md-6">
@@ -110,7 +110,7 @@
 					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
 					 	 @else
 
-					    	<table class="table">
+					    	<table class="table">	
 					    	<thead>
 					    		<tr>
 					    			<th>{{getPhrase('title')}}</th>
@@ -133,7 +133,7 @@
 					 				</td>
 					 				<td>
 					 				@if($series->is_paid)
-					 					<a href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a>
+					 					<a href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a> 
 				 					@else
 				 					-
 				 					@endif
@@ -142,21 +142,21 @@
 					 		@endforeach
 
 					    	</tbody>
-					    	</table>
+					    	</table>  
 					    @endif
-
+					     
 					    </div>
-
-
-
+					 
+					 	
+					 
 					</div>
 
+					 
 
-
-
+				 
 				</div>
-
-
+				 
+			 
 			</div>
 			<!-- /.container-fluid -->
 </div>
@@ -165,5 +165,5 @@
 @stop
 
 @section('footer_scripts')
-
+  
 @stop

@@ -175,8 +175,4 @@ class Language extends Model
     return (array)json_decode($phrases);
 
   }
-
-
- 
-
 }

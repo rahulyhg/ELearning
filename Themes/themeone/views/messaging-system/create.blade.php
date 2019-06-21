@@ -3,11 +3,6 @@
 @section('content')
 <div id="page-wrapper">
             <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-                    <li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-                    <li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-                </ul>
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -15,8 +10,7 @@
                             <li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
                             <li><a href="{{URL_MESSAGES}}">{{getPhrase('messages')}}</a> </li>
 
-{{--                            <li class="active"> {{ $title }} </li>--}}
-                            <li class="active">{{ trans('home.Send Message') }}</li>
+                            <li class="active"> {{ $title }} </li>
                         </ol>
                     </div>
                 </div>
@@ -24,14 +18,13 @@
 <div class="panel panel-custom">
                     <div class="panel-heading">
                     <div class="pull-right messages-buttons">
-                            <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES}}"> {{trans('home.Inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
-                            <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES_CREATE}}">
-                                {{trans('home.Compose')}}</a>
+                            <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES}}"> {{getPhrase('inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
+                            <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES_CREATE}}"> 
+                            {{getPhrase('compose')}}</a>
 
                  
                         </div>
-{{--                        <h1>{{$title}}</h1>--}}
-                        <h1>{{ trans('home.Send Message') }}</h1>
+                        <h1>{{$title}}</h1>
                     </div>
 
                     <div class="panel-body packages">
@@ -47,20 +40,20 @@
                 $tosentUsers[$user->id] = $user->name; 
             }
         ?>
-     {!! Form::label('Select User', trans('home.Select User'), ['class' => 'control-label']) !!}
+     {!! Form::label('Select User', 'Select User', ['class' => 'control-label']) !!}
     {{Form::select('recipients[]', $tosentUsers, null, ['class'=>'form-control select2', 'name'=>'recipients[]', 'multiple'=>'true'])}}
     @endif
  
     
     <!-- Subject Form Input -->
     <div class="form-group">
-        {!! Form::label('subject', trans('home.Subject'), ['class' => 'control-label']) !!}
+        {!! Form::label('subject', 'Subject', ['class' => 'control-label']) !!}
         {!! Form::text('subject', null, ['class' => 'form-control']) !!}
     </div>
 
     <!-- Message Form Input -->
     <div class="form-group">
-        {!! Form::label('message', trans('home.Message'), ['class' => 'control-label']) !!}
+        {!! Form::label('message', 'Message', ['class' => 'control-label']) !!}
         {!! Form::textarea('message', null, ['class' => 'form-control']) !!}
     </div>
 
@@ -68,7 +61,7 @@
     
     <!-- Submit Form Input -->
     <div class="text-right">
-        {!! Form::submit(trans('home.Submit'), ['class' => 'btn btn-primary btn-lg']) !!}
+        {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-lg']) !!}
     </div>
 </div>
 {!! Form::close() !!}

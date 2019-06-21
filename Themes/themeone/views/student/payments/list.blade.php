@@ -34,7 +34,7 @@
 
 				</div>
 
-
+								
 
 				<!-- /.row -->
 
@@ -42,9 +42,9 @@
 
 					<div class="panel-heading">
 
+						
 
-
-
+						 
 
 						<h1>{{ $title }}</h1>
 
@@ -52,7 +52,7 @@
 
 					<div class="panel-body packages">
 
-						<div class="table-responsive">
+						<div class="table-responsive"> 
 
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 
@@ -80,13 +80,13 @@
 
 									{{-- <th>{{ getPhrase('action')}}</th> --}}
 
-
+								  
 
 								</tr>
 
 							</thead>
 
-
+							 
 
 						</table>
 
@@ -106,13 +106,13 @@
 
 @endsection
 
-
+ 
 
 
 
 @section('footer_scripts')
 
-
+  
 
  @include('common.datatables', array('route'=>URL_PAYPAL_PAYMENTS_AJAXLIST.$user->slug, 'route_as_url' => TRUE))
 

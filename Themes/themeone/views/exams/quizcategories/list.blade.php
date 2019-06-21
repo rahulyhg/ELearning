@@ -12,7 +12,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li>{{ $title }}</li>
+							<li>{{ __('messages.quiz_categories')}}</li>
 						</ol>
 					</div>
 				</div>
@@ -23,10 +23,10 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-							<a href="{{URL_QUIZ_CATEGORY_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_QUIZ_CATEGORY_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 							 
 						</div>
-						<h1>{{ $title }}</h1>
+						<h1>{{ __('messages.quiz_categories')}}</h1>
 					</div>
 					<div class="panel-body packages">
 						<div> 
@@ -34,10 +34,10 @@
 							<thead>
 								<tr>
 									 
-									<th>{{ getPhrase('category')}}</th>
-									<th>{{ getPhrase('image')}}</th>
-									<th>{{ getPhrase('description')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.category')}}</th>
+									<th>{{ __('messages.image')}}</th>
+									<th>{{ __('messages.description')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

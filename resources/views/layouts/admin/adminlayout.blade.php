@@ -113,7 +113,10 @@
   			<strong>{{getPhrase('info')}}!</strong> CRUD {{getPhrase('operations_are_disabled_in_demo_version')}}
 		</div>
 		@endif
-		<aside class="left-sidebar">			<div class="collapse navbar-collapse navbar-ex1-collapse">				<ul class="nav navbar-nav side-nav">					<li {{ isActive($active_class, 'dashboard') }}> 
+		<aside class="left-sidebar">			
+			<div class="collapse navbar-collapse navbar-ex1-collapse">				
+				<ul class="nav navbar-nav side-nav">					
+					<li {{ isActive($active_class, 'dashboard') }}> 
 						<a href="{{PREFIX}}">
 							<i class="icon-home"></i> {{ getPhrase('dashboard') }} 
 						</a> 
@@ -215,7 +218,7 @@
 					{{ getPhrase('feedback') }} </a> 
 					
 					</li>
-
+					
 					<li {{ isActive($active_class, 'master_settings') }} > 
 
 					<a data-toggle="collapse" data-target="#master_settings"><i class="icon-settings" ></i> 
@@ -248,7 +251,7 @@
 		</aside>
 	 
 	@endif
-
+	
 		@yield('content')
 	</div>
 	<!-- /#wrapper -->

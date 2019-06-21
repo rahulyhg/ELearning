@@ -2,11 +2,6 @@
 @section('content')
 <div id="page-wrapper">
   <div class="container-fluid">
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-          <li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-          <li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-      </ul>
  <div class="row">
                    <div class="col-lg-12">
                        <ol class="breadcrumb">
@@ -19,14 +14,13 @@
                <div class="panel panel-custom">
                    <div class="panel-heading">
                        <div class="pull-right messages-buttons">
-                           <a class="btn btn-lg btn-primary button" href="{{URL_MESSAGES}}"> {{ trans('home.Inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
+                           <a class="btn btn-lg btn-primary button" href="{{URL_MESSAGES}}"> {{getPhrase('inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
                            <a class="btn btn-lg btn-danger button" href="{{URL_MESSAGES_CREATE}}"> 
-                           {{trans('home.Compose')}}</a>
+                           {{getPhrase('compose')}}</a>
 
                 
                        </div>
-{{--                       <h1>{{getPhrase('inbox')}}</h1>--}}
-                       <h1>{{trans('home.Inbox')}}</h1>
+                       <h1>{{getPhrase('inbox')}}</h1>
                    </div>
                    <?php $currentUserId = Auth::user()->id;?>
                    <div class="panel-body packages">
@@ -63,7 +57,7 @@
                                    </li>
                                      @endforeach
                                    @else
-                                       <p>{{ trans('home.Sorry, no messages') }}.</p>
+                                       <p>Sorry, no messages.</p>
                                    @endif
                            
 

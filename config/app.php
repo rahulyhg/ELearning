@@ -2,8 +2,6 @@
 
 return [
 
-    'locale' => 'vi', //ngôn ngữ mặc định
-    'fallback_locale' => 'en', // được sử dụng khi không tìm thấy config locale.
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -42,8 +42,8 @@
 					<div class="panel-body">
 					 
 					 <?php $button_name = getPhrase('update'); ?>
-						{{ Form::model($record,
-						array('url' => URL_USERS_SETTINGS.$record->slug,
+						{{ Form::model($record, 
+						array('url' => URL_USERS_SETTINGS.$record->slug, 
 						'method'=>'patch','novalidate'=>'','name'=>'formUsers ', 'files'=>'true' )) }}
 					
 					<h1>{{getPhrase('quiz_and_exam_series')}}</h1>

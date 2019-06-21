@@ -13,8 +13,6 @@ use Image;
 use ImageSettings;
 use File;
 use Response;
-use Illuminate\Support\Facades\Session;
-
 class StudentLmsController extends Controller
 {
      public function __construct()
@@ -53,10 +51,6 @@ class StudentLmsController extends Controller
         $data['user'] = $user;
         // return view('student.lms.categories', $data);
 
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
-        }
-
               $view_name = getTheme().'::student.lms.categories';
         return view($view_name, $data);
 
@@ -79,9 +73,7 @@ class StudentLmsController extends Controller
                                         ->where('end_date','>=',date('Y-m-d'))        
                                         ->paginate(getRecordsPerPage());
         // return view('student.lms.lms-series-list', $data);
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
-        }
+
 
 
             $view_name = getTheme().'::student.lms.lms-series-list';
@@ -119,10 +111,6 @@ class StudentLmsController extends Controller
                                         ->paginate(getRecordsPerPage());
     }
     $data['user']               = $user;
-
-    if (Session::has('locale')) {
-        App::setLocale(Session::get('locale'));
-    }
 
     // return view('student.lms.lms-series-list', $data);
 
@@ -170,9 +158,6 @@ class StudentLmsController extends Controller
         $data['layout']              = getLayout();
 
        // return view('student.lms.series-view-item', $data);
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
-        }
 
           $view_name = getTheme().'::student.lms.series-view-item';
         return view($view_name, $data);

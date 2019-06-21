@@ -33,7 +33,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
-
+        
 
         if(!getSetting('messaging', 'module'))
         {
@@ -54,9 +54,6 @@ class MessagesController extends Controller
         $data['threads'] 	  = $threads;
         $data['layout']       = getLayout();
 
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
-        }
         // return view('messaging-system.index', $data);
 
          $view_name = getTheme().'::messaging-system.index';
@@ -163,9 +160,6 @@ class MessagesController extends Controller
 
         // return view('messaging-system.create', $data);
 
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
-        }
           $view_name = getTheme().'::messaging-system.create';
         return view($view_name, $data);
         // return view('messenger.create', compact('users'));

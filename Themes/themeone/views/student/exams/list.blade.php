@@ -7,11 +7,6 @@
 
 <div id="page-wrapper">
 			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-					<li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-					<li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-				</ul>
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12">
@@ -47,20 +42,13 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-{{--									<th>{{ getPhrase('title')}}</th>--}}
-{{--									<th>{{ getPhrase('duration')}}</th>--}}
-{{--									<th>{{ getPhrase('category')}}</th>--}}
-{{--									<th>{{ getPhrase('type')}}</th>--}}
-{{--									<th>{{ getPhrase('total_questions')}}</th>--}}
-{{--									<th>{{ getPhrase('action')}}</th>--}}
-
-
-									<th>{{ trans('home.Title') }}</th>
-									<th>{{ trans('home.Duration') }}</th>
-									<th>{{ trans('home.Category') }}</th>
-									<th>{{ trans('home.Type') }}</th>
-									<th>{{ trans('home.Total Questions') }}</th>
-									<th>{{ trans('home.Action')}}</th>
+									<th>{{ getPhrase('title')}}</th>
+									<th>{{ getPhrase('duration')}}</th>
+									<th>{{ getPhrase('category')}}</th>
+									<th>{{ getPhrase('type')}}</th>
+									<th>{{ getPhrase('total_questions')}}</th>
+									<th>{{ getPhrase('action')}}</th>
+								  
 								</tr>
 							</thead>
 							 

@@ -3,9 +3,9 @@
 					<h2>Today Task</h2>
 				</div>
 				<div class="panel-body">
-
+					
 					<br> Content will come in this place
-
+				
 
 				</div>
 
@@ -13,7 +13,7 @@
 					<h2>Latest Messages</h2>
 				</div>
 				<div class="panel-body">
-
+					
 					<ul class="list-replay list-sidebar">
 						<li>
 							<a href="">
@@ -72,5 +72,5 @@
 							</a>
 						</li>
 					</ul>
-
+				
 				</div>

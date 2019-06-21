@@ -43,6 +43,8 @@ if(env('DEMO_MODE')) {
 
 
     });
+
+
      
 }
 
@@ -63,8 +65,15 @@ if(env('DB_DATABASE')==''){
 // 	return redirect(URL_USERS_LOGIN);
 // });
 
+
 Route::get('dashboard','DashboardController@index');
 Route::get('dashboard/testlang','DashboardController@testLanguage');
+// Route::get('lang/{lang}','LangController@lang')->name('lang');
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
 
 
 Route::get('auth/{slug}','Auth\LoginController@redirectToProvider');
@@ -125,7 +134,7 @@ Route::patch('languages/update-strings/{slug}', 'NativeController@saveLanguageSt
 
 //Users
 Route::get('users/staff/{role?}', 'UsersController@index');
-Route::get('users/create', 'UsersController@dashboard');
+Route::get('users/create', 'UsersController@create');
 Route::delete('users/delete/{slug}', 'UsersController@delete');
 Route::post('users/create/{role?}', 'UsersController@store');
 Route::get('users/edit/{slug}', 'UsersController@edit');
@@ -137,27 +146,6 @@ Route::get('users/details/{slug}', 'UsersController@details');
 
 Route::get('users/settings/{slug}', 'UsersController@settings');
 Route::patch('users/settings/{slug}', 'UsersController@updateSettings');
-
-////////////////////////////////
-///
-//Route::get('', function () {
-//    if (Session::has('locale')) {
-//        App::setLocale(Session::get('locale'));
-//    }
-//    return view('hai-le.account-setting');
-//});
-
-Route::get('language/{locale}', function ($locale) {
-    Session::put('locale', $locale);
-    return redirect()->back();
-});
-
-Route::group(['middleware' => 'locale'], function() {
-    Route::get('change-language/{language}', 'HomeController@changeLanguage')
-        ->name('user.change-language');
-});
-///
-/// ////////////////////////////
 
 Route::get('users/change-password/{slug}', 'UsersController@changePassword');
 Route::patch('users/change-password/{slug}', 'UsersController@updatePassword');
@@ -236,7 +224,7 @@ Route::get('exams/questionbank/getquestionslist/{slug}',
 Route::get('exams/questionbank/import',  'QuestionBankController@import');
 Route::post('exams/questionbank/import',  'QuestionBankController@readExcel');
 
-
+ 
 //Quiz Categories
 Route::get('exams/categories', 'QuizCategoryController@index');
 Route::get('exams/categories/add', 'QuizCategoryController@create');
@@ -599,3 +587,4 @@ Route::get('themes/data','SiteThemesController@getDatatable');
 Route::get('make/default/theme/{id}','SiteThemesController@makeDefault');
 Route::get('theme/settings/{slug}','SiteThemesController@viewSettings');
 Route::post('theme/update/settings/{slug}','SiteThemesController@updateSubSettings');
+

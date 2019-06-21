@@ -3,7 +3,6 @@
 <html lang="en" dir="{{ (App\Language::isDefaultLanuageRtl()) ? 'rtl' : 'ltr' }}">
 
 
-
 <head>
 
 	<meta charset="utf-8">

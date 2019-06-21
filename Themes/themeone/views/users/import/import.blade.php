@@ -9,7 +9,7 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 							@if(checkRole(getUserGrade(2)))
-							<li><a href="{{URL_USERS}}">{{ getPhrase('users')}}</a> </li>
+							<li><a href="{{URL_USERS}}">{{ __('messages.users')}}</a> </li>
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 							@else
 							<li class="active">{{$title}}</li>
@@ -25,7 +25,7 @@
 					@if(checkRole(getUserGrade(2))) 
 						<div class="pull-right messages-buttons">
 							 
-							<a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 							 
 						</div>
 						@endif
@@ -34,10 +34,10 @@
 
 					<div class="panel-body text-center">
 					
-					<a href="{{DOWNLOAD_LINK_USERS_IMPORT_EXCEL}}" class="btn btn-info">{{getPhrase('download_template')}}
+					<a href="{{DOWNLOAD_LINK_USERS_IMPORT_EXCEL}}" class="btn btn-info">{{__('messages.download_template')}}
 					</a>
 					
-					<?php $button_name = getPhrase('upload'); ?>
+					<?php $button_name = __('messages.upload'); ?>
 					
 						{!! Form::open(array('url' => URL_USERS_IMPORT, 'method' => 'POST', 'novalidate'=>'','name'=>'formUsers ', 'files'=>'true')) !!}
 					
@@ -45,8 +45,8 @@
 	 
 				 
 					<fieldset >
-					<label class="margintop30">Upload Excel</label>
-						{{-- {{ Form::label('excel', getphrase('upload_excel')) }} --}}
+					<label class="margintop30">{{__('messages.upload_excel')}}</label>
+						{{-- {{ Form::label('excel', __('messages.upload_excel')) }} --}}
 						 
 						
 					{!! Form::file('excel', array('class'=>'form-control','id'=>'excel_input', 'accept'=>'.xls,.xlsx', 'required'=>'true')) !!}
@@ -86,7 +86,7 @@ file.onchange = function(e){
      
             break;
         default:
-              alertify.error("{{getPhrase('file_type_not_allowed')}}");
+              alertify.error("{{__('messages.file_type_not_allowed')}}");
             this.value='';
     }
 };

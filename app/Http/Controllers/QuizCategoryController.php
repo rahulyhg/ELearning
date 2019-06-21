@@ -47,7 +47,7 @@ class QuizCategoryController extends Controller
         }
 
         $data['active_class']       = 'exams';
-        $data['title']              = getPhrase('quiz_categories');
+        $data['title']              = __('messages.quiz_categories');
     	// return view('exams.quizcategories.list', $data);
 
          $view_name = getTheme().'::exams.quizcategories.list';
@@ -118,7 +118,7 @@ class QuizCategoryController extends Controller
 
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'exams';
-    	$data['title']              = getPhrase('create_category');
+    	$data['title']              = __('messages.create_category');
     	// return view('exams.quizcategories.add-edit', $data);
 
            $view_name = getTheme().'::exams.quizcategories.add-edit';
@@ -144,7 +144,7 @@ class QuizCategoryController extends Controller
 
     	$data['record']       		= $record;
     	$data['active_class']       = 'exams';
-    	$data['title']              = getPhrase('edit_category');
+    	$data['title']              = __('messages.edit_category');
     	// return view('exams.quizcategories.add-edit', $data);
 
           $view_name = getTheme().'::exams.quizcategories.add-edit';
@@ -266,14 +266,14 @@ class QuizCategoryController extends Controller
                 $record->delete();
             }
             $response['status'] = 1;
-            $response['message'] = getPhrase('category_deleted_successfully');
+            $response['message'] = __('messages.category_deleted_successfully');
             
        } catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
        return json_encode($response);
 
@@ -283,7 +283,7 @@ class QuizCategoryController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __('messages.page_not_found'), 'error');
    			return $this->getRedirectUrl();
 		}
 
