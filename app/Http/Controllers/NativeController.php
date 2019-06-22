@@ -208,6 +208,7 @@ class NativeController extends Controller
         prepareBlockUserMessage();
         return back();
       }
+      
 
        $this->validate($request, [
          'language'          	=> 'bail|required|max:40|unique:languages,language',

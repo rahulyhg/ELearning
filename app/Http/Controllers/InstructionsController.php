@@ -32,7 +32,7 @@ class InstructionsController extends Controller
 
         $data['active_class']       = 'exams';
         $data['layout']       = getLayout();
-        $data['title']              = getPhrase('instructions');
+        $data['title']              = __('messages.instructions');
     	// return view('exams.instructions.list', $data);
        $view_name = getTheme().'::exams.instructions.list';
         return view($view_name, $data);
@@ -68,11 +68,11 @@ class InstructionsController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                           <li><a href="'.URL_INSTRUCTIONS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
+                           <li><a href="'.URL_INSTRUCTIONS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
                             
                            $temp = '';
                            if(checkRole(getUserGrade(1))) {
-                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
                       }
                     
                     $temp .='</ul></div>';
@@ -103,7 +103,7 @@ class InstructionsController extends Controller
     	$data['record']         	= FALSE;
       $data['layout']       = getLayout();
     	$data['active_class']       = 'exams';
-    	$data['title']              = getPhrase('add_instructions');
+    	$data['title']              = __('messages.add_instruction');
     	// return view('exams.instructions.add-edit', $data);
 
       $view_name = getTheme().'::exams.instructions.add-edit';
@@ -130,7 +130,7 @@ class InstructionsController extends Controller
     	$data['record']       		= $record;
     	$data['active_class']       = 'exams';
     	$data['layout']       = getLayout();
-    	$data['title']              = getPhrase('edit_instruction');
+    	$data['title']              = __('messages.edit_instruction');
     	// return view('exams.instructions.add-edit', $data);
        $view_name = getTheme().'::exams.instructions.add-edit';
         return view($view_name, $data); 
@@ -227,14 +227,14 @@ class InstructionsController extends Controller
 	        $record->delete();
         }
 	        $response['status'] = 1;
-	        $response['message'] = getPhrase('record_deleted_successfully');
+	        $response['message'] = __('messages.record_deleted_successfully');
     	}
        catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
         return json_encode($response);
     }
@@ -243,7 +243,7 @@ class InstructionsController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __("messages.page_not_found"), 'error');
    			return $this->getRedirectUrl();
 		}
 

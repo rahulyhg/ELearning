@@ -12,8 +12,8 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{url('/')}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{ getPhrase('question_subjects') }}</a></li>
-							<li><a href="{{URL_QUESTIONBAMK_IMPORT}}">{{ getPhrase('import_questions') }}</a></li>
+							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{ __('messages.question_subjects') }}</a></li>
+							<li><a href="{{URL_QUESTIONBAMK_IMPORT}}">{{ __('messages.import_questions') }}</a></li>
 							<li>{{ $title }}</li>
 						</ol>
 					</div>
@@ -25,7 +25,7 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-							<a href="{{URL_QUESTIONBANK_ADD_QUESTION.$subject->slug}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_QUESTIONBANK_ADD_QUESTION.$subject->slug}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 							 
 						</div>
 						<h1>{{ $title }}</h1>
@@ -36,13 +36,13 @@
 							<thead>
 								<tr>
 								 
-									<th>{{ getPhrase('subject')}}</th>
-									<th>{{ getPhrase('topic')}}</th>
-									<th>{{ getPhrase('type')}}</th>
-									<th>{{ getPhrase('question')}}</th>
-									<th>{{ getPhrase('marks')}}</th>
-									<th>{{ getPhrase('difficulty')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.subject')}}</th>
+									<th>{{ __('messages.topic')}}</th>
+									<th>{{ __('messages.type')}}</th>
+									<th>{{ __('messages.question')}}</th>
+									<th>{{ __('messages.marks')}}</th>
+									<th>{{ __('messages.difficulty')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

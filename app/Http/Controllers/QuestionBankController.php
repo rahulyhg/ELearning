@@ -38,7 +38,7 @@ class QuestionBankController extends Controller
       }
 
         $data['active_class']       = 'exams';
-        $data['title']              = getPhrase('question_subjects');
+        $data['title']              = __('messages.question_subjects');
     	// return view('exams.questionbank.list', $data);
 
          $view_name = getTheme().'::exams.questionbank.list';
@@ -71,9 +71,9 @@ class QuestionBankController extends Controller
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
                         
-                        <li><a href="'.URL_QUESTIONBANK_VIEW.$records->slug.'"><i class="fa fa-eye"></i>'.getPhrase("view_questions").'</a></li>
+                        <li><a href="'.URL_QUESTIONBANK_VIEW.$records->slug.'"><i class="fa fa-eye"></i>'.__("messages.view_questions").'</a></li>
 
-                            <li><a href="'.URL_QUESTIONBANK_ADD_QUESTION.$records->slug.'"><i class="fa fa-plus-circle"></i>'.getPhrase("add").'</a></li>
+                            <li><a href="'.URL_QUESTIONBANK_ADD_QUESTION.$records->slug.'"><i class="fa fa-plus-circle"></i>'.__("messages.add").'</a></li>
                             
                         </ul>
                     </div>';
@@ -108,7 +108,7 @@ class QuestionBankController extends Controller
     		return redirect($isValid);
 
     	  $data['active_class'] = 'exams';
-        $data['title']        = $subject->subject_title.' '.getPhrase('questions');
+        $data['title']        = $subject->subject_title.' '.__('messages.questions');
         $data['subject']			= $subject;
 
     	// return view('exams.questionbank.questions', $data);
@@ -155,9 +155,9 @@ class QuestionBankController extends Controller
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
                        
-                       <li><a href="'.URL_QUESTIONBANK_EDIT_QUESTION.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>
+                       <li><a href="'.URL_QUESTIONBANK_EDIT_QUESTION.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>
                             
-                       <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>
+                       <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>
                         </ul>
                     </div>';
             })
@@ -215,7 +215,7 @@ class QuestionBankController extends Controller
     	$data['topics']         	= array_pluck($topics, 'topic_name', 'id');
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'exams';
-    	$data['title']              = getPhrase('upload_question');
+    	$data['title']              = __('messages.upload_question');
     	$data['subject']			= $subject;
     	// $data['settings']			= json_encode($settings);
     	// return view('exams.questionbank.add-edit', $data);
@@ -267,7 +267,7 @@ class QuestionBankController extends Controller
     	$data['topics']         	= array_pluck($topics, 'topic_name', 'id');
     	$data['record']         	= $record;
     	$data['active_class']     = 'master_settings';
-    	$data['title']            = getPhrase('edit_question');
+    	$data['title']            = __('messages.edit_question');
     	$data['subject']			    = $subject;
       $settings                 = (object)$settings;
     	$data['settings']			    = json_encode($settings);
@@ -958,14 +958,14 @@ class QuestionBankController extends Controller
 
         }
             $response['status'] = 1;
-            $response['message'] = getPhrase('record_deleted_successfully');
+            $response['message'] = __('messages.record_deleted_successfully');
             return json_encode($response);
         } catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
        return json_encode($response);
     }
@@ -1004,7 +1004,7 @@ class QuestionBankController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __("messages.page_not_found"), 'error');
    			return $this->getRedirectUrl();
 		}
 
@@ -1032,8 +1032,8 @@ class QuestionBankController extends Controller
       
         $data['records']      = FALSE;
         $data['active_class'] = 'exams';
-        $data['heading']      = getPhrase('import_questions');
-        $data['title']        = getPhrase('import_questions');
+        $data['heading']      = __('messages.import_questions');
+        $data['title']        = __('messages.import_questions');
         $data['layout']        = getLayout();
         // return view('exams.questionbank.import.import', $data);
 
@@ -1132,8 +1132,8 @@ class QuestionBankController extends Controller
        $data['records']      = FALSE;
        $data['layout']       = getLayout();
        $data['active_class'] = 'exams';
-       $data['heading']      = getPhrase('upload_questions');
-       $data['title']        = getPhrase('report');
+       $data['heading']      = __('messages.upload_questions');
+       $data['title']        = __('messages.report');
        // return view('exams.questionbank.import.import-result', $data);
 
         $view_name = getTheme().'::exams.questionbank.import.import-result';

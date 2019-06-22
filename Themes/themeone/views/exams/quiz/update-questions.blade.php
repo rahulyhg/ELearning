@@ -22,7 +22,7 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-							<li><a href="{{URL_QUIZZES}}">{{ getPhrase('quizzes')}}</a></li>
+							<li><a href="{{URL_QUIZZES}}">{{ __('messages.quizzes')}}</a></li>
 
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 
@@ -42,7 +42,7 @@
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 
 						</div>
 
@@ -52,14 +52,14 @@
 
 					<div class="panel-body" >
 
-					<?php $button_name = getPhrase('create'); ?>
+					<?php $button_name = __('messages.create'); ?>
 
 					 		<div class="row">
 					 		<div class="col-md-6">
 
 							<fieldset class="form-group col-md-6">
 
-								{{ Form::label('subject', getphrase('subjects')) }}
+								{{ Form::label('subject', __('messages.subject')) }}
 
 								<span class="text-red">*</span>
 
@@ -75,7 +75,7 @@
 
 								<fieldset class="form-group col-md-6">
 
-								{{ Form::label('difficulty', getphrase('difficulty')) }}
+								{{ Form::label('difficulty', __('messages.difficulty')) }}
 
 								
 
@@ -83,13 +83,13 @@
 
 								<select ng-model="difficulty" class="form-control" >
 
-								<option value="">{{getPhrase('select')}}</option>	
+								<option value="">{{__('messages.select')}}</option>	
 
-								<option value="easy">{{getPhrase('easy')}}</option>	
+								<option value="easy">{{__('messages.easy')}}</option>	
 
-								<option value="medium">{{getPhrase('medium')}}</option>	
+								<option value="medium">{{__('messages.medium')}}</option>	
 
-								<option value="hard">{{getPhrase('hard')}}</option>	
+								<option value="hard">{{__('messages.hard')}}</option>	
 
 								</select>
 
@@ -99,24 +99,24 @@
 
 								<fieldset class="form-group col-md-6">
 
-								{{ Form::label('question_type', getphrase('question_type')) }}
+								{{ Form::label('question_type', __('messages.question_type')) }}
 
 								<select ng-model="question_type" class="form-control" >
 
-									<option selected="selected" value="">{{getPhrase('select')}}</option>
+									<option selected="selected" value="">{{__('messages.select')}}</option>
 
-									<option value="radio">{{getPhrase('single_answer')}}</option>
+									<option value="radio">{{__('messages.single_answer')}}</option>
 
-									<option value="checkbox">{{getPhrase('multi_answer')}}</option>
+									<option value="checkbox">{{__('messages.multi_answer')}}</option>
 
 
-									<option value="blanks">{{getPhrase('fill_in_the_blanks')}}</option>
+									<option value="blanks">{{__('messages.fill_the_blanks')}}</option>
 
-									<option value="match">{{getPhrase('match_the_following')}}</option>
+									<option value="match">{{__('messages.match_the_following')}}</option>
 
-									<option value="para">{{getPhrase('paragraph')}}</option>
+									<option value="para">{{__('messages.paragraph')}}</option>
 
-									<option value="video">{{getPhrase('video')}}</option>
+									<option value="video">{{__('messages.video')}}</option>
 
 								</select>
 
@@ -124,15 +124,15 @@
 
 								<!-- <fieldset class="form-group col-md-6">
 
-								{{ Form::label('show_in_front_end', getphrase('show_in_front_end')) }}
+								{{ Form::label('show_in_front_end', __('messages.show_in_front_end')) }}
 
 								<select ng-model="show_in_front_end" class="form-control" >
 
-									<option selected="selected" value="">{{getPhrase('select')}}</option>
+									<option selected="selected" value="">{{__('messages.select')}}</option>
 
-									<option value="1">{{getPhrase('yes')}}</option>
+									<option value="1">{{__('messages.yes')}}</option>
 
-									<option value="0">{{getPhrase('no')}}</option>
+									<option value="0">{{__('messages.no')}}</option>
 
 
 									
@@ -145,11 +145,11 @@
 
 								<!-- <fieldset class="form-group col-md-6">
 
-								{{ Form::label('searchTerm', getphrase('search_term')) }}
+								{{ Form::label('searchTerm', __('messages.search_term')) }}
 
 								{{ Form::text('searchTerm', $value = null , $attributes = array('class'=>'form-control', 
 
-						'placeholder' => getPhrase('enter_search_term'),
+						'placeholder' => __('messages.enter_search_term'),
 
 						'ng-model'=>'searchTerm')) }}
 
@@ -158,11 +158,11 @@
 
 								<fieldset class="form-group col-md-6">
 
-								{{ Form::label('question_model', 'Enter search term') }}
+								{{ Form::label('question_model', __('messages.enter_search_term')) }}
 
 								{{ Form::text('question_model', $value = null , $attributes = array('class'=>'form-control', 
 
-						'placeholder' => getPhrase('enter_search_term'),
+						'placeholder' => __('messages.enter_search_term'),
 
 						'ng-model'=>'question_model')) }}
 
@@ -224,7 +224,7 @@
 
 						
 
-								<h4 class="text-success">Questions @{{ subjectQuestions.length }} </h4>
+								<h4 class="text-success">{{__('messages.question')}} @{{ subjectQuestions.length }} </h4>
 
 
 
@@ -234,17 +234,17 @@
 
   									 
 
-									<th >{{getPhrase('subject')}}</th>
+									<th >{{__('messages.subject')}}</th>
 
-									<th>{{getPhrase('question')}}</th>
+									<th>{{__('messages.question')}}</th>
 
-									<th>{{getPhrase('difficulty')}}</th>
+									<th>{{__('messages.difficulty')}}</th>
 
-									<th>{{getPhrase('type')}}</th>
+									<th>{{__('messages.type')}}</th>
 
-									<th>{{getPhrase('marks')}}</th>	
+									<th>{{__('messages.marks')}}</th>	
 
-									<th>{{getPhrase('action')}}</th>	
+									<th>{{__('messages.action')}}</th>	
 
 								
 									<tr ng-repeat="question in subjectQuestions | filter: { difficulty_level:difficulty, question_type:question_type, show_in_front_end:show_in_front_end , topic_id:topic, sub_topic_id:sub_topic } | filter: question_model track by $index ">
@@ -270,7 +270,7 @@
 
 										 
 
-										ng-click="addQuestion(question, subject);" class="btn btn-primary" >{{getPhrase('add')}}</a>
+										ng-click="addQuestion(question, subject);" class="btn btn-primary" >{{__('messages.add')}}</a>
 
 									  		
 

@@ -35,7 +35,7 @@
 					 			</div>
 
 					 			<div class="buttons text-center" ng-if="savedQuestions.length>0">
-							<button class="btn btn-lg btn-success button">{{getPhrase('update')}}</button>
+							<button class="btn btn-lg btn-success button">{{__('messages.update')}}</button>
 						</div>
 			</div>
 		</div>

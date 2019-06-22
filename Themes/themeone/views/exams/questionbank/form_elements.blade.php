@@ -1,12 +1,12 @@
 	<input type="hidden" name="subject_id" value="{{ $subject->id }}">
 	<fieldset class="form-group ">
-	{{ Form::label('topic_id', getphrase('topic')) }} <span class="text-red">*</span>
+	{{ Form::label('topic_id', __('messages.topic')) }} <span class="text-red">*</span>
 	
 	{{Form::select('topic_id', $topics, null, ['class'=>'form-control', "id"=>"topic_id"])}}
 	</fieldset>
 
 	<fieldset class="form-group">
-		{{ Form::label('question', getphrase('question')) }} 
+		{{ Form::label('question', __('messages.question')) }} 
 		<span class="text-red">*</span>
 		
 		{{ Form::textarea('question', $value = null , $attributes = array('class'=>'form-control ckeditor', 'placeholder' => 'Your question', 'rows' => '5',
@@ -23,7 +23,7 @@
 	</fieldset>
 
 	<fieldset class="form-group">
-		{{ Form::label('question_l2', getphrase('question_2nd_language')) }} 
+		{{ Form::label('question_l2', __('messages.question_2nd_language')) }} 
 		
 		{{ Form::textarea('question_l2', $value = null , $attributes = array('class'=>'form-control ckeditor', 'placeholder' => 'Your question', 'rows' => '5',
 		'ng-model'=>'question_l2', 
@@ -42,7 +42,7 @@
 
 		?>
 	<fieldset class="form-group ">
-	{{ Form::label('question_type', getphrase('question_type')) }}
+	{{ Form::label('question_type', __('messages.question_type')) }}
 	<span class="text-red">*</span>
 	<?php 
 	$readonly = "";
@@ -65,18 +65,18 @@
 
 {{-- 
 		<fieldset ng-if="question_type=='video'|| question_type=='audio'" class='form-group col-md-6'>
-						{{ Form::label('is_having_url', getphrase('is_having_url')) }}
+						{{ Form::label('is_having_url', __('messages.is_having_url')) }}
 						<span class="text-red">*</span>
 						<div class="form-group row">
 							<div class="col-md-6">
 							{{ Form::radio('is_having_url', null , array('id'=>'optionNo', 'ng-model' => 'have_url' )) }}
 								
-								<label for="optionNo"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('No')}}</label> 
+								<label for="optionNo"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.No')}}</label> 
 							</div>
 							<div class="col-md-6">
 							{{ Form::radio('is_having_url', null , array('id'=>'optionYes', 
 							'ng-model' => 'have_url')) }}
-								<label for="optionYes"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('Yes')}} </label>
+								<label for="optionYes"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.Yes')}} </label>
 							</div>
 						</div>
 					</fieldset> --}}
@@ -84,20 +84,20 @@
 	<div  class="row">
 	 <div class="col-md-6">
 	 <fieldset class="form-group" >
-         {{ Form::label('question_file', getPhrase('upload') ) }} 
+         {{ Form::label('question_file', __('messages.upload') ) }} 
          @{{question_type}} 
-         <span ng-if="question_type=='video'">{{getPhrase('supported_formats are')}} .mp4
+         <span ng-if="question_type=='video'">{{__('messages.supported_formats are')}} .mp4
          </span>
-		 <span ng-if="question_type=='audio'">{{getPhrase('supported_formats are')}} .mp3
+		 <span ng-if="question_type=='audio'">{{__('messages.supported_formats are')}} .mp3
          </span>
 
-         <span ng-if="question_type!='audio' && question_type!='video'">({{getPhrase('supported_formats are')}}.jpeg, .jpg, .png)
+         <span ng-if="question_type!='audio' && question_type!='video'">({{__('messages.supported_formats are')}}.jpeg, .jpg, .png)
          </span>
 	
 
         {{Form::file('question_file', $attributes = array('class'=>'form-control'))}}
-        {{-- <p ng-if="question_type=='video'">{{getPhrase('supported_formats are')}} .mp4</p>
-        <p ng-if="question_type=='audio'">{{getPhrase('supported_formats are')}} .mp3</p> --}}
+        {{-- <p ng-if="question_type=='video'">{{__('messages.supported_formats are')}} .mp4</p>
+        <p ng-if="question_type=='audio'">{{__('messages.supported_formats are')}} .mp3</p> --}}
     </fieldset>
 	</div> 
 
@@ -111,30 +111,30 @@
 </div>
 		
 	<fieldset class="form-group ">
-	{{ Form::label('difficulty_level', getphrase('difficulty_level')) }}
+	{{ Form::label('difficulty_level', __('messages.difficulty_level')) }}
 	<span class="text-red">*</span>
 
 	{{Form::select('difficulty_level',$exam_difficulty_levels , null, ['class'=>'form-control', "id"=>"difficulty_level" ])}}
 	</fieldset>
 	<fieldset class="form-group">
-		{{ Form::label('hint', getphrase('hint')) }} 
+		{{ Form::label('hint', __('messages.hint')) }} 
 		{{ Form::text('hint', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Hint for the question')) }}
 	</fieldset>
 
 	<fieldset class="form-group">
-		{{ Form::label('explanation', getphrase('explanation')) }} 
+		{{ Form::label('explanation', __('messages.explanation')) }} 
 		{{ Form::textarea('explanation', $value = null , $attributes = array('class'=>'form-control ckeditor', 'placeholder' => 'Your explanation', 'rows' => '5')) }}
 	</fieldset>
 	
 	<fieldset class="form-group">
-		{{ Form::label('explanation_l2', getphrase('explanation_2nd_language')) }} 
+		{{ Form::label('explanation_l2', __('messages.explanation_2nd_language')) }} 
 		{{ Form::textarea('explanation_l2', $value = null , $attributes = array('class'=>'form-control ckeditor', 'placeholder' => 'Your explanation_l2', 'rows' => '5','id'=>'explanation_l2')) }}
 	</fieldset>
 
 {{-- 	<div class="row">
 		<div class="col-md-6">
 		<fieldset class="form-group" >
-	         {{ Form::label('explanation_file', getPhrase('explanation_file')) }}
+	         {{ Form::label('explanation_file', __('messages.explanation_file')) }}
 	        {{Form::file('explanation_file', $attributes = array('class'=>'form-control'))}}
 	    </fieldset>
 
@@ -150,7 +150,7 @@
 	</div>--}}
 
 	<fieldset class="form-group">
-		{{ Form::label('marks', getphrase('marks')) }} 
+		{{ Form::label('marks', __('messages.marks')) }} 
 		<span class="text-red">*</span>
 		{{ Form::number('marks', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => '1',
 			'min'=>'1',
@@ -166,9 +166,9 @@
  
 
 	<fieldset class="form-group">
-		{{ Form::label('time_to_spend', getphrase('time_to_spend')) }} 
+		{{ Form::label('time_to_spend', __('messages.time_to_spend')) }} 
 		<span class="text-red">*</span>
-		{{ Form::number('time_to_spend', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('in_seconds'),
+		{{ Form::number('time_to_spend', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.in_seconds'),
 			'min'=>'1',
 		'ng-model'=>'time_to_spend', 
 		'required'=> 'true', 

@@ -9,7 +9,7 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 							@if(checkRole(getUserGrade(2)))
-							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{ getPhrase('questions')}}</a> </li>
+							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{ __('messages.questions')}}</a> </li>
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 							@else
 							<li class="active">{{$title}}</li>
@@ -25,7 +25,7 @@
 					@if(checkRole(getUserGrade(2))) 
 						<div class="pull-right messages-buttons">
 							 
-							<a href="{{URL_QUIZ_QUESTIONBANK}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_QUIZ_QUESTIONBANK}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 							 
 						</div>
 						@endif
@@ -34,17 +34,17 @@
 
 					<div class="panel-body text-center">
 					
-					<a href="{{DOWNLOAD_LINK_QUESTION_IMPORT_EXCEL}}questions_radio_template.xlsx" class="btn btn-info">{{getPhrase('single_answer')}}
+					<a href="{{DOWNLOAD_LINK_QUESTION_IMPORT_EXCEL}}questions_radio_template.xlsx" class="btn btn-info">{{__('messages.single_answer')}}
 					</a>
-					<a href="{{DOWNLOAD_LINK_QUESTION_IMPORT_EXCEL}}questions_checkbox_template.xlsx" class="btn btn-info">{{getPhrase('multi_answer')}}
+					<a href="{{DOWNLOAD_LINK_QUESTION_IMPORT_EXCEL}}questions_checkbox_template.xlsx" class="btn btn-info">{{__('messages.multi_answer')}}
 					</a>
-					<a href="{{DOWNLOAD_LINK_QUESTION_IMPORT_EXCEL}}questions_blanks_template.xlsx" class="btn btn-info">{{getPhrase('fill_the_blanks')}}
+					<a href="{{DOWNLOAD_LINK_QUESTION_IMPORT_EXCEL}}questions_blanks_template.xlsx" class="btn btn-info">{{__('messages.fill_the_blanks')}}
 					</a>
 				 
-							<?php $button_name = getPhrase('upload'); ?>
+							<?php $button_name = __('messages.upload'); ?>
 					
 						{!! Form::open(array('url' => URL_QUESTIONBAMK_IMPORT, 'method' => 'POST', 'novalidate'=>'','name'=>'formUsers ', 'files'=>'true')) !!}
-					<?php $button_name = getPhrase('upload'); 
+					<?php $button_name = __('messages.upload'); 
 					// $question_types = array();
 					$question_types 		= array( ''              => 'Select',
                                         'radio'         => 'Single Answer',
@@ -54,7 +54,7 @@
 					?>
 					 	<div class="row">
 						<fieldset class='col-sm-4 col-sm-offset-4 form-group margintop30'>
-						{{ Form::label('question_type', getphrase('question_type')) }}
+						{{ Form::label('question_type', __('messages.question_type')) }}
 						{{Form::select('question_type',$question_types , null, ['class'=>'form-control', "id"=>"question_type", "ng-model"=>"question_type" , 'required'=> 'true'])}}
 						{!! Form::open(array('url' => URL_QUESTIONBAMK_IMPORT, 'method' => 'POST', 'novalidate'=>'','name'=>'formUsers ', 'files'=>'true')) !!}
 						</fieldset>
@@ -96,7 +96,7 @@ file.onchange = function(e){
             
             break;
         default:
-            alertify.error("{{getPhrase('file_type_not_allowed')}}");
+            alertify.error("{{__('messages.file_type_not_allowed')}}");
             this.value='';
     }
 };

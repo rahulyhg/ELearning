@@ -1,6 +1,6 @@
 <div ng-if="question_type=='radio'">
     <fieldset class="form-group "> 
-        {{ Form::label('total_answers', getphrase('total_options')) }}
+        {{ Form::label('total_answers', __('messages.total_options')) }}
 	    <span class="text-red">*</span>
 		{{Form::select('total_answers',$exam_max_options , null, ['class'=>'form-control', "id"=>"total_answers", "ng-model"=>"total_answers", "ng-change" => "answersChanged(total_answers)",
         'required'=> 'true', 
@@ -28,7 +28,7 @@
 
 
     <fieldset class="form-group col-md-4" >
-    <label > {{getPhrase('image')}}</label>
+    <label > {{__('messages.image')}}</label>
          <input type="file" class="form-control" name="upload_@{{$index}}" >
         
     </fieldset>
@@ -46,7 +46,7 @@
 <input type="hidden" name="total_correct_answers" value="1">
 <fieldset class="form-group" ng-if="total_answers > 0 ">
         
-         {{Form::label('correct_answers', getphrase('answer_number')) }}
+         {{Form::label('correct_answers', __('messages.answer_number')) }}
          <span class="text-red">*</span>
 			
 			{{ Form::number('correct_answers',  $value = null , $attributes = array('class'=>'form-control', 'name'=>'correct_answers', 'id'=>'correct_answers', 'placeholder' => '1',

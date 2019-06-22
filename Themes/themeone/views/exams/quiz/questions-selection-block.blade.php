@@ -4,12 +4,12 @@
 
 	<div class="crearfix selected-questions-details">
 
-		<span class="pull-left" ng-if="is_have_section==0">{{getPhrase('saved_questions')}} (@{{savedQuestions.length}})</span>
+		<span class="pull-left" ng-if="is_have_section==0">{{__('messages.saved_questions')}} (@{{savedQuestions.length}})</span>
 		<span class="pull-left" ng-if="is_have_section==1">Total Sections (@{{keys.length}})
  
 		</span>
 
-		<span class="pull-right">{{getPhrase('total_marks')}}: @{{ totalMarks }}</span>
+		<span class="pull-right">{{__('messages.total_marks')}}: @{{ totalMarks }}</span>
 
 	</div>	
  
@@ -30,7 +30,7 @@
 
 					 				
 
-					 				{{-- <a class="remove-all-questions text-red" style="cursor: pointer;" ng-click="removeAll()">{{getPhrase('remove_all')}}</a> --}}
+					 				{{-- <a class="remove-all-questions text-red" style="cursor: pointer;" ng-click="removeAll()">{{__('messages.remove_all')}}</a> --}}
 
 					 				<table  
 									ng-if="is_have_section==0"
@@ -40,11 +40,11 @@
 
 								  <tr>
 
-									<th>{{getPhrase('subject')}}</th>
+									<th>{{__('messages.subject')}}</th>
 
-									<th>{{getPhrase('question')}}</th>
+									<th>{{__('messages.question')}}</th>
 
-									<th>{{getPhrase('marks')}}</th>	
+									<th>{{__('messages.marks')}}</th>	
 
 									<th></th>	
 
@@ -88,11 +88,11 @@
 
 								  <tr>
 
-									<th>{{getPhrase('subject')}}</th>
+									<th>{{__('messages.subject')}}</th>
 
-									<th>{{getPhrase('question')}}</th>
+									<th>{{__('messages.question')}}</th>
 
-									<th>{{getPhrase('marks')}}</th>	
+									<th>{{__('messages.marks')}}</th>	
 
 									<th></th>	
 
@@ -134,7 +134,7 @@
 
 					 			<div class="buttons text-center" >
 
-							<button class="btn btn-lg btn-success button">{{getPhrase('update')}}</button>
+							<button class="btn btn-lg btn-success button">{{__('messages.update')}}</button>
 
 						</div>
 

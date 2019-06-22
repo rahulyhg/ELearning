@@ -34,7 +34,7 @@ class TopicsController extends Controller
       }
 
         $data['active_class']       = 'exams';
-        $data['title']              = getPhrase('topics_list');
+        $data['title']              = __('messages.topics_list');
     	// return view('mastersettings.topics.list', $data);
 
          $view_name = getTheme().'::mastersettings.topics.list';
@@ -64,13 +64,13 @@ class TopicsController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="'.URL_TOPICS_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
+                            <li><a href="'.URL_TOPICS_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
                      
                         
                     $temp = '';
                     if(checkRole(getUserGrade(1)))
                     {
-                        $temp .=' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+                        $temp .=' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
                     }
                     $temp .=    '</ul></div>';
                     $link_data .= $temp;
@@ -106,13 +106,13 @@ class TopicsController extends Controller
     	$data['parent_topics']      = array();
     	$list 						= App\Subject::all();
     	$subjects			= array_pluck($list, 'subject_title', 'id');
-      $data['subjects'] = array(''=>getPhrase('select')) + $subjects;
+      $data['subjects'] = array(''=>__('messages.select')) + $subjects;
 
       
       
-        $data['parent_topics'][0]   = getPhrase('select');
+        $data['parent_topics'][0]   = __('messages.select');
         
-    	$data['title']              = getPhrase('add_topic');
+    	$data['title']              = __('messages.add_topic');
     	// return view('mastersettings.topics.add-edit', $data);
 
        $view_name = getTheme().'::mastersettings.topics.add-edit';
@@ -142,7 +142,7 @@ class TopicsController extends Controller
     	$data['parent_topics']		= array_pluck(Topic::getTopics($record->subject_id,0),'topic_name','id');
 	   	$data['parent_topics'][0] = 'Parent';
     	$data['active_class']       = 'exams';
-        $data['title']              = getPhrase('edit_topic');
+        $data['title']              = __('messages.edit_topic');
     	// return view('mastersettings.topics.add-edit', $data);
 
        $view_name = getTheme().'::mastersettings.topics.add-edit';
@@ -193,7 +193,7 @@ class TopicsController extends Controller
         $record->description 			= $request->description;
         $record->save();
 
-    	flash('success','record_updated_successfully', 'success');
+    	flash(__('messages.success'),__('messages.record_updated_successfully'), __('messages.success'));
     	return redirect(URL_TOPICS);
     }
 
@@ -224,7 +224,7 @@ class TopicsController extends Controller
         $record->description 			= $request->description;
         $record->save();
 
-        flash('success','record_added_successfully', 'success');
+        flash(__('messages.success'),__('messages.record_added_successfully'), __('messages.success'));
     	return redirect(URL_TOPICS);
     }
 
@@ -248,14 +248,14 @@ class TopicsController extends Controller
           }
 
             $response['status'] = 1;
-            $response['message'] = getPhrase('record_deleted_successfully');
+            $response['message'] = __('messages.record_deleted_successfully');
         }
          catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
             return json_encode($response);
 
@@ -291,7 +291,7 @@ class TopicsController extends Controller
     {
       if ($record === null) {
 
-        flash('Ooops...!', getPhrase("page_not_found"), 'error');
+        flash('Ooops...!', __("messages.page_not_found"), 'error');
         return $this->getRedirectUrl();
     }
 
@@ -318,8 +318,8 @@ class TopicsController extends Controller
       
         $data['records']      = FALSE;
         $data['active_class'] = 'exams';
-        $data['heading']      = getPhrase('topics');
-        $data['title']        = getPhrase('import_topics');
+        $data['heading']      = __('messages.topics');
+        $data['title']        = __('messages.import_topics');
         $data['layout']        = getLayout();
         // return view('mastersettings.topics.import.import', $data);
 
@@ -352,7 +352,7 @@ class TopicsController extends Controller
           if(!$this->isValidSubject($record->subject_id))
             {
                $temp['record'] = $record;
-               $temp['type']  = getPhrase('invalid_subject_id');
+               $temp['type']  = __('messages.invalid_subject_id');
               $failed_list[count($failed_list)]  = (object)$temp;
               continue;
             }
@@ -361,7 +361,7 @@ class TopicsController extends Controller
             
              if(!$parent_records[(int)$record->id] = $this->pushToDb($record)) {
                 $temp['record'] = $record;
-                $temp['type']  = getPhrase('unknown_error_occurred');
+                $temp['type']  = __('messages.unknown_error_occurred');
                 $failed_list[count($failed_list)]  = (object)$temp;
                 continue;
              }
@@ -440,7 +440,7 @@ class TopicsController extends Controller
                     !$this->isRecordExists('id',$temp_parent_id)) 
                 {
                   $temp['record'] = $record;
-                  $temp['type']   = getPhrase('Invalid Subject Id');
+                  $temp['type']   = __('messages.Invalid Subject Id');
                   $failed_list[count($failed_list)] = (object)$temp;
                   continue;
                 }
@@ -467,10 +467,10 @@ class TopicsController extends Controller
        if(getSetting('show_foreign_key_constraint','module'))
        {
 
-          flash('oops...!',$e->errorInfo, 'error');
+          flash(__('messages.oops...!'),$e->errorInfo, __('messages.error'));
        }
        else {
-          flash('oops...!','improper_sheet_uploaded', 'error');
+          flash(__('messages.oops...!'),'improper_sheet_uploaded', __('messages.error'));
        }
 
        return back();
@@ -481,8 +481,8 @@ class TopicsController extends Controller
        $data['records']      = FALSE;
        $data['layout']       = getLayout();
        $data['active_class'] = 'settings';
-       $data['heading']      = getPhrase('users');
-       $data['title']        = getPhrase('report');
+       $data['heading']      = __('messages.users');
+       $data['title']        = __('messages.report');
        // return view('mastersettings.topics.import.import-result', $data);
 
        $view_name = getTheme().'::mastersettings.topics.import.import-result';

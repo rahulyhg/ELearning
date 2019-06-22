@@ -6,11 +6,12 @@
 
  					 <fieldset class="form-group col-md-6">
 
-						{{ Form::label('title', __('messages.title')) }}
+						<?php echo e(Form::label('title', __('messages.title'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.title'),
+						<?php echo e(Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.title'),
 
 							'ng-model'=>'title', 
 
@@ -24,17 +25,22 @@
 
 							'ng-maxlength' => '60',
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formQuiz.title.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('pattern')!!}
 
-	    					{!! getValidationMessage('minlength')!!}
+	    					<?php echo getValidationMessage('pattern'); ?>
 
-	    					{!! getValidationMessage('maxlength')!!}
+
+	    					<?php echo getValidationMessage('minlength'); ?>
+
+
+	    					<?php echo getValidationMessage('maxlength'); ?>
+
 
 						</div>
 
@@ -46,11 +52,12 @@
 
 						
 
-						{{ Form::label('coupon_code', __('messages.coupon_codes')) }}
+						<?php echo e(Form::label('coupon_code', __('messages.coupon_codes'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('coupon_code', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.coupon_codes'),
+						<?php echo e(Form::text('coupon_code', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.coupon_codes'),
 
 							'ng-model'=>'coupon_code', 
 
@@ -62,17 +69,22 @@
 
 							'ng-maxlength' => '20',
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formQuiz.coupon_code.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('pattern')!!}
 
-	    					{!! getValidationMessage('minlength')!!}
+	    					<?php echo getValidationMessage('pattern'); ?>
 
-	    					{!! getValidationMessage('maxlength')!!}
+
+	    					<?php echo getValidationMessage('minlength'); ?>
+
+
+	    					<?php echo getValidationMessage('maxlength'); ?>
+
 
 						</div>
 
@@ -86,11 +98,13 @@
 
 						<?php $discount_types = array('value' => __('messages.value'), 'percent' => __('messages.percent'), );?>
 
-						{{ Form::label('discount_type', __('messages.discount_type')) }}
+						<?php echo e(Form::label('discount_type', __('messages.discount_type'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{Form::select('discount_type', $discount_types, null, ['class'=>'form-control'])}}
+						<?php echo e(Form::select('discount_type', $discount_types, null, ['class'=>'form-control'])); ?>
+
 
 						
 
@@ -100,11 +114,12 @@
 
 							
 
-							{{ Form::label('discount_value', __('messages.discount_value')) }}
+							<?php echo e(Form::label('discount_value', __('messages.discount_value'))); ?>
+
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('discount_value', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_value'),
+							<?php echo e(Form::number('discount_value', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_value'),
                             'min'=>1,
 							'ng-model'=>'discount_value', 
 
@@ -114,13 +129,16 @@
 
 							 
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formQuiz.discount_value.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('number')!!}
+
+	    					<?php echo getValidationMessage('number'); ?>
+
 
 						</div>
 
@@ -134,11 +152,12 @@
 
 							
 
-							{{ Form::label('minimum_bill', __('messages.minimum_bill')) }}
+							<?php echo e(Form::label('minimum_bill', __('messages.minimum_bill'))); ?>
+
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('minimum_bill', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_minimum_bill'),
+							<?php echo e(Form::number('minimum_bill', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_minimum_bill'),
                             'min'=>1,
 							'ng-model'=>'minimum_bill', 
 
@@ -148,13 +167,16 @@
 
 							 
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formQuiz.minimum_bill.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('number')!!}
+
+	    					<?php echo getValidationMessage('number'); ?>
+
 
 						</div>
 
@@ -168,11 +190,12 @@
 
 							
 
-							{{ Form::label('discount_maximum_amount', __('messages.discount_maximum_amount')) }}
+							<?php echo e(Form::label('discount_maximum_amount', __('messages.discount_maximum_amount'))); ?>
+
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('discount_maximum_amount', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_maximum_amount'),
+							<?php echo e(Form::number('discount_maximum_amount', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_maximum_amount'),
 								'min'=>1,
 							'ng-model'=>'discount_maximum_amount', 
 
@@ -182,13 +205,16 @@
 
 							 
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formQuiz.discount_maximum_amount.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('number')!!}
+
+	    					<?php echo getValidationMessage('number'); ?>
+
 
 						</div>
 
@@ -222,11 +248,13 @@
 
                                      
 
-                        {{ Form::label('valid_from', __('messages.valid_from')) }}
+                        <?php echo e(Form::label('valid_from', __('messages.valid_from'))); ?>
+
 
                      
 
-                        {{ Form::text('valid_from', $value = $date_from , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
+                        <?php echo e(Form::text('valid_from', $value = $date_from , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17'))); ?>
+
 
                             
                        
@@ -239,11 +267,13 @@
 
                                      
 
-                        {{ Form::label('valid_to', __('messages.valid_to')) }}
+                        <?php echo e(Form::label('valid_to', __('messages.valid_to'))); ?>
+
 
                        
 
-                        {{ Form::text('valid_to', $value = $date_to , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
+                        <?php echo e(Form::text('valid_to', $value = $date_to , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17'))); ?>
+
  
                      
 
@@ -259,11 +289,12 @@
 
 							
 
-							{{ Form::label('usage_limit', __('messages.usage_limit')) }}
+							<?php echo e(Form::label('usage_limit', __('messages.usage_limit'))); ?>
+
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('usage_limit', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_usage_limit_per_user'),
+							<?php echo e(Form::number('usage_limit', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_usage_limit_per_user'),
 								'min'=>1,
 							'ng-model'=>'usage_limit', 
 
@@ -273,13 +304,16 @@
 
 							 
 
-							)) }}
+							))); ?>
+
 
 						<div class="validation-error" ng-messages="formQuiz.usage_limit.$error" >
 
-	    					{!! getValidationMessage()!!}
+	    					<?php echo getValidationMessage(); ?>
 
-	    					{!! getValidationMessage('number')!!}
+
+	    					<?php echo getValidationMessage('number'); ?>
+
 
 						</div>
 
@@ -291,11 +325,13 @@
 
 						<?php $status = array('Active' =>'Active', 'Inactive' => 'Inactive', );?>
 
-						{{ Form::label('status', __('messages.status')) }}
+						<?php echo e(Form::label('status', __('messages.status'))); ?>
+
 
 						<span class="text-red">*</span>
 
-						{{Form::select('status', $status, null, ['class'=>'form-control'])}}
+						<?php echo e(Form::select('status', $status, null, ['class'=>'form-control'])); ?>
+
 
 						
 
@@ -327,7 +363,7 @@
 
 					<div class="row">
 
-						@foreach($categories as $key=>$value)
+						<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
  					<?php 
 
@@ -363,17 +399,19 @@
 
 									data-offstyle="default"
 
-									name="applicability[{{$key}}]" 
+									name="applicability[<?php echo e($key); ?>]" 
 
-									{{$checked}}
+									<?php echo e($checked); ?>
 
-									> {{$value}}
+
+									> <?php echo e($value); ?>
+
 
 						</label>
 
 					</div>
 
-					@endforeach
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 					</div>
 
@@ -387,7 +425,7 @@
 
 							<button class="btn btn-lg btn-success button"
 
-							ng-disabled='!formQuiz.$valid'>{{ $button_name }}</button>
+							ng-disabled='!formQuiz.$valid'><?php echo e($button_name); ?></button>
 
 						</div>
 

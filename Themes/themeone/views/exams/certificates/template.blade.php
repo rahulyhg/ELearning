@@ -79,7 +79,7 @@
     </div>
 <hr>
 <div class="text-center">
-  <button class="btn btn-primary" onclick="printIt();">{{getPhrase('print')}}</button>
+  <button class="btn btn-primary" onclick="printIt();">{{__("messages.print')}}</button>
   </div>
 
     

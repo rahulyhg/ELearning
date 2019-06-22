@@ -28,7 +28,7 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-							<li><a href="{{URL_QUIZZES}}">{{ getPhrase('quizzes')}}</a></li>
+							<li><a href="{{URL_QUIZZES}}">{{ __('messages.quizzes')}}</a></li>
 
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 
@@ -50,7 +50,7 @@
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 
 						</div>
 
@@ -62,11 +62,11 @@
 
 					<div class="panel-body" >
 
-					<?php $button_name = getPhrase('create'); ?>
+					<?php $button_name = __('messages.create'); ?>
 
 					@if ($record)
 
-					 <?php $button_name = getPhrase('update'); ?>
+					 <?php $button_name = __('messages.update'); ?>
 
 						{{ Form::model($record, 
 

@@ -42,7 +42,7 @@
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_INSTRUCTIONS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_INSTRUCTIONS_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 
 						</div>
 
@@ -60,11 +60,11 @@
 
 								<tr>
 
-									<th>{{ getPhrase('title')}}</th>
+									<th>{{ __('messages.title')}}</th>
 
-									<th>{{ getPhrase('content')}}</th>
+									<th>{{ __('messages.content')}}</th>
 
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.action')}}</th>
 
 								  
 

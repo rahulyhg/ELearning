@@ -23,8 +23,8 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-							<a href="{{URL_QUESTIONBAMK_IMPORT}}" class="btn  btn-primary button" >{{ getPhrase('import_questions')}}</a>
-							<a href="{{URL_SUBJECTS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('add_subject')}}</a>
+							<a href="{{URL_QUESTIONBAMK_IMPORT}}" class="btn  btn-primary button" >{{ __('messages.import_questions')}}</a>
+							<a href="{{URL_SUBJECTS_ADD}}" class="btn  btn-primary button" >{{ __('messages.add_subject')}}</a>
 							 
 						</div>
 						<h1>{{ $title }}</h1>
@@ -35,9 +35,9 @@
 							<thead>
 								<tr>
 								 
-									<th>{{ getPhrase('subject')}}</th>
-									<th>{{ getPhrase('code')}}</th>
-									 <th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.subject')}}</th>
+									<th>{{ __('messages.code')}}</th>
+									 <th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

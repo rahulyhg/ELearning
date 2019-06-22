@@ -46,13 +46,13 @@
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_QUIZ_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_QUIZ_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 
 						</div>
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_EXAM_SERIES}}" class="btn  btn-primary button" >{{ getPhrase('create_series')}}</a>
+							<a href="{{URL_EXAM_SERIES}}" class="btn  btn-primary button" >{{ __('messages.create_series')}}</a>
 
 						</div>
 
@@ -70,19 +70,19 @@
 
 								<tr>
 
-									<th>{{ getPhrase('title')}}</th>
+									<th>{{ __('messages.title')}}</th>
 
-									<th>{{ getPhrase('duration')}}</th>
+									<th>{{ __('messages.duration')}}</th>
 
-									<th>{{ getPhrase('category')}}</th>
+									<th>{{ __('messages.category')}}</th>
 
-									<th>{{ getPhrase('is_paid')}}</th>
+									<th>{{ __('messages.is_paid')}}</th>
 
-									<th>{{ getPhrase('total_marks')}}</th>
+									<th>{{ __('messages.total_marks')}}</th>
 
-									<th>{{ getPhrase('exam_type')}}</th>
+									<th>{{ __('messages.exam_types')}}</th>
 
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.action')}}</th>
 
 								  
 

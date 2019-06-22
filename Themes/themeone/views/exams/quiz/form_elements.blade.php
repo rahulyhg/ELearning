@@ -3,9 +3,9 @@
 					<div class="row">
  					 <fieldset class="form-group col-md-6">
 						
-						{{ Form::label('title', getphrase('title')) }}
+						{{ Form::label('title', __('messages.title')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('quiz_title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.quiz_title'),
 							'ng-model'=>'title', 
 							'ng-pattern'=>getRegexPattern('name'), 
 							'required'=> 'true', 
@@ -23,7 +23,7 @@
 
 					<fieldset class="form-group col-md-6">
 						
-						{{ Form::label('category_id', getphrase('category')) }}
+						{{ Form::label('category_id', __('messages.category')) }}
 						<span class="text-red">*</span>
 						{{Form::select('category_id', $categories, null, ['class'=>'form-control'])}}
 						
@@ -35,9 +35,9 @@
 				<div class="row">
 	  				 <fieldset class="form-group col-md-6">
 							
-							{{ Form::label('dueration', getphrase('duration')) }}
+							{{ Form::label('dueration', __('messages.duration')) }}
 							<span class="text-red">*</span>
-							{{ Form::number('dueration', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('enter_value_in_minutes'),
+							{{ Form::number('dueration', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_value_in_minutes'),
 								'min'=>1,
 							'ng-model'=>'dueration', 
 							'required'=> 'true',
@@ -52,13 +52,13 @@
 					</fieldset>	
 	  				 <fieldset class="form-group col-md-3">
 							
-							{{ Form::label('total_marks', getphrase('total_marks')) }}
+							{{ Form::label('total_marks', __('messages.total_marks')) }}
 							<span class="text-red">*</span>
-							{{ Form::text('total_marks', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => getPhrase('It will be updated by adding the questions'))) }}
+							{{ Form::text('total_marks', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => __('messages.It will be updated by adding the questions'))) }}
 					</fieldset>	
 					 <fieldset class="form-group col-md-3">
 						
-						{{ Form::label('pass_percentage', getphrase('pass_percentage')) }}
+						{{ Form::label('pass_percentage', __('messages.pass_percentage')) }}
 						<span class="text-red">*</span>
 						{{ Form::number('pass_percentage', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => '40',
 							'min'=>'1',
@@ -81,7 +81,7 @@
 				 
   				 <fieldset   class="form-group col-md-6">
 						
-						{{ Form::label('negative_mark', getphrase('negative_mark')) }}
+						{{ Form::label('negative_mark', __('messages.negative_mark')) }}
 						<span class="text-red">*</span>
 						{{ Form::number('negative_mark', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => '40',
 							'min'=>'0',
@@ -99,7 +99,7 @@
 				</fieldset>
 					<fieldset class="form-group col-md-6">
 						
-						{{ Form::label('instructions_page_id', getphrase('instructions_page')) }}
+						{{ Form::label('instructions_page_id', __('messages.instructions_page')) }}
 						<span class="text-red">*</span>
 						{{Form::select('instructions_page_id', $instructions, null, ['class'=>'form-control'])}}
 						
@@ -118,12 +118,12 @@
 		 	}
 		 	 ?>
 		 	 <fieldset class="form-group col-md-6">
-				{{ Form::label('start_date', getphrase('start_date')) }}
+				{{ Form::label('start_date', __('messages.start_date')) }}
 				{{ Form::text('start_date', $value = $date_from , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
 			</fieldset>
 
 			<fieldset class="form-group col-md-6">
-				{{ Form::label('end_date', getphrase('end_date')) }}
+				{{ Form::label('end_date', __('messages.end_date')) }}
 				{{ Form::text('end_date', $value = $date_to , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
  			</fieldset>
 
@@ -133,9 +133,9 @@
 
 				<?php $payment_options = array('1'=>'Paid', '0'=>'Free');?>
 					 <fieldset class="form-group col-md-6" >
-						{{ Form::label('is_paid', getphrase('is_paid')) }}
+						{{ Form::label('is_paid', __('messages.is_paid')) }}
 						<span class="text-red">*</span>
-						{{Form::select('is_paid', $payment_options, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('is_paid', $payment_options, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 						'ng-model'=>'is_paid',
 							'required'=> 'true', 
 							'ng-pattern' => getRegexPattern("name"),
@@ -155,9 +155,9 @@
 					<div ng-if="is_paid==1">
 	  				 <fieldset class="form-group col-md-3">
 							
-							{{ Form::label('validity', getphrase('validity')) }}
+							{{ Form::label('validity', __('messages.validity')) }}
 							<span class="text-red">*</span>
-							{{ Form::number('validity', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('validity_in_days'),
+							{{ Form::number('validity', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.validity_in_days'),
 							'ng-model'=>'validity',
 							'string-to-number'=> 'true', 
 							'min'=>'1',
@@ -173,7 +173,7 @@
 					</fieldset>	
 	  				 <fieldset class="form-group col-md-3">
 						
-						{{ Form::label('cost', getphrase('cost')) }}
+						{{ Form::label('cost', __('messages.cost')) }}
 						<span class="text-red">*</span>
 						{{ Form::number('cost', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => '40',
 							'min'=>'0',
@@ -203,9 +203,9 @@
                    <div class="row">
 
 					<fieldset class="form-group col-md-6" >
-						{{ Form::label('show_in_front', 'Take exam with out registration') }}
+						{{ Form::label('show_in_front', __('messages.Take exam with out registration')) }}
 						<span class="text-red">*</span>
-						{{Form::select('show_in_front', $options, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('show_in_front', $options, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 						'ng-model'=>'show_in_front',
 							'required'=> 'true', 
 							'ng-pattern' => getRegexPattern("name"),
@@ -223,7 +223,7 @@
 
 					  <fieldset class="form-group col-md-6">
 						
-						{{ Form::label('exam_type', getphrase('exam_type')) }}
+						{{ Form::label('exam_type', __('messages.exam_types')) }}
 						<span class="text-red">*</span>
 						{{Form::select('exam_type', $exam_types, null, ['class'=>'form-control','ng-model'=>'exam_type'])}}
 						
@@ -236,9 +236,9 @@
 					<?php $language_options = array('1'=>'Yes', '0'=>'No');?>
 
 					 <fieldset class="form-group col-md-6" >
-						{{ Form::label('has_language', 'It has other language?') }}
+						{{ Form::label('has_language', __('messages.It has other language?')) }}
 						<span class="text-red">*</span>
-						{{Form::select('has_language', $language_options, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('has_language', $language_options, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 						'ng-model'=>'has_language',
 						'required'=> 'true', 
 						'ng-class'=>'{"has-error": formQuiz.has_language.$touched && formQuiz.has_language.$invalid}',
@@ -252,9 +252,9 @@
                      <?php $languages_data = getLangugesOptions(); ?>
                      
 					 <fieldset class="form-group col-md-6" ng-if="has_language == 1">
-						{{ Form::label('language_name', 'It has other language?') }}
+						{{ Form::label('language_name', __('messages.It has other language?')) }}
 						<span class="text-red">*</span>
-						{{Form::select('language_name', $languages_data, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('language_name', $languages_data, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 						'ng-model'=>'language_name',
 						'required'=> 'true', 
 						'ng-class'=>'{"has-error": formQuiz.language_name.$touched && formQuiz.language_name.$invalid}',
@@ -279,7 +279,7 @@
 
 				 <fieldset class="form-group col-md-6" >
 
-				   {{ Form::label('category', getphrase('image')) }}
+				   {{ Form::label('category', __('messages.image')) }}
 				         <input type="file" class="form-control" name="examimage" 
 				         accept=".png,.jpg,.jpeg" id="image_input">
 				          
@@ -305,9 +305,9 @@
  					
 					<fieldset class="form-group col-md-12">
 						
-						{{ Form::label('description', getphrase('description')) }}
+						{{ Form::label('description', __('messages.description')) }}
 						
-						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => getPhrase('description'))) }}
+						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => __('messages.description'))) }}
 					</fieldset>
 
 			</div>		

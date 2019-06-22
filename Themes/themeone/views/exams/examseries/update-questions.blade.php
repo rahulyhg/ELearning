@@ -22,7 +22,7 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-							<li><a href="{{URL_EXAM_SERIES}}">{{ getPhrase('exam_series')}}</a></li>
+							<li><a href="{{URL_EXAM_SERIES}}">{{ __('messages.exam_series')}}</a></li>
 
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 
@@ -42,7 +42,7 @@
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_EXAM_SERIES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_EXAM_SERIES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 
 						</div>
 
@@ -55,13 +55,13 @@
 
                
 
-					<?php $button_name = getPhrase('create'); ?>
+					<?php $button_name = __('messages.create'); ?>
 
 					 		<div class="row">
 
 							<fieldset class="form-group col-md-6">
 
-								{{ Form::label('exam_categories', getphrase('exam_categories')) }}
+								{{ Form::label('exam_categories', __('messages.exam_categories')) }}
 
 								<span class="text-red">*</span>
 
@@ -82,7 +82,7 @@
 
 						
 
-								<h4 ng-if="categoryExams.length>0" class="text-success">{{getPhrase('total_exams')}}: @{{ categoryExams.length}} </h4>
+								<h4 ng-if="categoryExams.length>0" class="text-success">{{__('messages.total_exams')}}: @{{ categoryExams.length}} </h4>
 
 
 
@@ -92,15 +92,15 @@
 
   									 
 
-									<th>{{getPhrase('exam_name')}}</th>
+									<th>{{__('messages.exam_name')}}</th>
 
-									<th>{{getPhrase('duration')}}</th>
+									<th>{{__('messages.duration')}}</th>
 
-									<th>{{getPhrase('marks')}}</th>
+									<th>{{__('messages.marks')}}</th>
 
-									<th>{{getPhrase('questions')}}</th>	
+									<th>{{__('messages.questions')}}</th>	
 
-									<th>{{getPhrase('action')}}</th>	
+									<th>{{__('messages.action')}}</th>	
  
 
 									<tr ng-repeat="exam in categoryExams  track by $index">
@@ -125,7 +125,7 @@
 
 										 
 
-										ng-click="addQuestion(exam);" class="btn btn-primary" >{{getPhrase('add')}}</a>
+										ng-click="addQuestion(exam);" class="btn btn-primary" >{{__('messages.add')}}</a>
 
 									  		
 

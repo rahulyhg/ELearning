@@ -7,7 +7,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_EXAM_TYPES}}">{{ getPhrase('exam_types')}}</a> </li>
+							<li><a href="{{URL_EXAM_TYPES}}">{{ __('messages.exam_types')}}</a> </li>
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 						</ol>
 					</div>
@@ -16,7 +16,7 @@
 				<div class="panel panel-custom col-lg-9 col-md-offset-2">
 					<div class="panel-heading">
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_EXAM_TYPES}}" class="btn  btn-primary button" >{{ getPhrase('exam_types')}}</a>
+							<a href="{{URL_EXAM_TYPES}}" class="btn  btn-primary button" >{{ __('messages.exam_types')}}</a>
 						</div>
 					<h1>{{ $title }}  </h1>
 					</div>
@@ -27,9 +27,9 @@
 
 					  <fieldset class="form-group col-md-6">
 						
-						{{ Form::label('title', getphrase('category_name')) }}
+						{{ Form::label('title', __('messages.category_name')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('enter_category_name'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_category_name'),
 							'ng-model'=>'title', 
 							'ng-pattern' => getRegexPattern('name'),
 							'ng-minlength' => '2',
@@ -55,9 +55,9 @@
 
 
 					<fieldset class="form-group col-md-6" >
-						{{ Form::label('status', getPhrase('is_active')) }}
+						{{ Form::label('status', __('messages.is_active')) }}
 						<span class="text-red">*</span>
-						{{Form::select('status', $options, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('status', $options, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 						'ng-model'=>'status',
 							'required'=> 'true', 
 							'ng-pattern' => getRegexPattern("name"),
@@ -75,14 +75,14 @@
 
 						<fieldset class="form-group col-md-12">
 						
-						{{ Form::label('description', getphrase('description')) }}
+						{{ Form::label('description', __('messages.description')) }}
 						
-						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => 'Description')) }}
+						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' =>  __('messages.description'))) }}
 					  </fieldset>
 
 					  <div class="buttons text-center">
 							<button class="btn btn-lg btn-success button"
-							ng-disabled='!formCategories.$valid'>{{getPhrase('update')}}</button>
+							ng-disabled='!formCategories.$valid'>{{__('messages.update')}}</button>
 						</div>
 				
 

@@ -47,7 +47,7 @@ class LmsContentController extends Controller
         return back();
       }
         $data['active_class']       = 'lms';
-        $data['title']              = 'LMS'.' '.getPhrase('content');
+        $data['title']              = 'LMS'.' '.__('messages.content');
         $data['layout']              = getLayout();
     	// return view('lms.lmscontents.list', $data);
 
@@ -115,7 +115,7 @@ class LmsContentController extends Controller
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'lms';
     	$data['subjects']       	= array_pluck(App\Subject::all(), 'subject_title', 'id');
-        $data['title']              = getPhrase('add_content');
+        $data['title']              = __('messages.add_content');
     	$data['layout']              = getLayout();
 
     	// return view('lms.lmscontents.add-edit', $data);
@@ -140,7 +140,7 @@ class LmsContentController extends Controller
     		return redirect($isValid);
 
     	$data['record']         	= $record;
-    	$data['title']       		= getPhrase('edit').' '.$record->title;
+    	$data['title']       		= __('messages.edit').' '.$record->title;
     	$data['active_class']       = 'lms';
     	$data['subjects']           = array_pluck(App\Subject::all(), 'subject_title', 'id');
     	$data['settings']           = json_encode($record);
@@ -405,14 +405,14 @@ class LmsContentController extends Controller
             }
             
             $response['status'] = 1;
-            $response['message'] = getPhrase('category_deleted_successfully');
+            $response['message'] = __('messages.category_deleted_successfully');
         }
         catch (\Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
        return json_encode($response);
 

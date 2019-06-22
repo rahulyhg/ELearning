@@ -32,7 +32,7 @@ class SubjectsController extends Controller
         return back();
       }
         $data['active_class']       = 'exams';
-        $data['title']              = getPhrase('subjects_list');
+        $data['title']              = __('messages.subjects_list');
     	// return view('mastersettings.subjects.list', $data);
 
           $view_name = getTheme().'::mastersettings.subjects.list';
@@ -66,10 +66,10 @@ class SubjectsController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="'.URL_SUBJECTS_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
+                            <li><a href="'.URL_SUBJECTS_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
                             $temp = '';
                             if(checkRole(getUserGrade(1))) {
-                                $temp .= '<li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+                                $temp .= '<li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
                             }
 
                             $temp .='</ul> </div>';
@@ -98,7 +98,7 @@ class SubjectsController extends Controller
       }
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'exams';
-    	$data['title']              = getPhrase('add_subject');
+    	$data['title']              = __('messages.add_subject');
     	// return view('mastersettings.subjects.add-edit', $data);
 
          $view_name = getTheme().'::mastersettings.subjects.add-edit';
@@ -120,7 +120,7 @@ class SubjectsController extends Controller
     	$record = Subject::where('slug', $slug)->first();
       $data['record']       		= $record;
     	$data['active_class']       = 'exams';
-      $data['title']              = getPhrase('edit_subject');
+      $data['title']              = __('messages.edit_subject');
     	// return view('mastersettings.subjects.add-edit', $data);
 
 
@@ -168,7 +168,7 @@ class SubjectsController extends Controller
         $record->is_elective_type 		= 0;
         $record->save();
 
-    	flash('success','record_updated_successfully', 'success');
+    	flash(__('messages.success'),__('messages.record_updated_successfully'), __('messages.success'));
 
        DB::commit();
          
@@ -180,10 +180,10 @@ class SubjectsController extends Controller
        if(getSetting('show_foreign_key_constraint','module'))
        {
 
-          flash('oops...!',$e->errorInfo, 'error');
+          flash(__('messages.oops...!'),$e->errorInfo, __('messages.error'));
        }
        else {
-          flash('oops...!','improper_data_in_the_question', 'error');
+          flash(__('messages.oops...!'),__('messages.improper_data_in_the_question'), __('messages.error'));
        }
      }
 
@@ -223,7 +223,7 @@ class SubjectsController extends Controller
         $record->is_elective_type 		= 0;
         $record->save();
        DB::commit();
-         flash('success','record_added_successfully', 'success');
+         flash(__('messages.success'),__('messages.record_added_successfully'), __('messages.success'));
       }
      catch(Exception $e)
      {
@@ -289,7 +289,7 @@ class SubjectsController extends Controller
            $record->delete();
           }
             $response['status'] = 1;
-            $response['message'] = getPhrase('record_deleted_successfully');
+            $response['message'] = __('messages.record_deleted_successfully');
             }
 
         catch ( \Illuminate\Database\QueryException $e) {
@@ -297,7 +297,7 @@ class SubjectsController extends Controller
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
             
             return json_encode($response);
@@ -319,8 +319,8 @@ class SubjectsController extends Controller
       
         $data['records']      = FALSE;
         $data['active_class'] = 'exams';
-        $data['heading']      = getPhrase('subjects');
-        $data['title']        = getPhrase('import_subjects');
+        $data['heading']      = __('messages.subjects');
+        $data['title']        = __('messages.import_subjects');
         $data['layout']        = getLayout();
         // return view('mastersettings.subjects.import.import', $data);
 
@@ -364,7 +364,7 @@ class SubjectsController extends Controller
                 if(!$record->subject_title || !$record->subject_code){
                     $temp = array();
                  $temp['record']    = $excel_record;
-                 $temp['type']      = getPhrase('title_or_code_cannot_be_null');
+                 $temp['type']      = __('messages.title_or_code_cannot_be_null');
                  $failed_list[$failed_length] = (object)$temp;
                  continue;
                 }
@@ -375,7 +375,7 @@ class SubjectsController extends Controller
                   
                  $temp = array();
                  $temp['record']    = $excel_record;
-                 $temp['type']      = getPhrase('record_already_exists_with_this_title');
+                 $temp['type']      = __('messages.record_already_exists_with_this_title');
                  $failed_list[$failed_length] = (object)$temp;
                   continue;
                 }
@@ -432,8 +432,8 @@ class SubjectsController extends Controller
        $data['records']      = FALSE;
        $data['layout']       = getLayout();
        $data['active_class'] = 'exams';
-       $data['heading']      = getPhrase('users');
-       $data['title']        = getPhrase('report');
+       $data['heading']      = __('messages.users');
+       $data['title']        = __('messages.report');
       // flash('success','record_added_successfully', 'success');
        // return view('mastersettings.subjects.import.import-result', $data);
 
