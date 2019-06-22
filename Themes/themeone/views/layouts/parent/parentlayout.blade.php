@@ -353,7 +353,7 @@ if(isset($block_navigation))
 
 	</div>
 
-	<!-- /#wrapper đasa -->
+	<!-- /#wrapper  -->
 
 	<!-- jQuery -->
 
