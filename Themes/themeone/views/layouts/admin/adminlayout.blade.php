@@ -44,7 +44,7 @@
     @elseif($theme_color == 'darktheme')	 
 	 <link href="{{themes('css/theme-colors/dark-theme.css')}}" rel="stylesheet">
     @elseif($theme_color == 'whitecolor')	 
-	 <link href="{{themes('css/theme-colors/white-theme.css')}}" rel="stylesheet">]
+	 <link href="{{themes('css/theme-colors/white-theme.css')}}" rel="stylesheet">
 	@endif 
 	
 	
