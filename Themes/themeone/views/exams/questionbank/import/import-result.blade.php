@@ -11,8 +11,13 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
+<<<<<<< HEAD
 							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{__('messages.questions')}}</a> </li>
 							<li><a href="{{URL_QUESTIONBAMK_IMPORT}}">{{__('messages.import')}}</a> </li>
+=======
+							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{getPhrase('questions')}}</a> </li>
+							<li><a href="{{URL_QUESTIONBAMK_IMPORT}}">{{getPhrase('import')}}</a> </li>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							
 							<li>{{ $title }}</li>
 						</ol>
@@ -25,9 +30,15 @@
 						
 						<div class="pull-right messages-buttons">
 							 
+<<<<<<< HEAD
 							<a href="{{URL_QUESTIONBAMK_IMPORT}}" class="btn  btn-primary button" >{{ __('messages.import_excel')}}</a>
 							 
 							<a href="{{URL_QUIZ_QUESTIONBANK}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
+=======
+							<a href="{{URL_QUESTIONBAMK_IMPORT}}" class="btn  btn-primary button" >{{ getPhrase('import_excel')}}</a>
+							 
+							<a href="{{URL_QUIZ_QUESTIONBANK}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 
 						</div>
 						<h1>{{ $title }}</h1>
@@ -39,9 +50,15 @@
 
 
 <ul class="nav nav-tabs add-studentlist-tabs">
+<<<<<<< HEAD
   <li class="active"><a data-toggle="tab" href="#home">{{__('messages.success')}} <span class="badge badge-success">{{count($success_list)}}</span></a>
   </li>
   <li><a data-toggle="tab" href="#menu1">{{__('messages.failed')}}<span class="badge badge-error">{{count($failed_list)}}</span></a></li>
+=======
+  <li class="active"><a data-toggle="tab" href="#home">{{getPhrase('success')}} <span class="badge badge-success">{{count($success_list)}}</span></a>
+  </li>
+  <li><a data-toggle="tab" href="#menu1">{{getPhrase('failed')}}<span class="badge badge-error">{{count($failed_list)}}</span></a></li>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 </ul>
 
 <div class="tab-content">
@@ -52,6 +69,7 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
+<<<<<<< HEAD
 								 	<th>{{ __('messages.topic_id')}}</th>
 									<th>{{ __('messages.subject_id')}}</th>
 									<th>{{ __('messages.question_type')}}</th>
@@ -59,6 +77,15 @@
 									<th>{{ __('messages.total_answers')}}</th>
 									 
 									<th>{{ __('messages.status')}}</th>
+=======
+								 	<th>{{ getPhrase('topic_id')}}</th>
+									<th>{{ getPhrase('subject_id')}}</th>
+									<th>{{ getPhrase('question_type')}}</th>
+									<th>{{ getPhrase('question')}}</th>
+									<th>{{ getPhrase('total_answers')}}</th>
+									 
+									<th>{{ getPhrase('status')}}</th>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								</tr>
 							</thead>
 							 <tbody>
@@ -72,7 +99,11 @@
 							 		<td>{{$list->question}}</td>
 							 		<td>{{$list->total_answers}}</td>
 							 	 
+<<<<<<< HEAD
 							 		<td class="text-success">{{__('messages.success')}}</td>
+=======
+							 		<td class="text-success">{{getPhrase('success')}}</td>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 	</tr>
 							<?php } ?>
 							  
@@ -87,6 +118,7 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							 <thead>
 								<tr>
+<<<<<<< HEAD
 								 	<th>{{ __('messages.topic_id')}}</th>
 									<th>{{ __('messages.subject_id')}}</th>
 									<th>{{ __('messages.question_type')}}</th>
@@ -94,6 +126,15 @@
 									<th>{{ __('messages.total_answers')}}</th>
 									
 									<th>{{ __('messages.status')}}</th>
+=======
+								 	<th>{{ getPhrase('topic_id')}}</th>
+									<th>{{ getPhrase('subject_id')}}</th>
+									<th>{{ getPhrase('question_type')}}</th>
+									<th>{{ getPhrase('question')}}</th>
+									<th>{{ getPhrase('total_answers')}}</th>
+									
+									<th>{{ getPhrase('status')}}</th>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								</tr>
 							</thead>
 							 <tbody>

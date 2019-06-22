@@ -34,7 +34,11 @@ class TopicsController extends Controller
       }
 
         $data['active_class']       = 'exams';
+<<<<<<< HEAD
         $data['title']              = __('messages.topics_list');
+=======
+        $data['title']              = getPhrase('topics_list');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('mastersettings.topics.list', $data);
 
          $view_name = getTheme().'::mastersettings.topics.list';
@@ -64,13 +68,21 @@ class TopicsController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
+<<<<<<< HEAD
                             <li><a href="'.URL_TOPICS_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
+=======
+                            <li><a href="'.URL_TOPICS_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                      
                         
                     $temp = '';
                     if(checkRole(getUserGrade(1)))
                     {
+<<<<<<< HEAD
                         $temp .=' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
+=======
+                        $temp .=' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                     }
                     $temp .=    '</ul></div>';
                     $link_data .= $temp;
@@ -106,6 +118,7 @@ class TopicsController extends Controller
     	$data['parent_topics']      = array();
     	$list 						= App\Subject::all();
     	$subjects			= array_pluck($list, 'subject_title', 'id');
+<<<<<<< HEAD
       $data['subjects'] = array(''=>__('messages.select')) + $subjects;
 
       
@@ -113,6 +126,15 @@ class TopicsController extends Controller
         $data['parent_topics'][0]   = __('messages.select');
         
     	$data['title']              = __('messages.add_topic');
+=======
+      $data['subjects'] = array(''=>getPhrase('select')) + $subjects;
+
+      
+      
+        $data['parent_topics'][0]   = getPhrase('select');
+        
+    	$data['title']              = getPhrase('add_topic');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('mastersettings.topics.add-edit', $data);
 
        $view_name = getTheme().'::mastersettings.topics.add-edit';
@@ -142,7 +164,11 @@ class TopicsController extends Controller
     	$data['parent_topics']		= array_pluck(Topic::getTopics($record->subject_id,0),'topic_name','id');
 	   	$data['parent_topics'][0] = 'Parent';
     	$data['active_class']       = 'exams';
+<<<<<<< HEAD
         $data['title']              = __('messages.edit_topic');
+=======
+        $data['title']              = getPhrase('edit_topic');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('mastersettings.topics.add-edit', $data);
 
        $view_name = getTheme().'::mastersettings.topics.add-edit';
@@ -193,7 +219,11 @@ class TopicsController extends Controller
         $record->description 			= $request->description;
         $record->save();
 
+<<<<<<< HEAD
     	flash(__('messages.success'),__('messages.record_updated_successfully'), __('messages.success'));
+=======
+    	flash('success','record_updated_successfully', 'success');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	return redirect(URL_TOPICS);
     }
 
@@ -224,7 +254,11 @@ class TopicsController extends Controller
         $record->description 			= $request->description;
         $record->save();
 
+<<<<<<< HEAD
         flash(__('messages.success'),__('messages.record_added_successfully'), __('messages.success'));
+=======
+        flash('success','record_added_successfully', 'success');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	return redirect(URL_TOPICS);
     }
 
@@ -248,14 +282,22 @@ class TopicsController extends Controller
           }
 
             $response['status'] = 1;
+<<<<<<< HEAD
             $response['message'] = __('messages.record_deleted_successfully');
+=======
+            $response['message'] = getPhrase('record_deleted_successfully');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         }
          catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
+<<<<<<< HEAD
             $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
+=======
+            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        }
             return json_encode($response);
 
@@ -291,7 +333,11 @@ class TopicsController extends Controller
     {
       if ($record === null) {
 
+<<<<<<< HEAD
         flash('Ooops...!', __("messages.page_not_found"), 'error');
+=======
+        flash('Ooops...!', getPhrase("page_not_found"), 'error');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         return $this->getRedirectUrl();
     }
 
@@ -318,8 +364,13 @@ class TopicsController extends Controller
       
         $data['records']      = FALSE;
         $data['active_class'] = 'exams';
+<<<<<<< HEAD
         $data['heading']      = __('messages.topics');
         $data['title']        = __('messages.import_topics');
+=======
+        $data['heading']      = getPhrase('topics');
+        $data['title']        = getPhrase('import_topics');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['layout']        = getLayout();
         // return view('mastersettings.topics.import.import', $data);
 
@@ -352,7 +403,11 @@ class TopicsController extends Controller
           if(!$this->isValidSubject($record->subject_id))
             {
                $temp['record'] = $record;
+<<<<<<< HEAD
                $temp['type']  = __('messages.invalid_subject_id');
+=======
+               $temp['type']  = getPhrase('invalid_subject_id');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
               $failed_list[count($failed_list)]  = (object)$temp;
               continue;
             }
@@ -361,7 +416,11 @@ class TopicsController extends Controller
             
              if(!$parent_records[(int)$record->id] = $this->pushToDb($record)) {
                 $temp['record'] = $record;
+<<<<<<< HEAD
                 $temp['type']  = __('messages.unknown_error_occurred');
+=======
+                $temp['type']  = getPhrase('unknown_error_occurred');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                 $failed_list[count($failed_list)]  = (object)$temp;
                 continue;
              }
@@ -440,7 +499,11 @@ class TopicsController extends Controller
                     !$this->isRecordExists('id',$temp_parent_id)) 
                 {
                   $temp['record'] = $record;
+<<<<<<< HEAD
                   $temp['type']   = __('messages.Invalid Subject Id');
+=======
+                  $temp['type']   = getPhrase('Invalid Subject Id');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                   $failed_list[count($failed_list)] = (object)$temp;
                   continue;
                 }
@@ -467,10 +530,17 @@ class TopicsController extends Controller
        if(getSetting('show_foreign_key_constraint','module'))
        {
 
+<<<<<<< HEAD
           flash(__('messages.oops...!'),$e->errorInfo, __('messages.error'));
        }
        else {
           flash(__('messages.oops...!'),'improper_sheet_uploaded', __('messages.error'));
+=======
+          flash('oops...!',$e->errorInfo, 'error');
+       }
+       else {
+          flash('oops...!','improper_sheet_uploaded', 'error');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        }
 
        return back();
@@ -481,8 +551,13 @@ class TopicsController extends Controller
        $data['records']      = FALSE;
        $data['layout']       = getLayout();
        $data['active_class'] = 'settings';
+<<<<<<< HEAD
        $data['heading']      = __('messages.users');
        $data['title']        = __('messages.report');
+=======
+       $data['heading']      = getPhrase('users');
+       $data['title']        = getPhrase('report');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        // return view('mastersettings.topics.import.import-result', $data);
 
        $view_name = getTheme().'::mastersettings.topics.import.import-result';

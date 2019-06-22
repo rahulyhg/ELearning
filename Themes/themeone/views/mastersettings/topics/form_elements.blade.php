@@ -1,6 +1,10 @@
  					
  					<fieldset class="form-group">
+<<<<<<< HEAD
 						{{ Form::label('subject_id', __('messages.subject')) }}
+=======
+						{{ Form::label('subject_id', getphrase('subject')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						<span class="text-red">*</span>
 						{{Form::select('subject_id', $subjects, null, ['class'=>'form-control','onChange'=>'getSubjectParents()', 'id'=>'subject',
 							'ng-model'=>'subject_id',
@@ -13,7 +17,11 @@
 					</fieldset>
 
 					<fieldset class="form-group">
+<<<<<<< HEAD
 						{{ Form::label('parent_id', __('messages.select_parent')) }}
+=======
+						{{ Form::label('parent_id', getphrase('select_parent')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						<span class="text-red">*</span>
 						{{Form::select('parent_id', $parent_topics, null, ['class'=>'form-control', 'id'=>'parent' ])}}
 					</fieldset>
@@ -21,7 +29,11 @@
 
 					 <fieldset class="form-group">
 						
+<<<<<<< HEAD
 						{{ Form::label('topic_name', __('messages.topic_name')) }}
+=======
+						{{ Form::label('topic_name', getphrase('topic_name')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						<span class="text-red">*</span>
 						{{ Form::text('topic_name', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Introduction',
 							'ng-model'=>'topic_name',
@@ -37,7 +49,11 @@
 
 					<fieldset class="form-group">
 						
+<<<<<<< HEAD
 						{{ Form::label('description', __('messages.description')) }}
+=======
+						{{ Form::label('description', getphrase('description')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						
 						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => 'Description of the topic')) }}
 					</fieldset>

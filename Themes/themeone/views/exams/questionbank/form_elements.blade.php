@@ -200,8 +200,6 @@ $show = TRUE;
 		@if($show)
 	@include('exams.questionbank.form_elements_para', array('record'=>$record))
 		@endif
-	
-
 	<!-- Load the files end as independent -->
         @if(!$record)
 		<div class="buttons text-center">

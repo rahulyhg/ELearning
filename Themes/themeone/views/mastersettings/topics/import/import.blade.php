@@ -9,7 +9,11 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 							@if(checkRole(getUserGrade(2)))
+<<<<<<< HEAD
 							<li><a href="{{URL_TOPICS}}">{{ __('messages.topics')}}</a> </li>
+=======
+							<li><a href="{{URL_TOPICS}}">{{ getPhrase('topics')}}</a> </li>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 							@else
 							<li class="active">{{$title}}</li>
@@ -25,7 +29,11 @@
 					@if(checkRole(getUserGrade(2))) 
 						<div class="pull-right messages-buttons">
 							 
+<<<<<<< HEAD
 							<a href="{{URL_TOPICS}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
+=======
+							<a href="{{URL_TOPICS}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 
 						</div>
 						@endif
@@ -34,10 +42,17 @@
 
 					<div class="panel-body text-center">
 					
+<<<<<<< HEAD
 					<a href="{{DOWNLOAD_LINK_TOPICS_IMPORT_EXCEL}}" class="btn btn-info">{{__('messages.download_template')}}
 					</a>
 					
 					<?php $button_name = __('messages.upload'); ?>
+=======
+					<a href="{{DOWNLOAD_LINK_TOPICS_IMPORT_EXCEL}}" class="btn btn-info">{{getPhrase('download_template')}}
+					</a>
+					
+					<?php $button_name = getPhrase('upload'); ?>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					
 						{!! Form::open(array('url' => URL_TOPICS_IMPORT, 'method' => 'POST', 'novalidate'=>'','name'=>'formUsers ', 'files'=>'true')) !!}
 					
@@ -45,7 +60,11 @@
 						<div class="row">
 				 
 					<fieldset class='col-sm-4 col-sm-offset-4 form-group margintop30'>
+<<<<<<< HEAD
 						{{ Form::label('excel', __('messages.upload').' Excel') }}
+=======
+						{{ Form::label('excel', getphrase('upload').' Excel') }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						 
 						
 					{!! Form::file('excel', array('class'=>'form-control','id'=>'excel_input', 'accept'=>'.xls,.xlsx')) !!}
@@ -85,7 +104,11 @@ file.onchange = function(e){
             
             break;
         default:
+<<<<<<< HEAD
              alertify.error("{{__('messages.file_type_not_allowed')}}");
+=======
+             alertify.error("{{getPhrase('file_type_not_allowed')}}");
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             this.value='';
     }
 };

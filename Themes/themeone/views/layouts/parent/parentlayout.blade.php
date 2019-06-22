@@ -15,9 +15,6 @@
 	<meta name="description" content="{{getSetting('meta_description', 'seo_settings')}}">
 
 	<meta name="keywords" content="{{getSetting('meta_keywords', 'seo_settings')}}">
-
-	 
-
 	<link rel="icon" href="{{IMAGE_PATH_SETTINGS.getSetting('site_favicon', 'site_settings')}}" type="image/x-icon" />
 
 	<title>@yield('title') {{ isset($title) ? $title : getSetting('site_title','site_settings') }}</title>
@@ -236,6 +233,7 @@ if(isset($block_navigation))
 
 					</li>
 
+<<<<<<< HEAD
 					<li {{ isActive($active_class, 'analysis') }} > 
 
 					<a href="{{URL_PARENT_ANALYSIS_FOR_STUDENTS}}"> 
@@ -262,6 +260,34 @@ if(isset($block_navigation))
 						<li><a href="{{URL_STUDENT_EXAM_SERIES_LIST}}"> <i class="fa fa-list-ol"></i>{{ __('messages.exam_series') }}</a></li>
 
 						
+=======
+					<li {{ isActive($active_class, 'analysis') }} >
+
+					<a href="{{URL_PARENT_ANALYSIS_FOR_STUDENTS}}">
+					<i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
+
+					{{ getPhrase('analysis') }} </a>
+
+					</li>
+
+					<li {{ isActive($active_class, 'exams') }} >
+
+
+
+					<a data-toggle="collapse" data-target="#exams"><i class="fa fa-fw fa-desktop" ></i>
+
+					{{ getPhrase('exams') }} </a>
+
+
+
+					<ul id="exams" class="collapse sidemenu-dropdown">
+
+						<li><a href="{{URL_STUDENT_EXAM_CATEGORIES}}"> <i class="fa fa-random"></i>{{ getPhrase('categories') }}</a></li>
+
+						<li><a href="{{URL_STUDENT_EXAM_SERIES_LIST}}"> <i class="fa fa-list-ol"></i>{{ getPhrase('exam_series') }}</a></li>
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 					</ul>
 
@@ -269,6 +295,7 @@ if(isset($block_navigation))
 
 					</li>
 
+<<<<<<< HEAD
 					<li {{ isActive($active_class, 'lms') }} > 
 
 
@@ -286,19 +313,47 @@ if(isset($block_navigation))
 							 
 
 							<li><a href="{{ URL_STUDENT_LMS_SERIES }}"> <i class="fa fa-list-ol"></i>{{ __('messages.series') }}</a></li>
+=======
+					<li {{ isActive($active_class, 'lms') }} >
+
+
+
+					<a data-toggle="collapse" data-target="#lms"><i class="fa fa-fw fa-tv" ></i>
+
+					LMS </a>
+
+
+
+					<ul id="lms" class="collapse sidemenu-dropdown">
+
+							<li><a href="{{ URL_STUDENT_LMS_CATEGORIES }}"> <i class="fa fa-random"></i>{{ getPhrase('categories') }}</a></li>
+
+
+
+							<li><a href="{{ URL_STUDENT_LMS_SERIES }}"> <i class="fa fa-list-ol"></i>{{ getPhrase('series') }}</a></li>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 					</ul>
 
 					</li>
+<<<<<<< HEAD
 				
 
 					<li {{ isActive($active_class, 'subscriptions') }} > 
 					<a  href="{{URL_PAYMENTS_LIST.Auth::user()->slug}}"><i class="fa fa-fw fa-ticket" ></i> 
 					{{ __('messages.subscriptions') }} </a> 
+=======
+
+
+					<li {{ isActive($active_class, 'subscriptions') }} >
+					<a  href="{{URL_PAYMENTS_LIST.Auth::user()->slug}}"><i class="fa fa-fw fa-ticket" ></i>
+					{{ getPhrase('subscriptions') }} </a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					</li>
 
 
 
+<<<<<<< HEAD
 					<li {{ isActive($active_class, 'notifications') }} > 
 
 						<a href="{{URL_NOTIFICATIONS}}" ><i class="fa fa-fw fa-bell" aria-hidden="true"></i> 
@@ -314,6 +369,23 @@ if(isset($block_navigation))
 					 
 
 					 
+=======
+					<li {{ isActive($active_class, 'notifications') }} >
+
+						<a href="{{URL_NOTIFICATIONS}}" ><i class="fa fa-fw fa-bell" aria-hidden="true"></i>
+
+					{{ getPhrase('notifications') }} </a>
+
+
+
+					</li>
+
+
+
+
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 				</ul>
 
@@ -323,7 +395,11 @@ if(isset($block_navigation))
 
 		@if(isset($right_bar))
 
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 		<aside class="right-sidebar" id="rightSidebar">
 
@@ -345,7 +421,11 @@ if(isset($block_navigation))
 
 		</aside>
 
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 	@endif
 
@@ -361,9 +441,15 @@ if(isset($block_navigation))
 	<script src="{{themes('js/bootstrap.min.js')}}"></script>
 	<script src="{{themes('js/main.js')}}"></script>
 	<script src="{{themes('js/sweetalert-dev.js')}}"></script>
+<<<<<<< HEAD
 	
 
 	
+=======
+
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 	 @yield('footer_scripts')
 
@@ -371,7 +457,11 @@ if(isset($block_navigation))
 
 	@include('errors.formMessages')
 
+<<<<<<< HEAD
  	
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 	{!!getSetting('google_analytics', 'seo_settings')!!}
 </body>
 

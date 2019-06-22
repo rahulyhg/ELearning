@@ -12,6 +12,10 @@ use App\User;
 use SMS;
 use DB;
 use Artisan;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Session;
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 // use Illuminate\Support\Facades\App;
 
@@ -33,7 +37,11 @@ class DashboardController extends Controller
       
         $user = getUserRecord();
         $data['layout']         = getLayout();
+<<<<<<< HEAD
         $data['title']          =  __('messages.dashboard');
+=======
+        $data['title']          = getPhrase('dashboard');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $role = getRole();
         if($role=='admin' || $role=='owner'){
            
@@ -67,7 +75,11 @@ class DashboardController extends Controller
                     );
                 
            $data['chart_data'][] = (object)$chart_data;
+<<<<<<< HEAD
            $data['chart_heading']         = __('messages.user_statistics');
+=======
+           $data['chart_heading']         = getPhrase('user_statistics');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
            
            $data['payments_chart_data'] = (object)$this->getPaymentStats();
            $data['payments_monthly_data'] = (object)$this->getPaymentMonthlyStats();
@@ -84,6 +96,12 @@ class DashboardController extends Controller
 
            // return view('admin.dashboard', $data);
 
+<<<<<<< HEAD
+=======
+            if (Session::has('locale')) {
+                App::setLocale(Session::get('locale'));
+            }
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $view_name = getTheme().'::admin.dashboard';
             
             return view($view_name, $data);
@@ -97,6 +115,13 @@ class DashboardController extends Controller
            $data['latest_series'] = $this->getLatestLmsSeries();
 
            // return view('parent.dashboard', $data);
+<<<<<<< HEAD
+=======
+
+            if (Session::has('locale')) {
+                App::setLocale(Session::get('locale'));
+            }
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
            $view_name = getTheme().'::parent.dashboard';
             return view($view_name, $data);
         }
@@ -122,14 +147,22 @@ class DashboardController extends Controller
 
            } 
 
+<<<<<<< HEAD
             $labels = [__('messages.correct.'), __('messages.wrong'), __('messages.not_answered')];
+=======
+            $labels = [getPhrase('correct'), getPhrase('wrong'), getPhrase('not_answered')];
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $dataset = [$correct_answers, $wrong_answers, $not_answered];
             $dataset_label[] = 'lbl';
             $bgcolor  = [$color_correct,$color_wrong,$color_not_attempted];
             $border_color = [$color_correct,$color_wrong,$color_not_attempted];
             $chart_data['type'] = 'pie'; 
             //horizontalBar, bar, polarArea, line, doughnut, pie
+<<<<<<< HEAD
             $chart_data['title'] = __('messages.overall_performance');  
+=======
+            $chart_data['title'] = getphrase('overall_performance');  
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
             $chart_data['data']   = (object) array(
                     'labels'            => $labels,
@@ -159,12 +192,20 @@ class DashboardController extends Controller
 
             $labels = $labels;
             $dataset = $dataset;
+<<<<<<< HEAD
             $dataset_label = __('messages.performance');
+=======
+            $dataset_label = getPhrase('performance');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $bgcolor  = $bgcolor;
             $border_color = $bordercolor;
             $chart_data['type'] = 'bar'; 
             //horizontalBar, bar, polarArea, line, doughnut, pie
+<<<<<<< HEAD
             $chart_data['title'] = __('messages.best_performance_in_all_quizzes');
+=======
+            $chart_data['title'] = getPhrase('best_performance_in_all_quizzes');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
             $chart_data['data']   = (object) array(
                     'labels'            => $labels,
@@ -178,7 +219,15 @@ class DashboardController extends Controller
 
 
 
+<<<<<<< HEAD
            // return view('student.dashboard', $data);   
+=======
+           // return view('student.dashboard', $data);
+            //
+            if (Session::has('locale')) {
+                App::setLocale(Session::get('locale'));
+            }
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $view_name = getTheme().'::student.dashboard';
             return view($view_name, $data);         
         }
@@ -250,8 +299,13 @@ class DashboardController extends Controller
             
 
             $payment_dataset = [$payment_data->success_count, $payment_data->cancelled_count, $payment_data->pending_count];
+<<<<<<< HEAD
             $payment_labels = [__('messages.success'), __('messages.cancelled'), __('messages.pending')];
             $payment_dataset_labels = [__('messages.total')];
+=======
+            $payment_labels = [getPhrase('success'), getPhrase('cancelled'), getPhrase('pending')];
+            $payment_dataset_labels = [getPhrase('total')];
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
             $payment_bgcolor = [getColor('',4),getColor('',9),getColor('',18)];
             $payment_border_color = [getColor('background',4),getColor('background',9),getColor('background',18)]; 
@@ -264,7 +318,11 @@ class DashboardController extends Controller
                                         'border_color'      => $payment_border_color
                                         );
            $payments_stats['type'] = 'bar'; 
+<<<<<<< HEAD
              $payments_stats['title'] = __('messages.overall_statistics');
+=======
+             $payments_stats['title'] = getPhrase('overall_statistics');
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
            return $payments_stats;
     }
@@ -281,7 +339,11 @@ class DashboardController extends Controller
 
             $payment_dataset = [];
             $payment_labels = [];
+<<<<<<< HEAD
             $payment_dataset_labels = [__('messages.total')];
+=======
+            $payment_dataset_labels = [getPhrase('total')];
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $payment_bgcolor = [];
             $payment_border_color = []; 
 
@@ -304,7 +366,11 @@ class DashboardController extends Controller
                                         'border_color'      => $payment_border_color
                                         );
            $payments_stats['type'] = 'line'; 
+<<<<<<< HEAD
            $payments_stats['title'] = __('messages.payments_reports_in').' '.getCurrencyCode(); 
+=======
+           $payments_stats['title'] = getPhrase('payments_reports_in').' '.getCurrencyCode(); 
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
            return $payments_stats;
     }
@@ -316,7 +382,11 @@ class DashboardController extends Controller
 
         $summary_dataset = [];
             $summary_labels = [];
+<<<<<<< HEAD
             $summary_dataset_labels = [__('messages.total')];
+=======
+            $summary_dataset_labels = [getPhrase('total')];
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $summary_bgcolor = [];
             $summary_border_color = []; 
 
@@ -339,9 +409,15 @@ class DashboardController extends Controller
                                         'border_color'      => $summary_border_color
                                         );
            $quiz_stats['type'] = 'doughnut'; 
+<<<<<<< HEAD
            $quiz_stats['title'] = __('messages.demanding_quizzes'); 
            if($type!='')
            $quiz_stats['title'] = __('messages.demanding').' '.$type.' '.__('messages.quizzes'); 
+=======
+           $quiz_stats['title'] = getPhrase('demanding_quizzes'); 
+           if($type!='')
+           $quiz_stats['title'] = getPhrase('demanding').' '.$type.' '.getPhrase('quizzes'); 
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
            return $quiz_stats;
     }

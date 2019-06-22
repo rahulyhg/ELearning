@@ -53,7 +53,6 @@
 					<div class="panel-body packages">
 
 						<div> 
-
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 
 							<thead>
@@ -65,15 +64,8 @@
 									<th>{{ __('messages.content')}}</th>
 
 									<th>{{ __('messages.action')}}</th>
-
-								  
-
 								</tr>
-
 							</thead>
-
-							 
-
 						</table>
 
 						</div>

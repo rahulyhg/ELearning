@@ -2,6 +2,11 @@
 
 return [
 
+<<<<<<< HEAD
+=======
+    'locale' => 'vi', //ngôn ngữ mặc định
+    'fallback_locale' => 'en', // được sử dụng khi không tìm thấy config locale.
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     /*
     |--------------------------------------------------------------------------
     | Application Name

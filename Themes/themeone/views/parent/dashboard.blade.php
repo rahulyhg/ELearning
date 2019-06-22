@@ -6,14 +6,23 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
+<<<<<<< HEAD
 							 
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							<li>{{ $title}}</li>
 						</ol>
 					</div>
 				</div>
 				 <div class="row">
+<<<<<<< HEAD
 			
  
+=======
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 		 			<div class="col-md-4 col-sm-6">
  		<div class="media state-media box-ws">
  			<div class="media-left">
@@ -24,7 +33,11 @@
 				<a href="{{URL_STUDENT_EXAM_CATEGORIES}}">{{ getPhrase('quiz_categories')}}</a>
  			</div>
  		</div>
+<<<<<<< HEAD
  	</div>    
+=======
+ 	</div>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
  	<div class="col-md-4 col-sm-6">
  		<div class="media state-media box-ws">
  			<div class="media-left">
@@ -35,7 +48,11 @@
 				<a href="{{URL_STUDENT_EXAM_ALL}}">{{ getPhrase('quizzes')}}</a>
  			</div>
  		</div>
+<<<<<<< HEAD
  	</div> 
+=======
+ 	</div>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
  	<div class="col-md-4 col-sm-6">
  		<div class="media state-media box-ws">
  			<div class="media-left">
@@ -47,9 +64,15 @@
  			</div>
  		</div>
  	</div>
+<<<<<<< HEAD
  	
 
 				 
+=======
+
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -61,7 +84,11 @@
 					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
 					 	 @else
 
+<<<<<<< HEAD
 					    	<table class="table">	
+=======
+					    	<table class="table">
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					    	<thead>
 					    		<tr>
 					    			<th>{{getPhrase('title')}}</th>
@@ -84,7 +111,11 @@
 					 				</td>
 					 				<td>
 					 				@if($quiz->is_paid)
+<<<<<<< HEAD
 					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a> 
+=======
+					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 					@else
 				 					-
 				 					@endif
@@ -93,6 +124,7 @@
 					 		@endforeach
 
 					    	</tbody>
+<<<<<<< HEAD
 					    	</table>  
 					    @endif
 					     
@@ -100,6 +132,15 @@
 					 
 					 	
 					 
+=======
+					    	</table>
+					    @endif
+
+					    </div>
+
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					</div>
 
 						<div class="col-md-6">
@@ -111,7 +152,11 @@
 					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
 					 	 @else
 
+<<<<<<< HEAD
 					    	<table class="table">	
+=======
+					    	<table class="table">
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					    	<thead>
 					    		<tr>
 					    			<th>{{getPhrase('title')}}</th>
@@ -134,7 +179,11 @@
 					 				</td>
 					 				<td>
 					 				@if($series->is_paid)
+<<<<<<< HEAD
 					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a> 
+=======
+					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 					@else
 				 					-
 				 					@endif
@@ -143,6 +192,7 @@
 					 		@endforeach
 
 					    	</tbody>
+<<<<<<< HEAD
 					    	</table>  
 					    @endif
 					     
@@ -158,6 +208,23 @@
 				</div>
 				 
 			 
+=======
+					    	</table>
+					    @endif
+
+					    </div>
+
+
+
+					</div>
+
+
+
+
+				</div>
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 			</div>
 			<!-- /.container-fluid -->
 </div>
@@ -166,5 +233,9 @@
 @stop
 
 @section('footer_scripts')
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 @stop

@@ -3,12 +3,27 @@
 
 <div id="page-wrapper">
             <div class="container-fluid">
+<<<<<<< HEAD
                 <!-- Page Heading -->
+=======
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
+                    <li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
+                    <li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
+                </ul>
+                <!-- Page Heading -->
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                <div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
+<<<<<<< HEAD
 							<li> <a href="{{URL_STUDENT_LMS_SERIES}}">{{getPhrase('learning_management_series')}} </a> </li>
+=======
+{{--                            <li> <a href="{{URL_STUDENT_LMS_SERIES}}">{{getPhrase('learning_management_series')}} </a> </li>--}}
+							<li> <a href="{{URL_STUDENT_LMS_SERIES}}">{{ trans('home.Learning Management Series') }} </a> </li>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							<li class="active"> {{ $title }} </li>
 						</ol>
 					</div>

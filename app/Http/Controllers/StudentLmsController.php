@@ -13,6 +13,11 @@ use Image;
 use ImageSettings;
 use File;
 use Response;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Session;
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 class StudentLmsController extends Controller
 {
      public function __construct()
@@ -51,6 +56,13 @@ class StudentLmsController extends Controller
         $data['user'] = $user;
         // return view('student.lms.categories', $data);
 
+<<<<<<< HEAD
+=======
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        }
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
               $view_name = getTheme().'::student.lms.categories';
         return view($view_name, $data);
 
@@ -73,7 +85,13 @@ class StudentLmsController extends Controller
                                         ->where('end_date','>=',date('Y-m-d'))        
                                         ->paginate(getRecordsPerPage());
         // return view('student.lms.lms-series-list', $data);
+<<<<<<< HEAD
 
+=======
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        }
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 
             $view_name = getTheme().'::student.lms.lms-series-list';
@@ -112,6 +130,13 @@ class StudentLmsController extends Controller
     }
     $data['user']               = $user;
 
+<<<<<<< HEAD
+=======
+    if (Session::has('locale')) {
+        App::setLocale(Session::get('locale'));
+    }
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     // return view('student.lms.lms-series-list', $data);
 
       $view_name = getTheme().'::student.lms.lms-series-list';
@@ -158,6 +183,12 @@ class StudentLmsController extends Controller
         $data['layout']              = getLayout();
 
        // return view('student.lms.series-view-item', $data);
+<<<<<<< HEAD
+=======
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        }
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
           $view_name = getTheme().'::student.lms.series-view-item';
         return view($view_name, $data);

@@ -1,5 +1,6 @@
 <?php
 return [
+<<<<<<< HEAD
     'dashboard' => 'Dashboard',
     'languages' => 'Languages',
     'add_languages' => 'Add Languages',
@@ -1055,3 +1056,7 @@ return [
     
 ];
 ?>
+=======
+    'welcome' => 'Welcome to Website!',
+];
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db

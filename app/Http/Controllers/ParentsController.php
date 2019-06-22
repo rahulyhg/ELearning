@@ -9,6 +9,10 @@ use App\Http\Requests;
 use App\User;
 use Yajra\Datatables\Datatables;
 use DB;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Session;
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 
 class ParentsController extends Controller
@@ -48,6 +52,12 @@ class ParentsController extends Controller
        $data['layout']       = getLayout();
        // return view('parent.list-users', $data);
 
+<<<<<<< HEAD
+=======
+         if (Session::has('locale')) {
+             App::setLocale(Session::get('locale'));
+         }
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $view_name = getTheme().'::parent.list-users';
         return view($view_name, $data);     
      }

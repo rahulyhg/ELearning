@@ -28,7 +28,11 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
+<<<<<<< HEAD
 							<li><a href="{{URL_QUIZZES}}">{{ __('messages.quizzes')}}</a></li>
+=======
+							<li><a href="{{URL_QUIZZES}}">{{ getPhrase('quizzes')}}</a></li>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 
@@ -50,7 +54,11 @@
 
 						<div class="pull-right messages-buttons">
 
+<<<<<<< HEAD
 							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
+=======
+							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						</div>
 
@@ -62,11 +70,19 @@
 
 					<div class="panel-body" >
 
+<<<<<<< HEAD
 					<?php $button_name = __('messages.create'); ?>
 
 					@if ($record)
 
 					 <?php $button_name = __('messages.update'); ?>
+=======
+					<?php $button_name = getPhrase('create'); ?>
+
+					@if ($record)
+
+					 <?php $button_name = getPhrase('update'); ?>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						{{ Form::model($record, 
 

@@ -23,8 +23,13 @@
 						
 						<div class="pull-right messages-buttons">
 							 
+<<<<<<< HEAD
 							<a href="{{URL_SUBJECTS_IMPORT}}" class="btn  btn-primary button" >{{ __('messages.import')}}</a>
 							<a href="{{URL_SUBJECTS_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
+=======
+							<a href="{{URL_SUBJECTS_IMPORT}}" class="btn  btn-primary button" >{{ getPhrase('import')}}</a>
+							<a href="{{URL_SUBJECTS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 
 						</div>
 						<h1>{{ $title }}</h1>
@@ -35,10 +40,17 @@
 							<thead>
 								<tr>
 									 
+<<<<<<< HEAD
 									<th>{{ __('messages.id')}}</th>
 									<th>{{ __('messages.subject')}}</th>
 									<th>{{ __('messages.code')}}</th>
 								 	<th>{{ __('messages.action')}}</th>
+=======
+									<th>{{ getPhrase('id')}}</th>
+									<th>{{ getPhrase('subject')}}</th>
+									<th>{{ getPhrase('code')}}</th>
+								 	<th>{{ getPhrase('action')}}</th>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								</tr>
 							</thead>
 							 

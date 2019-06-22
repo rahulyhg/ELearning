@@ -1,5 +1,6 @@
 <?php
 return [
+<<<<<<< HEAD
     'dashboard' => 'Điều khiển',
     'languages' => 'Ngôn ngữ',
     'add_languages' => 'Thêm Ngôn ngữ',
@@ -293,3 +294,7 @@ return [
 
 ];
 ?>
+=======
+    'welcome' => 'Chào mừng bạn đến với Website!',
+];
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db

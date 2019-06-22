@@ -15,6 +15,14 @@
 <div id="page-wrapper">
 
 			<div class="container-fluid">
+<<<<<<< HEAD
+=======
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
+					<li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
+					<li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
+				</ul>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 				<!-- Page Heading -->
 
@@ -44,9 +52,14 @@
 
 					<div class="panel-heading">
 
+<<<<<<< HEAD
 						 
 
 						<h1>{{ $title.' '.getPhrase('of').' '.$user->name }}</h1>
+=======
+
+						<h1>{{ trans('home.Exam Analysis By Attempts').' '.trans('home.Of').' '.$user->name }}</h1>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 					</div>
 
@@ -62,6 +75,7 @@
 
 								 
 
+<<<<<<< HEAD
 									<th>{{ getPhrase('title')}}</th>
 
 									<th>{{ getPhrase('type')}}</th>
@@ -71,6 +85,28 @@
 									<th>{{ getPhrase('marks')}}</th>
 
 									<th>{{ getPhrase('attempts')}}</th>
+=======
+{{--									<th>{{ getPhrase('title')}}</th>--}}
+
+{{--									<th>{{ getPhrase('type')}}</th>--}}
+
+{{--									<th>{{ getPhrase('duration')}}</th>--}}
+
+{{--									<th>{{ getPhrase('marks')}}</th>--}}
+
+{{--									<th>{{ getPhrase('attempts')}}</th>--}}
+
+
+									<th>{{ trans('home.Title') }}</th>
+
+									<th>{{ trans('home.Type') }}</th>
+
+									<th>{{ trans('home.Duration') }}</th>
+
+									<th>{{ trans('home.Marks') }}</th>
+
+									<th>{{ trans('home.Attempts') }}</th>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 									 
 

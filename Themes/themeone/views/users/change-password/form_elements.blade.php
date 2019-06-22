@@ -4,11 +4,19 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('old_password', __('messages.old_password')) }}
 
 						<span class="text-red">*</span>
 
 						{{ Form::password('old_password', $attributes = array('class'=>'form-control', 'placeholder' => __('messages.old_password'),
+=======
+						{{ Form::label('old_password', getphrase('old_password')) }}
+
+						<span class="text-red">*</span>
+
+						{{ Form::password('old_password', $attributes = array('class'=>'form-control', 'placeholder' => getphrase('old_password'),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'old_password',
 
@@ -36,11 +44,19 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('password', __('messages.new_password')) }}
 
 						<span class="text-red">*</span>
 
 						{{ Form::password('password', $attributes = array('class'=>'form-control', 'placeholder' => __('messages.new_password'),
+=======
+						{{ Form::label('password', getphrase('new_password')) }}
+
+						<span class="text-red">*</span>
+
+						{{ Form::password('password', $attributes = array('class'=>'form-control', 'placeholder' => getphrase('new_password'),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						'ng-model'=>'password',
 
@@ -66,11 +82,19 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('password_confirmation', __('messages.retype_password')) }}
 
 						<span class="text-red">*</span>
 
 						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control', 'placeholder' => __('messages.retype_password'),
+=======
+						{{ Form::label('password_confirmation', getphrase('retype_password')) }}
+
+						<span class="text-red">*</span>
+
+						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control', 'placeholder' => getphrase('retype_password'),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						'ng-model'=>'password_confirmation',
 
@@ -104,6 +128,10 @@
 
 							<button class="btn btn-lg btn-success button"
 
+<<<<<<< HEAD
 							ng-disabled='!changePassword.$valid' >{{ __('messages.update') }}</button>
+=======
+							ng-disabled='!changePassword.$valid' >{{ $button_name }}</button>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						</div>

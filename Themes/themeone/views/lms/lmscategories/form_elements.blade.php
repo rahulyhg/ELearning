@@ -1,10 +1,17 @@
  					
  					 <fieldset class="form-group">
 						
+<<<<<<< HEAD
 						{{ Form::label('category', __('messages.category_name')) }}
 						<span class="text-red">*</span>
 						{{ Form::text('category', $value = null , $attributes = array('class'=>'form-control', 
 						'placeholder' => __('messages.enter_category_name'),
+=======
+						{{ Form::label('category', getphrase('category_name')) }}
+						<span class="text-red">*</span>
+						{{ Form::text('category', $value = null , $attributes = array('class'=>'form-control', 
+						'placeholder' => getPhrase('enter_category_name'),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						'ng-model'=>'category',
 							'required'=> 'true', 
 							'ng-pattern' => getRegexPattern("name"),
@@ -22,7 +29,11 @@
 					</fieldset>
  					  
  					  <fieldset class="form-group" >
+<<<<<<< HEAD
 				   {{ Form::label('category', __('messages.image')) }}
+=======
+				   {{ Form::label('category', getphrase('image')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				         <input type="file" class="form-control" name="catimage"
 				          accept=".png,.jpg,.jpeg" id="image_input">
 				    </fieldset>
@@ -39,7 +50,11 @@
 				 
 					<fieldset class="form-group">
 						
+<<<<<<< HEAD
 						{{ Form::label('description', __('messages.description')) }}
+=======
+						{{ Form::label('description', getphrase('description')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						
 						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => 'Description')) }}
 					</fieldset>

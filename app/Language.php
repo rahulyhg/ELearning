@@ -175,4 +175,11 @@ class Language extends Model
     return (array)json_decode($phrases);
 
   }
+<<<<<<< HEAD
+=======
+
+
+ 
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 }

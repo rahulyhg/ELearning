@@ -4,7 +4,11 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('name', __('messages.name')) }}
+=======
+						{{ Form::label('name', getphrase('name')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
@@ -64,7 +68,11 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('username', __('messages.username')) }}
+=======
+						{{ Form::label('username', getphrase('username')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
@@ -110,7 +118,11 @@
 							$password_required = false;
 						?>
 
+<<<<<<< HEAD
 						{{ Form::label('password', __('messages.password')) }}
+=======
+						{{ Form::label('password', getphrase('password')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						@if(!$record)
 
 						<span class="text-red">*</span>
@@ -168,7 +180,11 @@
 
 						?>
 
+<<<<<<< HEAD
 						{{ Form::label('email', __('messages.email')) }}
+=======
+						{{ Form::label('email', getphrase('email')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
@@ -194,7 +210,11 @@
 
 					@if(!$record)
 					 <fieldset class="form-group">
+<<<<<<< HEAD
 					 {{ Form::label('password', __('messages.password')) }}
+=======
+					 {{ Form::label('password', getphrase('password')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
@@ -224,13 +244,21 @@
 					</fieldset>
 
 					 <fieldset class="form-group">
+<<<<<<< HEAD
 					 {{ Form::label('confirm_password', __('messages.confirm_password')) }}
+=======
+					 {{ Form::label('confirm_password', getphrase('confirm_password')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
 						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control instruction-call',
 
+<<<<<<< HEAD
 								'placeholder' => __("messages.confirm_password"),
+=======
+								'placeholder' => getPhrase("confirm_password"),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 								'ng-model'=>'password_confirmation',
 
@@ -265,7 +293,11 @@
 
 
 
+<<<<<<< HEAD
 						{{ Form::label('role', __('messages.role')) }}
+=======
+						{{ Form::label('role', getphrase('role')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
@@ -281,7 +313,11 @@
 
 						?>
 
+<<<<<<< HEAD
 						{{Form::select('role_id', $roles, $selected, ['placeholder' => __('messages.select_role'),'class'=>'form-control', $disabled,
+=======
+						{{Form::select('role_id', $roles, $selected, ['placeholder' => getPhrase('select_role'),'class'=>'form-control', $disabled,
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'role_id',
 
@@ -311,12 +347,20 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('phone', __('messages.phone')) }}
+=======
+						{{ Form::label('phone', getphrase('phone')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
 						{{ Form::text('phone', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 
+<<<<<<< HEAD
 						__('messages.please_enter_10-15_digit_mobile_number'),
+=======
+						getPhrase('please_enter_10-15_digit_mobile_number'),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'phone',
 
@@ -349,11 +393,19 @@
 
 						
 
+<<<<<<< HEAD
 						{{ Form::label('address', __('messages.billing_address')) }}
 
 					 
 
 						{{ Form::textarea('address', $value = null , $attributes = array('class'=>'form-control','rows'=>3, 'cols'=>'15', 'placeholder' => __('messages.please_enter_your_address'),
+=======
+						{{ Form::label('address', getphrase('billing_address')) }}
+
+					 
+
+						{{ Form::textarea('address', $value = null , $attributes = array('class'=>'form-control','rows'=>3, 'cols'=>'15', 'placeholder' => getPhrase('please_enter_your_address'),
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'address',
 
@@ -365,7 +417,11 @@
 
 					<fieldset class='col-sm-6'>
 
+<<<<<<< HEAD
 						{{ Form::label('image', __('messages.image')) }}
+=======
+						{{ Form::label('image', getphrase('image')) }}
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<div class="form-group row">
 

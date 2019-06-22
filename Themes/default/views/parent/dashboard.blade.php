@@ -16,10 +16,10 @@
 						<div class="card card-blue text-xs-center">
 							<div class="card-block">
 							<h4 class="card-title">{{ count(App\User::getUserSeleted('categories'))}}</h4>
-								<p class="card-text">{{ getPhrase('quiz_categories')}}</p>
+								<p class="card-text">{{ __('messages.quiz_categories')}}</p>
 							</div>
 							<a class="card-footer text-muted" href="{{URL_STUDENT_EXAM_CATEGORIES}}">
-								{{ getPhrase('view_all')}}
+								{{ __('messages.view_all')}}
 							</a>
 						</div>
 					</div>
@@ -28,10 +28,10 @@
 						<div class="card card-yellow text-xs-center">
 							<div class="card-block">
 								<h4 class="card-title">{{ App\User::getUserSeleted('quizzes') }}</h4>
-								<p class="card-text">{{ getPhrase('quizzes')}}</p>
+								<p class="card-text">{{ __('messages.quizzes')}}</p>
 							</div>
 							<a class="card-footer text-muted" href="{{URL_STUDENT_EXAM_ALL}}">
-								{{ getPhrase('view_all')}}
+								{{ __('messages.view_all')}}
 							</a>
 						</div>
 					</div>
@@ -40,32 +40,40 @@
 						<div class="card card-green text-xs-center">
 							<div class="card-block">
 								<h4 class="card-title">{{ App\User::where('parent_id', '=', $user->id)->get()->count()}}</h4>
-								<p class="card-text">{{ getPhrase('children')}}</p>
+								<p class="card-text">{{ __('messages.children')}}</p>
 							</div>
 							<a class="card-footer text-muted" href="{{URL_PARENT_CHILDREN}}">
-								{{ getPhrase('view_all')}}
+								{{ __('messages.view_all')}}
 							</a>
 						</div>
 					</div>
 
+<<<<<<< HEAD
 				 
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				</div>
 				<div class="row">
 					<div class="col-md-6">
 					     <div class="panel panel-primary">
-					      <div class="panel-heading">{{getPhrase('latest_quizzes')}}</div>
+					      <div class="panel-heading">{{__('messages.latest_quizzes')}}</div>
 					      @if(!count($latest_quizzes))
 					      <br>
-					 		 <p> &nbsp;&nbsp;&nbsp;{{getPhrase('no_quizzes_available')}}</p>
-					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
+					 		 <p> &nbsp;&nbsp;&nbsp;{{__('messages.no_quizzes_available')}}</p>
+					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{__('messages.click_here')}}</a> {{__('messages.to_change_your_settings')}}</p>
 					 	 @else
 
+<<<<<<< HEAD
 					    	<table class="table">	
+=======
+					    	<table class="table">
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					    	<thead>
 					    		<tr>
-					    			<th>{{getPhrase('title')}}</th>
-					    			<th>{{getPhrase('type')}}</th>
-					    			<th>{{getPhrase('Action')}}</th>
+					    			<th>{{__('messages.title')}}</th>
+					    			<th>{{__('messages.type')}}</th>
+					    			<th>{{__('messages.Action')}}</th>
 					    		</tr>
 					    	</thead>
 					    	<tbody>
@@ -74,16 +82,20 @@
 					 				<td>{{$quiz->title}}</td>
 					 				<td>
 					 				@if($quiz->is_paid)
-					 					<span class="label label-danger">{{getPhrase('paid')}}
+					 					<span class="label label-danger">{{__('messages.paid')}}
 					 					</span>
 				 					@else
-				 					<span class="label label-success">{{getPhrase('free')}}
+				 					<span class="label label-success">{{__('messages.free')}}
 					 					</span>
 				 					@endif
 					 				</td>
 					 				<td>
 					 				@if($quiz->is_paid)
-					 					<a href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a> 
+<<<<<<< HEAD
+					 					<a href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{__('messages.buy_now')}}</a> 
+=======
+					 					<a href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{__('messages.buy_now')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 					@else
 				 					-
 				 					@endif
@@ -92,6 +104,7 @@
 					 		@endforeach
 
 					    	</tbody>
+<<<<<<< HEAD
 					    	</table>  
 					    @endif
 					     
@@ -99,23 +112,36 @@
 					 
 					 	
 					 
+=======
+					    	</table>
+					    @endif
+
+					    </div>
+
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					</div>
 
 						<div class="col-md-6">
 					     <div class="panel panel-primary">
-					      <div class="panel-heading">{{getPhrase('latest')}} LMS {{getPhrase('series')}}</div>
+					      <div class="panel-heading">{{__('messages.latest')}} LMS {{__('messages.series')}}</div>
 					      @if(!count($latest_series))
 					      <br>
-					 		 <p> &nbsp;&nbsp;&nbsp;{{getPhrase('no_series_available')}}</p>
-					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
+					 		 <p> &nbsp;&nbsp;&nbsp;{{__('messages.no_series_available')}}</p>
+					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{__('messages.click_here')}}</a> {{__('messages.to_change_your_settings')}}</p>
 					 	 @else
 
+<<<<<<< HEAD
 					    	<table class="table">	
+=======
+					    	<table class="table">
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					    	<thead>
 					    		<tr>
-					    			<th>{{getPhrase('title')}}</th>
-					    			<th>{{getPhrase('type')}}</th>
-					    			<th>{{getPhrase('Action')}}</th>
+					    			<th>{{__('messages.title')}}</th>
+					    			<th>{{__('messages.type')}}</th>
+					    			<th>{{__('messages.Action')}}</th>
 					    		</tr>
 					    	</thead>
 					    	<tbody>
@@ -124,16 +150,20 @@
 					 				<td>{{$series->title}}</td>
 					 				<td>
 					 				@if($series->is_paid)
-					 					<span class="label label-danger">{{getPhrase('paid')}}
+					 					<span class="label label-danger">{{__('messages.paid')}}
 					 					</span>
 				 					@else
-				 					<span class="label label-success">{{getPhrase('free')}}
+				 					<span class="label label-success">{{__('messages.free')}}
 					 					</span>
 				 					@endif
 					 				</td>
 					 				<td>
 					 				@if($series->is_paid)
-					 					<a href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a> 
+<<<<<<< HEAD
+					 					<a href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{__('messages.buy_now')}}</a> 
+=======
+					 					<a href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{__('messages.buy_now')}}</a>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 					@else
 				 					-
 				 					@endif
@@ -142,6 +172,7 @@
 					 		@endforeach
 
 					    	</tbody>
+<<<<<<< HEAD
 					    	</table>  
 					    @endif
 					     
@@ -157,6 +188,23 @@
 				</div>
 				 
 			 
+=======
+					    	</table>
+					    @endif
+
+					    </div>
+
+
+
+					</div>
+
+
+
+
+				</div>
+
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 			</div>
 			<!-- /.container-fluid -->
 </div>
@@ -165,5 +213,9 @@
 @stop
 
 @section('footer_scripts')
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 @stop

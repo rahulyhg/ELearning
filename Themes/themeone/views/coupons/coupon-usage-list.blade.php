@@ -32,6 +32,7 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
+<<<<<<< HEAD
 									<th>{{ __('messages.title')}}</th>
 									<th>{{ __('messages.code')}}</th>
 									<th>{{ __('messages.type')}}</th>
@@ -41,6 +42,17 @@
 									<th>{{ __('messages.limit')}}</th>
 									<th>{{ __('messages.status')}}</th>
 									<th>{{ __('messages.action')}}</th>
+=======
+									<th>{{ getPhrase('title')}}</th>
+									<th>{{ getPhrase('code')}}</th>
+									<th>{{ getPhrase('type')}}</th>
+									<th>{{ getPhrase('discount')}}</th>
+									<th>{{ getPhrase('minimum_bill')}}</th>
+									<th>{{ getPhrase('maximum_discount')}}</th>
+									<th>{{ getPhrase('limit')}}</th>
+									<th>{{ getPhrase('status')}}</th>
+									<th>{{ getPhrase('action')}}</th>
+>>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								  
 								</tr>
 							</thead>
