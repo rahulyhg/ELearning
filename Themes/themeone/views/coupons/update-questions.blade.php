@@ -10,7 +10,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_QUIZZES}}">{{ __('messages.quizzes')}}</a></li>
+							<li><a href="{{URL_QUIZZES}}">{{ getPhrase('quizzes')}}</a></li>
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 						</ol>
 					</div>
@@ -20,22 +20,22 @@
 				<div class="panel panel-custom" ng-init="initAngData({{$settings}});" >
 					<div class="panel-heading">
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
+							<a href="{{URL_QUIZZES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
 						</div>
 					<h1>{{ $title }}  </h1>
 					</div>
 					<div class="panel-body" >
-					<?php $button_name = __('messages.create'); ?>
+					<?php $button_name = getPhrase('create'); ?>
 					 		<div class="row">
 							<fieldset class="form-group col-md-6">
-								{{ Form::label('subject', __('messages.subjects')) }}
+								{{ Form::label('subject', getphrase('subjects')) }}
 								<span class="text-red">*</span>
 								{{Form::select('subject', $subjects, null, ['class'=>'form-control', 'ng-model' => 'subject_id', 
 								'placeholder' => 'Select', 'ng-change'=>'subjectChanged(subject_id)' ])}}
 							</fieldset>
 
 								{{-- <fieldset class="form-group col-md-6">
-								{{ Form::label('topic', __('messages.topics')) }}
+								{{ Form::label('topic', getphrase('topics')) }}
 								<span class="text-red">*</span>
 								
 								<select ng-model="topic" class="form-control" ng-options="item.topic_name for item in topics" >
@@ -43,7 +43,7 @@
 								</select>
 								</fieldset> --}}
 							{{-- 	<fieldset class="form-group col-md-6">
-								{{ Form::label('difficulty', __('messages.difficulty')) }}
+								{{ Form::label('difficulty', getphrase('difficulty')) }}
 								
 								
 								<select ng-model="difficulty" class="form-control" >
@@ -55,7 +55,7 @@
 								</fieldset> --}}
 
 								{{-- <fieldset class="form-group col-md-6">
-								{{ Form::label('question_type', __('messages.question_type')) }}
+								{{ Form::label('question_type', getphrase('question_type')) }}
 								<select ng-model="question_type" class="form-control" >
 									<option selected="selected" value="">Select</option>
 									<option value="radio">Single Answer</option>

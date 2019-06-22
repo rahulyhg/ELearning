@@ -45,11 +45,7 @@ class LmsCategoryController extends Controller
         return back();
       }
         $data['active_class']       = 'lms';
-<<<<<<< HEAD
-        $data['title']              = 'LMS'.' '.__('messages.categories');
-=======
         $data['title']              = 'LMS'.' '.getPhrase('categories');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('lms.lmscategories.list', $data);
 
            $view_name = getTheme().'::lms.lmscategories.list';
@@ -81,15 +77,9 @@ class LmsCategoryController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-<<<<<<< HEAD
-                            <li><a href="'.URL_LMS_CATEGORIES_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>
-                            
-                            <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>
-=======
                             <li><a href="'.URL_LMS_CATEGORIES_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>
                             
                             <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                         </ul>
                     </div>';
             })
@@ -117,11 +107,7 @@ class LmsCategoryController extends Controller
       }
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'lms';
-<<<<<<< HEAD
-    	$data['title']              = __('messages.create_category');
-=======
     	$data['title']              = getPhrase('create_category');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('lms.lmscategories.add-edit', $data);
 
          $view_name = getTheme().'::lms.lmscategories.add-edit';
@@ -146,11 +132,7 @@ class LmsCategoryController extends Controller
 
     	$data['record']       		= $record;
     	$data['active_class']       = 'lms';
-<<<<<<< HEAD
-    	$data['title']              = __('messages.edit_category');
-=======
     	$data['title']              = getPhrase('edit_category');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('lms.lmscategories.add-edit', $data);
           $view_name = getTheme().'::lms.lmscategories.add-edit';
         return view($view_name, $data);
@@ -273,22 +255,14 @@ class LmsCategoryController extends Controller
         }
         
             $response['status'] = 1;
-<<<<<<< HEAD
-            $response['message'] = __('messages.category_deleted_successfully');
-=======
             $response['message'] = getPhrase('category_deleted_successfully');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         }
         catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-<<<<<<< HEAD
-            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
-=======
             $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        }
 
          return json_encode($response);
@@ -298,11 +272,7 @@ class LmsCategoryController extends Controller
     {
     	if ($record === null) {
 
-<<<<<<< HEAD
-    		flash('Ooops...!', __("messages.page_not_found"), 'error');
-=======
     		flash('Ooops...!', getPhrase("page_not_found"), 'error');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
    			return $this->getRedirectUrl();
 		}
 

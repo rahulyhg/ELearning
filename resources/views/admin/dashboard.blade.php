@@ -1,32 +1,17 @@
 @extends('layouts.admin.adminlayout')
-<<<<<<< HEAD
-@section('content') 
-=======
 @section('content')
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 <div id="page-wrapper">
 			<div class="container-fluid">
 			<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
-<<<<<<< HEAD
-						
-							<li><i class="fa fa-home"></i>
-								{{ $title}}
-							</li>
-						</ol>
-					</div>
-				</div>
-				</div>
-=======
 							 
 							<li><i class="fa fa-home"></i> {{ $title}}</li>
 						</ol>
 					</div>
 				</div>
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 <div class="row">
 					<div class="col-md-3">
 						<div class="card card-blue text-xs-center">

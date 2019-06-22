@@ -8,11 +8,11 @@
 
 						
 
-						{{ Form::label('title', __('messages.title')) }}
+						{{ Form::label('title', getphrase('title')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.quiz_title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('quiz_title'),
 
 							'ng-model'=>'title', 
 
@@ -48,11 +48,11 @@
 
 					<fieldset class="form-group">
 
-						{{ Form::label('content', __('messages.content')) }}
+						{{ Form::label('content', getphrase('content')) }}
 
 						
 
-						{{ Form::textarea('content', $value = null , $attributes = array('class'=>'form-control editor1', 'id'=>'editor1', 'rows'=>'5', 'placeholder' => __('messages.content'))) }}
+						{{ Form::textarea('content', $value = null , $attributes = array('class'=>'form-control editor1', 'id'=>'editor1', 'rows'=>'5', 'placeholder' => getPhrase('content'))) }}
 
 					</fieldset>
 

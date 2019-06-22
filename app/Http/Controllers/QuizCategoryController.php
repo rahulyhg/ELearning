@@ -47,11 +47,7 @@ class QuizCategoryController extends Controller
         }
 
         $data['active_class']       = 'exams';
-<<<<<<< HEAD
-        $data['title']              = __('messages.quiz_categories');
-=======
         $data['title']              = getPhrase('quiz_categories');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('exams.quizcategories.list', $data);
 
          $view_name = getTheme().'::exams.quizcategories.list';
@@ -83,20 +79,12 @@ class QuizCategoryController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-<<<<<<< HEAD
-                            <li><a href="'.URL_QUIZ_CATEGORY_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
-=======
                             <li><a href="'.URL_QUIZ_CATEGORY_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                             
                             
         $temp = '';
         if(checkRole(getUserGrade(1))) {
-<<<<<<< HEAD
-        $temp .= '<li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
-=======
         $temp .= '<li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         }
         $temp .='</ul></div>';
 
@@ -130,11 +118,7 @@ class QuizCategoryController extends Controller
 
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'exams';
-<<<<<<< HEAD
-    	$data['title']              = __('messages.create_category');
-=======
     	$data['title']              = getPhrase('create_category');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('exams.quizcategories.add-edit', $data);
 
            $view_name = getTheme().'::exams.quizcategories.add-edit';
@@ -160,11 +144,7 @@ class QuizCategoryController extends Controller
 
     	$data['record']       		= $record;
     	$data['active_class']       = 'exams';
-<<<<<<< HEAD
-    	$data['title']              = __('messages.edit_category');
-=======
     	$data['title']              = getPhrase('edit_category');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('exams.quizcategories.add-edit', $data);
 
           $view_name = getTheme().'::exams.quizcategories.add-edit';
@@ -286,22 +266,14 @@ class QuizCategoryController extends Controller
                 $record->delete();
             }
             $response['status'] = 1;
-<<<<<<< HEAD
-            $response['message'] = __('messages.category_deleted_successfully');
-=======
             $response['message'] = getPhrase('category_deleted_successfully');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             
        } catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-<<<<<<< HEAD
-            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
-=======
             $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        }
        return json_encode($response);
 
@@ -311,11 +283,7 @@ class QuizCategoryController extends Controller
     {
     	if ($record === null) {
 
-<<<<<<< HEAD
-    		flash('Ooops...!', __('messages.page_not_found'), 'error');
-=======
     		flash('Ooops...!', getPhrase("page_not_found"), 'error');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
    			return $this->getRedirectUrl();
 		}
 

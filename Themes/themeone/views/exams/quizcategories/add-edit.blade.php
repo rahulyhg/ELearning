@@ -9,11 +9,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-<<<<<<< HEAD
-							<li><a href="{{URL_QUIZ_CATEGORIES}}">{{ __('messages.quiz_categories')}}</a> </li>
-=======
 							<li><a href="{{URL_QUIZ_CATEGORIES}}">{{ getPhrase('quiz_categories')}}</a> </li>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 						</ol>
 					</div>
@@ -22,24 +18,14 @@
 				<div class="panel panel-custom col-lg-6 col-lg-offset-3">
 					<div class="panel-heading">
 						<div class="pull-right messages-buttons">
-<<<<<<< HEAD
-							<a href="{{URL_QUIZ_CATEGORIES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
-=======
 							<a href="{{URL_QUIZ_CATEGORIES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						</div>
 					<h1>{{ $title }}  </h1>
 					</div>
 					<div class="panel-body  form-auth-style" >
-<<<<<<< HEAD
-					<?php $button_name = __('messages.create'); ?>
-					@if ($record)
-					 <?php $button_name = __('messages.update'); ?>
-=======
 					<?php $button_name = getPhrase('create'); ?>
 					@if ($record)
 					 <?php $button_name = getPhrase('update'); ?>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						{{ Form::model($record, 
 						array('url' => URL_QUIZ_CATEGORY_EDIT.'/'.$record->slug, 
 						'method'=>'patch', 'files' => true, 'novalidate'=>'','name'=>'formCategories')) }}
@@ -76,11 +62,7 @@ file.onchange = function(e){
      
             break;
         default:
-<<<<<<< HEAD
-           alertify.error("{{__('messages.file_type_not_allowed')}}");
-=======
            alertify.error("{{getPhrase('file_type_not_allowed')}}");
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             this.value='';
     }
 };

@@ -22,11 +22,7 @@
 				<div class="panel panel-custom">
 					<div class="panel-heading">
 						
-<<<<<<< HEAD
-						
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						<h1>{{ $title }}</h1>
 					</div>
 					<div class="panel-body packages">
@@ -34,20 +30,12 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-<<<<<<< HEAD
-									 
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 									<th>{{ getPhrase('theme_name')}}</th>
 									<th>{{ getPhrase('description')}}</th>
 									<th>{{ getPhrase('make_as_default_theme')}}</th>
 									<th>{{ getPhrase('action')}}</th>
-<<<<<<< HEAD
-								  
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								</tr>
 							</thead>
 							 

@@ -11,13 +11,8 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-<<<<<<< HEAD
-							<li><a href="{{URL_USERS}}">{{__('messages.users')}}</a> </li>
-							<li><a href="{{URL_USERS_IMPORT}}">{{__('messages.import_users')}}</a> </li>
-=======
 							<li><a href="{{URL_USERS}}">{{getPhrase('users')}}</a> </li>
 							<li><a href="{{URL_USERS_IMPORT}}">{{getPhrase('import_users')}}</a> </li>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							
 							<li>{{ $title }}</li>
 						</ol>
@@ -30,15 +25,9 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-<<<<<<< HEAD
-							<a href="{{URL_USERS_IMPORT}}" class="btn  btn-primary button" >{{ __('messages.import_excel')}}</a>
-							<a href="{{URL_USERS_ADD}}" class="btn  btn-primary button" >{{ __('messages.add_user')}}</a>
-							<a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
-=======
 							<a href="{{URL_USERS_IMPORT}}" class="btn  btn-primary button" >{{ getPhrase('import_excel')}}</a>
 							<a href="{{URL_USERS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('add_user')}}</a>
 							<a href="{{URL_USERS}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 
 						</div>
 						<h1>{{ $title }}</h1>

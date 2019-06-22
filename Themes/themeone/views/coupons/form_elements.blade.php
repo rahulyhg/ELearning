@@ -6,11 +6,11 @@
 
  					 <fieldset class="form-group col-md-6">
 
-						{{ Form::label('title', __('messages.title')) }}
+						{{ Form::label('title', getphrase('title')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('title'),
 
 							'ng-model'=>'title', 
 
@@ -46,11 +46,11 @@
 
 						
 
-						{{ Form::label('coupon_code', __('messages.coupon_codes')) }}
+						{{ Form::label('coupon_code', getphrase('coupon_code')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('coupon_code', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.coupon_codes'),
+						{{ Form::text('coupon_code', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('coupon_code'),
 
 							'ng-model'=>'coupon_code', 
 
@@ -84,9 +84,9 @@
 
 					<fieldset class="form-group col-md-6">
 
-						<?php $discount_types = array('value' => __('messages.value'), 'percent' => __('messages.percent'), );?>
+						<?php $discount_types = array('value' => getPhrase('value'), 'percent' => getPhrase('percent'), );?>
 
-						{{ Form::label('discount_type', __('messages.discount_type')) }}
+						{{ Form::label('discount_type', getphrase('discount_type')) }}
 
 						<span class="text-red">*</span>
 
@@ -100,11 +100,11 @@
 
 							
 
-							{{ Form::label('discount_value', __('messages.discount_value')) }}
+							{{ Form::label('discount_value', getphrase('discount_value')) }}
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('discount_value', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_value'),
+							{{ Form::number('discount_value', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('enter_value'),
                             'min'=>1,
 							'ng-model'=>'discount_value', 
 
@@ -134,11 +134,11 @@
 
 							
 
-							{{ Form::label('minimum_bill', __('messages.minimum_bill')) }}
+							{{ Form::label('minimum_bill', getphrase('minimum_bill')) }}
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('minimum_bill', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_minimum_bill'),
+							{{ Form::number('minimum_bill', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('enter_minimum_bill'),
                             'min'=>1,
 							'ng-model'=>'minimum_bill', 
 
@@ -168,11 +168,11 @@
 
 							
 
-							{{ Form::label('discount_maximum_amount', __('messages.discount_maximum_amount')) }}
+							{{ Form::label('discount_maximum_amount', getphrase('discount_maximum_amount')) }}
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('discount_maximum_amount', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_maximum_amount'),
+							{{ Form::number('discount_maximum_amount', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('enter_maximum_amount'),
 								'min'=>1,
 							'ng-model'=>'discount_maximum_amount', 
 
@@ -222,7 +222,7 @@
 
                                      
 
-                        {{ Form::label('valid_from', __('messages.valid_from')) }}
+                        {{ Form::label('valid_from', getphrase('valid_from')) }}
 
                      
 
@@ -239,7 +239,7 @@
 
                                      
 
-                        {{ Form::label('valid_to', __('messages.valid_to')) }}
+                        {{ Form::label('valid_to', getphrase('valid_to')) }}
 
                        
 
@@ -259,11 +259,11 @@
 
 							
 
-							{{ Form::label('usage_limit', __('messages.usage_limit')) }}
+							{{ Form::label('usage_limit', getphrase('usage_limit')) }}
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('usage_limit', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.enter_usage_limit_per_user'),
+							{{ Form::number('usage_limit', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('enter_usage_limit_per_user'),
 								'min'=>1,
 							'ng-model'=>'usage_limit', 
 
@@ -291,7 +291,7 @@
 
 						<?php $status = array('Active' =>'Active', 'Inactive' => 'Inactive', );?>
 
-						{{ Form::label('status', __('messages.status')) }}
+						{{ Form::label('status', getphrase('status')) }}
 
 						<span class="text-red">*</span>
 

@@ -5,6 +5,7 @@
 @section('content')
 
 <div id="page-wrapper">
+            @extends('language')
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="row">

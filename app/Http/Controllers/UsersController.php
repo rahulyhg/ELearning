@@ -17,10 +17,7 @@ use Input;
 use File;
 use App\OneSignalApp;
 use Exception;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\Session;
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 class UsersController extends Controller
 {
@@ -50,13 +47,8 @@ class UsersController extends Controller
         $data['records']      = FALSE;
         $data['layout']      = getLayout();
         $data['active_class'] = 'users';
-<<<<<<< HEAD
-        $data['heading']      = __('messages.users');
-        $data['title']        = __('messages.users');
-=======
         $data['heading']      = getPhrase('users');
         $data['title']        = getPhrase('users');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         // return view('users.list-users', $data);
 
          $view_name = getTheme().'::users.list-users';
@@ -99,27 +91,16 @@ class UsersController extends Controller
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-<<<<<<< HEAD
-                           <li><a href="'.URL_USERS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
-          if(getRoleData($records->role_id)=='student')                           
-          {
-            $link_data .= ' <li><a href="'.URL_USERS_UPDATE_PARENT_DETAILS.$records->slug.'"><i class="fa fa-user"></i>'.__("messages.update_parent").'</a></li>';
-=======
                            <li><a href="'.URL_USERS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
           if(getRoleData($records->role_id)=='student')                           
           {
             $link_data .= ' <li><a href="'.URL_USERS_UPDATE_PARENT_DETAILS.$records->slug.'"><i class="fa fa-user"></i>'.getPhrase("update_parent").'</a></li>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
           }
                          $temp='';
 
                         //Show delete option to only the owner user
                         if(checkRole(getUserGrade(1)) && $records->id!=\Auth::user()->id)   {
-<<<<<<< HEAD
-                        $temp = '<li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
-=======
                         $temp = '<li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                          } 
                             
                         $temp .='</ul> </div>';
@@ -180,24 +161,19 @@ class UsersController extends Controller
           else 
            $final_roles[$role->id] = $role->display_name;
         }
-        $data['roles']        = $final_roles;
-<<<<<<< HEAD
-        $data['title']        = __('messages.add_user');
-=======
-        $data['title']        = getPhrase('add_user');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+        if (Session::has('locale')) {
+             App::setLocale(Session::get('locale'));
+        }
+
+         $data['roles']        = $final_roles;
+//dd(trans('home.Add User'));
+        $data['title']        = trans('home.Add User');
         if(checkRole(['parent']))
           $data['active_class'] = 'children';
         $data['layout']       = getLayout();
 
         // return view('users.add-edit-user', $data);
 
-<<<<<<< HEAD
-=======
-         if (Session::has('locale')) {
-             App::setLocale(Session::get('locale'));
-         }
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
          $view_name = getTheme().'::users.add-edit-user';
         return view($view_name, $data);
      }
@@ -276,11 +252,7 @@ class UsersController extends Controller
            $user->roles()->attach($user->role_id);
           $this->processUpload($request, $user);
         }
-<<<<<<< HEAD
-        $message = __('messages.record_added_successfully_with_password ').' '.$password;
-=======
         $message = getPhrase('record_added_successfully_with_password ').' '.$password;
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $exception = 0;
        try{ 
        if(!env('DEMO_MODE')) {
@@ -292,13 +264,8 @@ class UsersController extends Controller
      }
      catch(Exception $ex)
      {
-<<<<<<< HEAD
-        $message = __('messages.record_added_successfully_with_password ').' '.$password;
-        $message .= __('messages.\ncannot_send_email_to_user, please_check_your_server_settings');
-=======
         $message = getPhrase('record_added_successfully_with_password ').' '.$password;
         $message .= getPhrase('\ncannot_send_email_to_user, please_check_your_server_settings');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $exception = 1;
      }
        
@@ -388,11 +355,7 @@ class UsersController extends Controller
     public function isValidRecord($record)
     {
       if ($record === null) {
-<<<<<<< HEAD
-        flash('Ooops...!',__("messages.page_not_found"), 'error');
-=======
         flash('Ooops...!', getPhrase("page_not_found"), 'error');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         return $this->getRedirectUrl();
     }
 
@@ -484,11 +447,7 @@ class UsersController extends Controller
           $data['roles'][getRoleData('admin')] = 'Admin';
 
         $data['active_class']       = 'users';
-<<<<<<< HEAD
-        $data['title']              = __('messages.edit_user');
-=======
         $data['title']              = getPhrase('edit_user');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['layout']             = getLayout();
         // dd($data);
         // return view('users.add-edit-user', $data);
@@ -608,11 +567,7 @@ class UsersController extends Controller
             $record->delete();
           }
             $response['status'] = 1;
-<<<<<<< HEAD
-            $response['message'] = __('messages.record_deleted_successfully');
-=======
             $response['message'] = getPhrase('record_deleted_successfully');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             return json_encode($response);
        
     }
@@ -683,22 +638,14 @@ class UsersController extends Controller
 
            } 
 
-<<<<<<< HEAD
-            $labels = [__('messages.correct'), __('messages.wrong'), __('messages.not_answered')];
-=======
             $labels = [getPhrase('correct'), getPhrase('wrong'), getPhrase('not_answered')];
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $dataset = [$correct_answers, $wrong_answers, $not_answered];
             $dataset_label[] = 'lbl';
             $bgcolor  = [$color_correct,$color_wrong,$color_not_attempted];
             $border_color = [$color_correct,$color_wrong,$color_not_attempted];
             $chart_data['type'] = 'pie'; 
             //horizontalBar, bar, polarArea, line, doughnut, pie
-<<<<<<< HEAD
-            $chart_data['title'] = __('messages.overall_performance');  
-=======
             $chart_data['title'] = getphrase('overall_performance');  
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
             $chart_data['data']   = (object) array(
                     'labels'            => $labels,
@@ -728,20 +675,12 @@ class UsersController extends Controller
 
             $labels = $labels;
             $dataset = $dataset;
-<<<<<<< HEAD
-            $dataset_label = __('messages.performance');
-=======
             $dataset_label = getPhrase('performance');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
             $bgcolor  = $bgcolor;
             $border_color = $bordercolor;
             $chart_data['type'] = 'bar'; 
             //horizontalBar, bar, polarArea, line, doughnut, pie
-<<<<<<< HEAD
-            $chart_data['title'] = __('messages.best_performance_in_all_quizzes');
-=======
             $chart_data['title'] = getPhrase('best_performance_in_all_quizzes');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
             $chart_data['data']   = (object) array(
                     'labels'            => $labels,
@@ -754,11 +693,7 @@ class UsersController extends Controller
             $data['chart_data'][] = (object)$chart_data;
 
         $data['ids'] = array('myChart0', 'myChart1');
-<<<<<<< HEAD
-        $data['title']        = __('messages.user_details');
-=======
         $data['title']        = getPhrase('user_details');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['layout']        = getLayout();
          $data['active_class'] = 'users';
         if(checkRole(['parent']))
@@ -797,11 +732,7 @@ class UsersController extends Controller
 
         $data['record']             = $record;
         $data['active_class']       = 'profile';
-<<<<<<< HEAD
-        $data['title']              = __('messages.change_password');
-=======
         $data['title']              = getPhrase('change_password');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['layout']             = getLayout();
         // return view('users.change-password.change-view', $data);
 
@@ -858,13 +789,8 @@ class UsersController extends Controller
       
         $data['records']      = FALSE;
         $data['active_class'] = 'users';
-<<<<<<< HEAD
-        $data['heading']      = __('messages.users');
-        $data['title']        = __('messages.import_users');
-=======
         $data['heading']      = getPhrase('users');
         $data['title']        = getPhrase('import_users');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['layout']        = getLayout();
         // return view('users.import.import', $data);
 
@@ -978,13 +904,8 @@ class UsersController extends Controller
        $data['records']      = FALSE;
        $data['layout']      = getLayout();
        $data['active_class'] = 'users';
-<<<<<<< HEAD
-       $data['heading']      = __('messages.users');
-       $data['title']        = __('messages.report');
-=======
        $data['heading']      = getPhrase('users');
        $data['title']        = getPhrase('report');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
       
        // return view('users.import.import-result', $data);
 
@@ -1108,16 +1029,6 @@ public function downloadExcel()
        $data['quiz_categories']   = App\QuizCategory::get();
        $data['lms_category']      = App\LmsCategory::get();
 
-<<<<<<< HEAD
-       // dd($data);
-       $data['layout']       = getLayout();
-       $data['active_class'] = 'users';
-       $data['heading']      = __('messages.account_settings');
-       $data['title']        = __('messages.account_settings');
-      // flash('success','record_added_successfully', 'success');
-       // return view('users.account-settings', $data);
-
-=======
 //        dd($data);
        $data['layout']       = getLayout();
        $data['active_class'] = 'users';
@@ -1130,7 +1041,6 @@ public function downloadExcel()
 //        return view('hai-le.account-setting', compact('data'));
 
 //        $view_name = getTheme().'::hai-le.account-setting';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $view_name = getTheme().'::users.account-settings';
         return view($view_name, $data);
 
@@ -1224,13 +1134,8 @@ public function downloadExcel()
        $data['active_class'] = 'users';
        $data['record']       = $record;
 
-<<<<<<< HEAD
-       $data['heading']      = __('messages.parent_details');
-       $data['title']        = __('messages.parent_details');
-=======
        $data['heading']      = getPhrase('parent_details');
        $data['title']        = getPhrase('parent_details');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        // return view('users.parent-details', $data); 
 
          $view_name = getTheme().'::users.parent-details';
@@ -1247,11 +1152,7 @@ public function downloadExcel()
         }
 
     
-<<<<<<< HEAD
-      $user = User::where('slug', '=', $slug)->first();
-=======
     $user                   = User::where('slug', '=', $slug)->first();
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $role_id = getRoleData('parent');
         $message = '';
         $hasError = 0;
@@ -1278,11 +1179,7 @@ public function downloadExcel()
             sendEmail('registration', array('user_name'=>$user->name, 'username'=>$user->username, 'to_email' => $user->email, 'password'=>$parent_user->password));
 
             DB::commit();
-<<<<<<< HEAD
-            $message = __('messages.record_updated_successfully');
-=======
             $message = 'record_updated_successfully';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         }
         catch(Exception $ex){
             DB::rollBack();
@@ -1343,11 +1240,7 @@ public function downloadExcel()
         }
 
         $data['active_class']       = 'users';
-<<<<<<< HEAD
-        $data['title']              = __('messages.subscribed_users');
-=======
         $data['title']              = getPhrase('subscribed_users');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
       // return view('exams.quizcategories.list', $data);
 
          $view_name = getTheme().'::users.subscribeduser';

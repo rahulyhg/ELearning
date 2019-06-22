@@ -13,6 +13,7 @@
 
 
 <div id="page-wrapper">
+			@extends('language')
 
 			<div class="container-fluid">
 
@@ -34,11 +35,7 @@
 
 				</div>
 
-<<<<<<< HEAD
 								
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 				<!-- /.row -->
 
@@ -46,15 +43,9 @@
 
 					<div class="panel-heading">
 
-<<<<<<< HEAD
 						
 
 						 
-=======
-
-
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<h1>{{ $title }}</h1>
 
@@ -62,11 +53,7 @@
 
 					<div class="panel-body packages">
 
-<<<<<<< HEAD
 						<div class="table-responsive"> 
-=======
-						<div class="table-responsive">
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 
@@ -74,41 +61,33 @@
 
 								<tr>
 								@if($is_parent)
-								 <th>{{ getPhrase('image')}}</th>
-                                    <th>{{ getPhrase('user_name')}}</th>
+								 <th>{{ trans('home.image')}}</th>
+                                    <th>{{ trans('home.user_name')}}</th>
                                 @endif
 
-									<th>{{ getPhrase('name')}}</th>
+									<th>{{ trans('home.name')}}</th>
 
-									<th>{{ getPhrase('plan_type')}}</th>
+									<th>{{ trans('home.plan_type')}}</th>
 
-									<th>{{ getPhrase('start_date')}}</th>
+									<th>{{ trans('home.start_date')}}</th>
 
-									<th>{{ getPhrase('end_date')}}</th>
+									<th>{{ trans('home.end_date')}}</th>
 
-									<th>{{ getPhrase('paid_from')}}</th>
+									<th>{{ trans('home.paid_from')}}</th>
 
-									<th>{{ getPhrase('datetime')}}</th>
+									<th>{{ trans('home.datetime')}}</th>
 
-									<th>{{ getPhrase('status')}}</th>
+									<th>{{ trans('home.status')}}</th>
 
-									{{-- <th>{{ getPhrase('action')}}</th> --}}
+									{{-- <th>{{ trans('home.action')}}</th> --}}
 
-<<<<<<< HEAD
 								  
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 								</tr>
 
 							</thead>
 
-<<<<<<< HEAD
 							 
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						</table>
 
@@ -128,21 +107,13 @@
 
 @endsection
 
-<<<<<<< HEAD
  
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 
 
 @section('footer_scripts')
 
-<<<<<<< HEAD
   
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
  @include('common.datatables', array('route'=>URL_PAYPAL_PAYMENTS_AJAXLIST.$user->slug, 'route_as_url' => TRUE))
 

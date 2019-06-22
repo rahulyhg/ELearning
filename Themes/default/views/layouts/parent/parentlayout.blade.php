@@ -177,7 +177,7 @@ if(isset($block_navigation))
   			<strong>{{getPhrase('info')}}!</strong> CRUD {{getPhrase('operations_are_disabled_in_demo_version')}}
 		</div>
 		@endif
-
+		<?php dd( "lala");?>
 		<aside class="left-sidebar">
 
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -188,7 +188,7 @@ if(isset($block_navigation))
 
 						<a href="{{PREFIX}}">
 
-							<i class="icon-home"></i> {{ getPhrase('dashboard') }} 
+							<i class="icon-home"></i> {{ getPhrase('dashboard') }}
 
 						</a> 
 

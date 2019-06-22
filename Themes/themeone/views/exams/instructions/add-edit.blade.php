@@ -9,7 +9,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="/"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_INSTRUCTIONS}}">{{ __('messages.instructions')}}</a></li>
+							<li><a href="{{URL_INSTRUCTIONS}}">{{ getPhrase('instructions')}}</a></li>
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 						</ol>
 					</div>
@@ -20,14 +20,14 @@
 				<div class="panel panel-custom col-lg-6 col-lg-offset-3" >
 					<div class="panel-heading">
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_INSTRUCTIONS}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
+							<a href="{{URL_INSTRUCTIONS}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
 						</div>
 					<h1>{{ $title }}  </h1>
 					</div>
 					<div class="panel-body" >
-					<?php $button_name = __('messages.create'); ?>
+					<?php $button_name = getPhrase('create'); ?>
 					@if ($record)
-					 <?php $button_name = __('messages.update'); ?>
+					 <?php $button_name = getPhrase('update'); ?>
 						{{ Form::model($record, 
 						array('url' => URL_INSTRUCTIONS_EDIT.$record->slug, 
 						'method'=>'patch', 'files' => true, 'name'=>'formInstructions ', 'novalidate'=>'')) }}

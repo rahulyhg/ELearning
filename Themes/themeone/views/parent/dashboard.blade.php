@@ -1,28 +1,24 @@
- @extends($layout)
+@extends($layout)
+
 @section('content')
 
 <div id="page-wrapper">
+			@extends('language')
 			<div class="container-fluid">
+
 				<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
-<<<<<<< HEAD
 							 
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							<li>{{ $title}}</li>
+
 						</ol>
 					</div>
+
 				</div>
 				 <div class="row">
-<<<<<<< HEAD
 			
  
-=======
-
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 		 			<div class="col-md-4 col-sm-6">
  		<div class="media state-media box-ws">
  			<div class="media-left">
@@ -30,14 +26,11 @@
  			</div>
  			<div class="media-body">
  				<h4 class="card-title">{{ count(App\User::getUserSeleted('categories'))}}</h4>
-				<a href="{{URL_STUDENT_EXAM_CATEGORIES}}">{{ getPhrase('quiz_categories')}}</a>
+
+				<a href="{{URL_STUDENT_EXAM_CATEGORIES}}">{{ trans('home.Quiz Categories')}}</a>
  			</div>
  		</div>
-<<<<<<< HEAD
  	</div>    
-=======
- 	</div>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
  	<div class="col-md-4 col-sm-6">
  		<div class="media state-media box-ws">
  			<div class="media-left">
@@ -45,14 +38,10 @@
  			</div>
  			<div class="media-body">
  				<h4 class="card-title">{{ App\User::getUserSeleted('quizzes') }}</h4>
-				<a href="{{URL_STUDENT_EXAM_ALL}}">{{ getPhrase('quizzes')}}</a>
+				<a href="{{URL_STUDENT_EXAM_ALL}}">{{ trans('home.Quizzes')}}</a>
  			</div>
  		</div>
-<<<<<<< HEAD
  	</div> 
-=======
- 	</div>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
  	<div class="col-md-4 col-sm-6">
  		<div class="media state-media box-ws">
  			<div class="media-left">
@@ -60,40 +49,30 @@
  			</div>
  			<div class="media-body">
  				<h4 class="card-title">{{ App\User::where('parent_id', '=', $user->id)->get()->count()}}</h4>
-				<a href="{{URL_PARENT_CHILDREN}}">{{ getPhrase('children')}}</a>
+				<a href="{{URL_PARENT_CHILDREN}}">{{ trans('home.Chilren')}}</a>
  			</div>
  		</div>
  	</div>
-<<<<<<< HEAD
  	
 
 				 
-=======
-
-
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				</div>
 				<div class="row">
 					<div class="col-md-6">
 					     <div class="panel panel-custom">
-					      <div class="panel-heading">{{getPhrase('latest_quizzes')}}</div>
+					      <div class="panel-heading">{{trans('home.Latest Quizzes')}}</div>
 					      @if(!count($latest_quizzes))
 					      <br>
 					 		 <p> &nbsp;&nbsp;&nbsp;{{getPhrase('no_quizzes_available')}}</p>
 					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
 					 	 @else
 
-<<<<<<< HEAD
 					    	<table class="table">	
-=======
-					    	<table class="table">
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					    	<thead>
 					    		<tr>
-					    			<th>{{getPhrase('title')}}</th>
-					    			<th>{{getPhrase('type')}}</th>
-					    			<th>{{getPhrase('Action')}}</th>
+					    			<th>{{trans('home.Title')}}</th>
+					    			<th>{{trans('home.Type')}}</th>
+					    			<th>{{trans('home.Action')}}</th>
 					    		</tr>
 					    	</thead>
 					    	<tbody>
@@ -111,11 +90,7 @@
 					 				</td>
 					 				<td>
 					 				@if($quiz->is_paid)
-<<<<<<< HEAD
 					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a> 
-=======
-					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'exam/'.$quiz->slug}}">{{getPhrase('buy_now')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 					@else
 				 					-
 				 					@endif
@@ -124,7 +99,6 @@
 					 		@endforeach
 
 					    	</tbody>
-<<<<<<< HEAD
 					    	</table>  
 					    @endif
 					     
@@ -132,36 +106,24 @@
 					 
 					 	
 					 
-=======
-					    	</table>
-					    @endif
-
-					    </div>
-
-
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					</div>
 
 						<div class="col-md-6">
 					     <div class="panel panel-custom">
-					      <div class="panel-heading">{{getPhrase('latest')}} LMS {{getPhrase('series')}}</div>
+{{--					      <div class="panel-heading">{{getPhrase('latest')}} LMS {{getPhrase('series')}}</div>--}}
+							 <div class="panel-heading">{{trans('home.Latest LMS Series')}}</div>
 					      @if(!count($latest_series))
 					      <br>
 					 		 <p> &nbsp;&nbsp;&nbsp;{{getPhrase('no_series_available')}}</p>
 					 		 <p> &nbsp;&nbsp;&nbsp; <a href="{{URL_USERS_SETTINGS.Auth::user()->slug}}">{{getPhrase('click_here')}}</a> {{getPhrase('to_change_your_settings')}}</p>
 					 	 @else
 
-<<<<<<< HEAD
 					    	<table class="table">	
-=======
-					    	<table class="table">
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 					    	<thead>
 					    		<tr>
-					    			<th>{{getPhrase('title')}}</th>
-					    			<th>{{getPhrase('type')}}</th>
-					    			<th>{{getPhrase('Action')}}</th>
+					    			<th>{{trans('home.Title')}}</th>
+					    			<th>{{trans('home.Type')}}</th>
+					    			<th>{{trans('home.Action')}}</th>
 					    		</tr>
 					    	</thead>
 					    	<tbody>
@@ -179,11 +141,7 @@
 					 				</td>
 					 				<td>
 					 				@if($series->is_paid)
-<<<<<<< HEAD
 					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a> 
-=======
-					 					<a class="btn btn-smoke" href="{{URL_PAYMENTS_CHECKOUT.'lms/'.$series->slug}}">{{getPhrase('buy_now')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 				 					@else
 				 					-
 				 					@endif
@@ -192,7 +150,6 @@
 					 		@endforeach
 
 					    	</tbody>
-<<<<<<< HEAD
 					    	</table>  
 					    @endif
 					     
@@ -208,23 +165,6 @@
 				</div>
 				 
 			 
-=======
-					    	</table>
-					    @endif
-
-					    </div>
-
-
-
-					</div>
-
-
-
-
-				</div>
-
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 			</div>
 			<!-- /.container-fluid -->
 </div>
@@ -233,9 +173,5 @@
 @stop
 
 @section('footer_scripts')
-<<<<<<< HEAD
   
-=======
-
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 @stop

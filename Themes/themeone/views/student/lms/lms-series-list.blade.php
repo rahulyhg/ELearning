@@ -7,14 +7,11 @@
 <div id="page-wrapper">
 
 			<div class="container-fluid">
-<<<<<<< HEAD
-=======
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
 					<li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
 					<li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
 				</ul>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 				<!-- Page Heading -->
 
@@ -26,13 +23,8 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-<<<<<<< HEAD
-							<li class="active"> {{ $title }} </li>
-
-=======
 {{--							<li class="active"> {{ $title }} </li>--}}
 							<li class="active"> {{ trans('home.LMS Series') }} </li>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						</ol>
 
 					</div>
@@ -45,22 +37,14 @@
 
 					<div class="panel-heading">
 
-<<<<<<< HEAD
-						<h1>{{$title}}</h1>
-=======
 {{--						<h1>{{$title}}</h1>--}}
 						<h1>{{ trans('home.LMS Series') }}</h1>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 					</div>
 
 					<div class="panel-body packages">
 
-<<<<<<< HEAD
-						 
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<div class="row library-items">
 
@@ -129,10 +113,7 @@
 									<div class="item-details">
 
 										<h3>{{ $c->title }}</h3>
-<<<<<<< HEAD
-=======
 {{--										<h3>{{ trans("home.$c->title") }}</h3>--}}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 										<div class="quiz-short-discription">
 

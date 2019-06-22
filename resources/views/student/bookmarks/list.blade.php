@@ -26,11 +26,7 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-<<<<<<< HEAD
-							
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							<li>{{ $title }}</li>
 
@@ -40,11 +36,7 @@
 
 				</div>
 
-<<<<<<< HEAD
-								
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 				<!-- /.row -->
 
@@ -52,15 +44,9 @@
 
 					<div class="panel-heading">
 
-<<<<<<< HEAD
-						
-
-					 
-=======
 
 
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<h1>{{ $title }}</h1>
 
@@ -68,11 +54,7 @@
 
 					<div class="panel-body packages">
 
-<<<<<<< HEAD
-						<div > 
-=======
 						<div >
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 
@@ -88,21 +70,13 @@
 
 									<th>{{ getPhrase('action')}}</th>
 
-<<<<<<< HEAD
-								  
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 								</tr>
 
 							</thead>
 
-<<<<<<< HEAD
-							 
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						</table>
 
@@ -122,21 +96,13 @@
 
 @endsection
 
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 
 
 @section('footer_scripts')
 
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
  @include('common.datatables', array('route'=>URL_BOOKMARK_AJAXLIST.$user->slug, 'route_as_url'=>TRUE))
 

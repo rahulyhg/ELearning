@@ -8,6 +8,7 @@ use App\Http\Requests;
 use \App;
 
 use App\Notification;
+use Illuminate\Support\Facades\Session;
 use Yajra\Datatables\Datatables;
 use DB;
 use Auth;
@@ -32,7 +33,7 @@ class NotificationsController extends Controller
       }
 
         $data['active_class']       = 'notifications';
-        $data['title']              = getPhrase('notifications');
+        $data['title']              = trans('home.notifications');
         $data['layout']              = getLayout();
     	// return view('notifications.list', $data);
 
@@ -265,9 +266,11 @@ class NotificationsController extends Controller
 
     public function usersList()
     {
-
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        }
         $data['active_class']       = 'notifications';
-        $data['title']              = getPhrase('notifications');
+        $data['title']              = trans('home.notifications');
         $data['layout']              = getLayout();
         $date = date('Y-m-d');
         $data['notifications']  	= Notification::where('valid_from', '<=', $date)

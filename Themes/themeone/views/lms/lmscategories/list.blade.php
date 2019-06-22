@@ -23,11 +23,7 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-<<<<<<< HEAD
-							<a href="{{URL_LMS_CATEGORIES_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
-=======
 							<a href="{{URL_LMS_CATEGORIES_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 
 						</div>
 						<h1>{{ $title }}</h1>
@@ -38,17 +34,10 @@
 							<thead>
 								<tr>
 									 
-<<<<<<< HEAD
-									<th>{{ __('messages.category')}}</th>
-									<th>{{ __('messages.image')}}</th>
-									<th>{{ __('messages.description')}}</th>
-									<th>{{ __('messages.action')}}</th>
-=======
 									<th>{{ getPhrase('category')}}</th>
 									<th>{{ getPhrase('image')}}</th>
 									<th>{{ getPhrase('description')}}</th>
 									<th>{{ getPhrase('action')}}</th>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								  
 								</tr>
 							</thead>

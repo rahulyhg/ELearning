@@ -3,9 +3,9 @@
 					<div class="row">
  					 <fieldset class="form-group col-md-6">
 						
-						{{ Form::label('title', __('messages.title')) }}
+						{{ Form::label('title', getphrase('title')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.series_title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('series_title'),
 							'ng-model'=>'title', 
 							'ng-pattern'=>getRegexPattern('name'), 
 							'required'=> 'true', 
@@ -22,7 +22,7 @@
 					</fieldset>
 						<fieldset class="form-group col-md-3">
 						
-						{{ Form::label('category_id', __('messages.category')) }}
+						{{ Form::label('category_id', getphrase('category')) }}
 						<span class="text-red">*</span>
 						{{Form::select('category_id', $categories, null, ['class'=>'form-control'])}}
 						
@@ -30,13 +30,13 @@
 
 				 
 					<?php 
-					$options = array('0'=> __('messages.free'), '1'=> __('messages.paid')); 
+					$options = array('0'=> getPhrase('free'), '1'=> getPhrase('paid')); 
 						?>
 					
 
 				    <fieldset class="form-group col-md-3">
 						
-						{{ Form::label('is_paid', __('messages.is_paid')) }}
+						{{ Form::label('is_paid', getphrase('is_paid')) }}
 						<span class="text-red">*</span>
 						{{Form::select('is_paid', $options, null, ['class'=>'form-control','ng-model'=>'is_paid'])}}
 						
@@ -49,9 +49,9 @@
 				<div ng-if="is_paid==1" class="row">
 	  				 <fieldset class="form-group col-md-6">
 							
-							{{ Form::label('validity', __('messages.validity')) }}
+							{{ Form::label('validity', getphrase('validity')) }}
 							<span class="text-red">*</span>
-							{{ Form::number('validity', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.validity_in_days'),
+							{{ Form::number('validity', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('validity_in_days'),
 							'ng-model'=>'validity',
 							'string-to-number'=>'true',
 							'min'=>'1',
@@ -67,7 +67,7 @@
 					</fieldset>	
 	  				 <fieldset class="form-group col-md-6">
 						
-						{{ Form::label('cost', __('messages.cost')) }}
+						{{ Form::label('cost', getphrase('cost')) }}
 						<span class="text-red">*</span>
 						{{ Form::number('cost', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => '40',
 							'string-to-number'=>'true',
@@ -87,7 +87,7 @@
 				</div>
 				<div class="row">
  					  <fieldset class="form-group col-md-6" >
-				   {{ Form::label('image', __('messages.image')) }}
+				   {{ Form::label('image', getphrase('image')) }}
 				         <input type="file" class="form-control" name="image" 
 				         accept=".png,.jpg,.jpeg" id="image_input">
 				          
@@ -116,15 +116,15 @@
 
 				<fieldset class="form-group col-md-6">
 							
-							{{ Form::label('total_exams', __('messages.total_exams')) }}
+							{{ Form::label('total_exams', getphrase('total_exams')) }}
 							<span class="text-red">*</span>
-							{{ Form::text('total_exams', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => __('messages.It will be updated by adding the exams'))) }}
+							{{ Form::text('total_exams', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => getPhrase('It will be updated by adding the exams'))) }}
 					</fieldset>
 				<fieldset class="form-group col-md-6">
 							
-							{{ Form::label('total_questions', __('messages.total_questions')) }}
+							{{ Form::label('total_questions', getphrase('total_questions')) }}
 							<span class="text-red">*</span>
-							{{ Form::text('total_questions', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => __('messages.It will be updated by adding the exams'))) }}
+							{{ Form::text('total_questions', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => getPhrase('It will be updated by adding the exams'))) }}
 					</fieldset>
 				
   				 
@@ -142,12 +142,12 @@
 				}
 				 ?>
 				 <fieldset class="form-group col-md-6">
-					{{ Form::label('start_date', __('messages.start_date')) }}
+					{{ Form::label('start_date', getphrase('start_date')) }}
 					{{ Form::text('start_date', $value = $date_from , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
 				</fieldset>
 
 				<fieldset class="form-group col-md-6">
-					{{ Form::label('end_date', __('messages.end_date')) }}
+					{{ Form::label('end_date', getphrase('end_date')) }}
 					{{ Form::text('end_date', $value = $date_to , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
 				</fieldset>
 			</div>
@@ -156,15 +156,15 @@
  					<div class="row">
 					<fieldset class="form-group  col-md-6">
 						
-						{{ Form::label('short_description', __('messages.short_description')) }}
+						{{ Form::label('short_description', getphrase('short_description')) }}
 						
-						{{ Form::textarea('short_description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => __('messages.short_description'))) }}
+						{{ Form::textarea('short_description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => getPhrase('short_description'))) }}
 					</fieldset>
 					<fieldset class="form-group  col-md-6">
 						
-						{{ Form::label('description', __('messages.description')) }}
+						{{ Form::label('description', getphrase('description')) }}
 						
-						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => __('messages.description'))) }}
+						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => getPhrase('description'))) }}
 					</fieldset>
 
 					</div>

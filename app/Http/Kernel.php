@@ -31,10 +31,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
              \App\Http\Middleware\VerifyCsrfToken::class,
-<<<<<<< HEAD
-             \App\Http\Middleware\LangMiddleware::class,
-=======
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         ],
 
         'api' => [
@@ -61,9 +57,6 @@ class Kernel extends HttpKernel
         'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
         'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
         'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
-<<<<<<< HEAD
-=======
         'locale' => \App\Http\Middleware\Locale::class,
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     ];
 }

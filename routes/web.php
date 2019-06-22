@@ -43,11 +43,6 @@ if(env('DEMO_MODE')) {
 
 
     });
-<<<<<<< HEAD
-
-
-=======
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
      
 }
 
@@ -68,20 +63,8 @@ if(env('DB_DATABASE')==''){
 // 	return redirect(URL_USERS_LOGIN);
 // });
 
-<<<<<<< HEAD
-
 Route::get('dashboard','DashboardController@index');
 Route::get('dashboard/testlang','DashboardController@testLanguage');
-// Route::get('lang/{lang}','LangController@lang')->name('lang');
-Route::get('locale/{locale}', function ($locale){
-    Session::put('locale', $locale);
-    return redirect()->back();
-});
-
-=======
-Route::get('dashboard','DashboardController@index');
-Route::get('dashboard/testlang','DashboardController@testLanguage');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 
 Route::get('auth/{slug}','Auth\LoginController@redirectToProvider');
@@ -155,8 +138,6 @@ Route::get('users/details/{slug}', 'UsersController@details');
 Route::get('users/settings/{slug}', 'UsersController@settings');
 Route::patch('users/settings/{slug}', 'UsersController@updateSettings');
 
-<<<<<<< HEAD
-=======
 ////////////////////////////////
 ///
 //Route::get('', function () {
@@ -178,7 +159,6 @@ Route::group(['middleware' => 'locale'], function() {
 ///
 /// ////////////////////////////
 
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 Route::get('users/change-password/{slug}', 'UsersController@changePassword');
 Route::patch('users/change-password/{slug}', 'UsersController@updatePassword');
 
@@ -256,13 +236,8 @@ Route::get('exams/questionbank/getquestionslist/{slug}',
 Route::get('exams/questionbank/import',  'QuestionBankController@import');
 Route::post('exams/questionbank/import',  'QuestionBankController@readExcel');
 
-<<<<<<< HEAD
- 
-//Quiz Categories 
-=======
 
 //Quiz Categories
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 Route::get('exams/categories', 'QuizCategoryController@index');
 Route::get('exams/categories/add', 'QuizCategoryController@create');
 Route::post('exams/categories/add', 'QuizCategoryController@store');
@@ -548,7 +523,7 @@ Route::post('sms/send', 'SMSAgentController@sendSMS');
 
 
 Route::group(['prefix' => 'messages'], function () {
-    Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+    Route::get('/', ['as' => 'messages', 'uses' => 'messages@index']);
     Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
     Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
     Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
@@ -624,7 +599,3 @@ Route::get('themes/data','SiteThemesController@getDatatable');
 Route::get('make/default/theme/{id}','SiteThemesController@makeDefault');
 Route::get('theme/settings/{slug}','SiteThemesController@viewSettings');
 Route::post('theme/update/settings/{slug}','SiteThemesController@updateSubSettings');
-<<<<<<< HEAD
-
-=======
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db

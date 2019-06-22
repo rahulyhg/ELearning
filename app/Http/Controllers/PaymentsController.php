@@ -13,6 +13,7 @@ use App\QuizCategory;
 use App\ExamSeries;
 use App\LmsSeries;
 use App\EmailTemplate;
+use Illuminate\Support\Facades\Session;
 use Razorpay\Api\Api;
 use Yajra\Datatables\Datatables;
 use DB;
@@ -24,6 +25,7 @@ use Softon\Indipay\Facades\Indipay;
 use Excel;
 use Carbon;
 use Exception;
+
 
 class PaymentsController extends Controller
 {
@@ -44,33 +46,35 @@ class PaymentsController extends Controller
 
        if(!isEligible($slug))
           return back();
-      
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        }
     	$user = getUserWithSlug($slug);
 
-      $data['is_parent']           = 0;
-    $user = getUserWithSlug($slug);
+        $data['is_parent']           = 0;
+        $user = getUserWithSlug($slug);
 
-    if(getRoleData($user->role_id)=='parent')
-      $data['is_parent']           = 1;
+        if(getRoleData($user->role_id)=='parent')
+          $data['is_parent']           = 1;
 
-    	$data['user']       		= $user;
-    	$data['active_class']       = 'subscriptions';
-      $data['title']              = getPhrase('subscriptions_list');
-      $data['layout']              = getLayout();
+            $data['user']       		= $user;
+            $data['active_class']       = 'subscriptions';
+          $data['title']              = trans('home.subscriptions_list');
+          $data['layout']              = getLayout();
 
-      $payment = new Payment();
-      $records = $payment->updateTransactionRecords($user->id);
-      foreach($records as $record)
-      {
-      	$rec = Payment::where('id',$record->id)->first();
-      	$this->isExpired($rec);
-      }
-        
-    	// return view('student.payments.list', $data);
+          $payment = new Payment();
+          $records = $payment->updateTransactionRecords($user->id);
+          foreach($records as $record)
+          {
+            $rec = Payment::where('id',$record->id)->first();
+            $this->isExpired($rec);
+          }
 
-       $view_name = getTheme().'::student.payments.list';
-        return view($view_name, $data);     
-    }
+            // return view('student.payments.list', $data);
+
+           $view_name = getTheme().'::student.payments.list';
+            return view($view_name, $data);
+        }
 
     public function getDatatable($slug)
     {

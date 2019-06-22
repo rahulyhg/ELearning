@@ -31,11 +31,7 @@ class CouponcodesController extends Controller
       }
 
         $data['active_class']       = 'coupons';
-<<<<<<< HEAD
-        $data['title']              = __('messages.coupon_codes');
-=======
         $data['title']              = getPhrase('coupon_codes');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('coupons.list', $data);
          $view_name = getTheme().'::coupons.list';
         return view($view_name, $data);
@@ -70,19 +66,11 @@ class CouponcodesController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-<<<<<<< HEAD
-                            <li><a href="'.URL_COUPONS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
-                            
-                           $temp = '';
-                           if(checkRole(getUserGrade(1))) {
-                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
-=======
                             <li><a href="'.URL_COUPONS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
                             
                            $temp = '';
                            if(checkRole(getUserGrade(1))) {
                     $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                       }
                     
                     $temp .='</ul></div>';
@@ -115,13 +103,8 @@ class CouponcodesController extends Controller
       }
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'coupons';
-<<<<<<< HEAD
-        $data['categories']           =array('exam'=>__('messages.quizzes'), 'combo'=>__('messages.exam_series'), 'lms'=> __('messages.LMS'));
-    	$data['title']              = __('messages.create_coupon');
-=======
         $data['categories']           =array('exam'=>getPhrase('Quizzes'), 'combo'=>getPhrase('Examseries'), 'lms'=> getPhrase('LMS'));
     	$data['title']              = getPhrase('create_coupon');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('coupons.add-edit', $data);
          $view_name = getTheme().'::coupons.add-edit';
         return view($view_name, $data);
@@ -147,13 +130,8 @@ class CouponcodesController extends Controller
     	$data['record']       		= $record;
     	$data['active_class']     = 'coupons';
     	$data['settings']       	= FALSE;
-<<<<<<< HEAD
-       $data['categories']           =array('exam'=>__('messages.quizzes'), 'combo'=>__('messages.exam_series'), 'lms'=> __('messages.LMS'));
-      	$data['title']            = __('messages.edit_coupon');
-=======
        $data['categories']           =array('exam'=>getPhrase('Quizzes'), 'combo'=>getPhrase('Examseries'), 'lms'=> getPhrase('LMS'));
       	$data['title']            = getPhrase('edit_coupon');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	// return view('coupons.add-edit', $data);
          $view_name = getTheme().'::coupons.add-edit';
         return view($view_name, $data);
@@ -270,11 +248,7 @@ class CouponcodesController extends Controller
 
 
         $record->save();
-<<<<<<< HEAD
-        flash(__('messages.success'),__('messages.record_added_successfully'), __('messages.success'));
-=======
         flash('success','record_added_successfully', 'success');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
     	return redirect(URL_COUPONS);
     }
  
@@ -301,22 +275,14 @@ class CouponcodesController extends Controller
                 $record->delete();
             }
             $response['status'] = 1;
-<<<<<<< HEAD
-            $response['message'] = __('messages.record_deleted_successfully');
-=======
             $response['message'] = getPhrase('record_deleted_successfully');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         }
          catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-<<<<<<< HEAD
-            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
-=======
             $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
        }
         return json_encode($response);
     }
@@ -325,11 +291,7 @@ class CouponcodesController extends Controller
     {
     	if ($record === null) {
 
-<<<<<<< HEAD
-    		flash(__('messages.Ooops...!'), __("messages.page_not_found"), __('messages.error'));
-=======
     		flash('Ooops...!', getPhrase("page_not_found"), 'error');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
    			return $this->getRedirectUrl();
 		}
 
@@ -481,11 +443,7 @@ class CouponcodesController extends Controller
       }
 
         $data['active_class']       = 'coupons';
-<<<<<<< HEAD
-        $data['title']              = __('messages.coupons_usage');
-=======
         $data['title']              = getPhrase('coupons_usage');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
       // return view('coupons.coupon-usage-list', $data);
        $view_name = getTheme().'::coupons.coupon-usage-list';

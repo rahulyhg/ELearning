@@ -2,7 +2,7 @@
 <div ng-if="question_type=='match'">
 
     <fieldset class="form-group ">
-        {{ Form::label('total_answers', __('messages.total_options')) }}
+        {{ Form::label('total_answers', getphrase('total_options')) }}
 	
 		{{Form::select('total_answers',$exam_max_options , null, ['class'=>'form-control', "id"=>"total_answers", "ng-model"=>"total_answers", "ng-change" => "answersChanged(total_answers)" ])}}
     </fieldset>
@@ -10,7 +10,7 @@
     <div ng-if="total_answers > 0" class="row">
 
      <fieldset class="form-group col-md-5" >
-        <label >{{__('messages.left_title')}}</label> <span class="text-red">*</span>
+        <label >{{getPhrase('left_title')}}</label> <span class="text-red">*</span>
         <input type="text" name="title_left" class="form-control" placeholder="Left Title" ng-model="answers.left.title"  
         required="true" ng-class="{'has-error': formQuestionBank.title_left.$touched && formQuestionBank.title_left.$invalid}"  >
          <div class="validation-error" ng-messages="formQuestionBank.title_left.$error" >
@@ -18,7 +18,7 @@
         </div>
     </fieldset>
      <fieldset class="form-group col-md-5" >
-        <label >{{__('messages.right_title')}}</label> <span class="text-red">*</span>
+        <label >{{getPhrase('right_title')}}</label> <span class="text-red">*</span>
         <input type="text" name="title_right" class="form-control" placeholder="Right Title" ng-model="answers.right.title" 
          required="true" ng-class="{'has-error': formQuestionBank.title_left.$touched && formQuestionBank.title_right.$invalid}"   
         >
@@ -32,41 +32,52 @@
      <div class="row" data-ng-repeat="i in range(total_answers) track by $index" ng-if="total_answers > 0">
      
     <fieldset class="form-group col-md-5" >
-        <label >{{__('messages.left_option')}} @{{ $index+1 }}</label> <span class="text-red">*</span>
+        <label >{{getPhrase('left_option')}} @{{ $index+1 }}</label> <span class="text-red">*</span>
         <input type="text" name="options_left[]" id="option_@{{ $index }}" class="form-control" placeholder="Option @{{ $index+1 }}" ng-model="answers.left.options[$index]"  required="true">
     </fieldset>
+
+
+
     <fieldset class="form-group col-md-5" >
-        <label >{{__('messages.right_option')}} @{{ $index+1 }}</label> <span class="text-red">*</span>
+        <label >Right Option @{{ $index+1 }}</label> <span class="text-red">*</span>
         <input type="text" name="options_right[]" id="option_@{{ $index }}" class="form-control" placeholder="Option @{{ $index+1 }}" ng-model="answers.right.options[$index]"  required="true">
     </fieldset>
  
     <fieldset class="form-group col-md-2" >
-        <label >{{__('messages.answer')}} @{{ $index+1 }}</label> <span class="text-red">*</span>
+        <label >Answer @{{ $index+1 }}</label> <span class="text-red">*</span>
         <input type="text" name="correct_answers[]" id="option_@{{ $index }}" class="form-control" placeholder="@{{ $index+1 }}" ng-model="correct_answers[$index].answer"  required="true" min="1">
     </fieldset>
+ 
     </div>
-   <h4>{{__('messages.2nd_languages')}}</h4>
+
+   <h4>For 2nd Language</h4>
 
      <div ng-if="total_answers > 0" class="row">
 
      <fieldset class="form-group col-md-5" >
 
-        <label >{{__('messages.left_title')}} ({{__('messages.2nd_languages')}}) </label>
+        <label >{{getPhrase('left_title')}} (2nd Language) </label>
         <input type="text" name="title_left_l2" class="form-control" placeholder="Left Title" ng-model="answers.left.titlel2"  
-        >    
+        >
+       
     </fieldset>
 
      <fieldset class="form-group col-md-5" >
-        <label >{{__('messages.right_title')}} ({{__('messages.2nd_languages')}}) </label>
+
+        <label >{{getPhrase('right_title')}} (2nd Language) </label>
         <input type="text" name="title_right_l2" class="form-control" placeholder="Right Title" ng-model="answers.right.titlel2" 
-         >     
+         >
+       
     </fieldset>
+
     </div>
+
+
      <div class="row" data-ng-repeat="i in range(total_answers) track by $index" ng-if="total_answers > 0">
      
     <fieldset class="form-group col-md-5" >
 
-        <label >{{__('messages.left_option')}} @{{ $index+1 }} ({{__('messages.2nd_languages')}})</label>
+        <label >{{getPhrase('left_option')}} @{{ $index+1 }} (2nd Language)</label>
         <input type="text" name="optionsl2_left[]" id="optionl2_@{{ $index }}" class="form-control" placeholder="Option 2nd lang @{{ $index+1 }}" ng-model="answers.left.optionsl2[$index]"  >
 
     </fieldset>
@@ -75,7 +86,7 @@
 
     <fieldset class="form-group col-md-5" >
 
-        <label >{{__('messages.right_option')}} @{{ $index+1 }} ({{__('messages.2nd_languages')}})</label>
+        <label >Right Option @{{ $index+1 }} (2nd Language)</label>
         <input type="text" name="optionsl2_right[]" id="optionl2_@{{ $index }}" class="form-control" placeholder="Option 2nd lang @{{ $index+1 }}" ng-model="answers.right.optionsl2[$index]"  >
 
     </fieldset>

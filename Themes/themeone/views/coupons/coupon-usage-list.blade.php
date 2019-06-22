@@ -22,7 +22,7 @@
 					<div class="panel-heading">
 						
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_COUPONS_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
+							<a href="{{URL_COUPONS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
 						</div>
 					 
 						<h1>{{ $title }}</h1>
@@ -32,17 +32,6 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-<<<<<<< HEAD
-									<th>{{ __('messages.title')}}</th>
-									<th>{{ __('messages.code')}}</th>
-									<th>{{ __('messages.type')}}</th>
-									<th>{{ __('messages.discount')}}</th>
-									<th>{{ __('messages.minimum_bill')}}</th>
-									<th>{{ __('messages.maximum_discount')}}</th>
-									<th>{{ __('messages.limit')}}</th>
-									<th>{{ __('messages.status')}}</th>
-									<th>{{ __('messages.action')}}</th>
-=======
 									<th>{{ getPhrase('title')}}</th>
 									<th>{{ getPhrase('code')}}</th>
 									<th>{{ getPhrase('type')}}</th>
@@ -52,7 +41,6 @@
 									<th>{{ getPhrase('limit')}}</th>
 									<th>{{ getPhrase('status')}}</th>
 									<th>{{ getPhrase('action')}}</th>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								  
 								</tr>
 							</thead>

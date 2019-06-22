@@ -1,14 +1,11 @@
- 
+
 
 					 <fieldset class="form-group">
 
-						
 
-<<<<<<< HEAD
-						{{ Form::label('name', __('messages.name')) }}
-=======
-						{{ Form::label('name', getphrase('name')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+
+						{{ Form::label('name', trans('home.Name'))}}
+
 
 						<span class="text-red">*</span>
 
@@ -16,7 +13,7 @@
 
 							'ng-model'=>'name',
 
-							'required'=> 'true', 
+							'required'=> 'true',
 
 							'ng-pattern' => getRegexPattern("name"),
 
@@ -46,7 +43,7 @@
 
 
 
-					<?php 
+					<?php
 
 					$readonly = '';
 
@@ -66,13 +63,9 @@
 
 					 <fieldset class="form-group">
 
-						
 
-<<<<<<< HEAD
-						{{ Form::label('username', __('messages.username')) }}
-=======
-						{{ Form::label('username', getphrase('username')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+
+						{{ Form::label('username', trans('home.Username') )}}
 
 						<span class="text-red">*</span>
 
@@ -80,11 +73,9 @@
 
 							'ng-model'=>'username',
 
-							'required'=> 'true', 
+							'required'=> 'true',
 
 							 $readonly,
-
-
 
 							'ng-minlength' => '2',
 
@@ -109,20 +100,16 @@
 						</div>
 
 					</fieldset>
-					
+
 					@if($record)
 					 <fieldset class="form-group">
 
-						<?php $password_required = true; 
+						<?php $password_required = true;
 						if($record)
 							$password_required = false;
 						?>
 
-<<<<<<< HEAD
-						{{ Form::label('password', __('messages.password')) }}
-=======
 						{{ Form::label('password', getphrase('password')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 						@if(!$record)
 
 						<span class="text-red">*</span>
@@ -132,7 +119,7 @@
 
 							'ng-model'=>'password',
 
-							'required'=> $password_required, 
+							'required'=> $password_required,
 
 							'ng-minlength' => '2',
 
@@ -160,7 +147,7 @@
 
 					 <fieldset class="form-group">
 
-						<?php 
+						<?php
 
 						$readonly = '';
 
@@ -180,11 +167,7 @@
 
 						?>
 
-<<<<<<< HEAD
-						{{ Form::label('email', __('messages.email')) }}
-=======
-						{{ Form::label('email', getphrase('email')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+						{{ Form::label('email', trans('home.Email')) }}
 
 						<span class="text-red">*</span>
 
@@ -192,7 +175,7 @@
 
 							'ng-model'=>'email',
 
-							'required'=> 'true', 
+							'required'=> 'true',
 
 							'ng-class'=>'{"has-error": formUsers.email.$touched && formUsers.email.$invalid}',
 
@@ -210,11 +193,7 @@
 
 					@if(!$record)
 					 <fieldset class="form-group">
-<<<<<<< HEAD
-					 {{ Form::label('password', __('messages.password')) }}
-=======
-					 {{ Form::label('password', getphrase('password')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+					 {{ Form::label('password', trans('home.Password')) }}
 
 						<span class="text-red">*</span>
 
@@ -224,7 +203,7 @@
 
 								'ng-model'=>'password',
 
-								'required'=> 'true', 
+								'required'=> 'true',
 
 								'ng-class'=>'{"has-error": formUsers.password.$touched && formUsers.password.$invalid}',
 
@@ -244,25 +223,17 @@
 					</fieldset>
 
 					 <fieldset class="form-group">
-<<<<<<< HEAD
-					 {{ Form::label('confirm_password', __('messages.confirm_password')) }}
-=======
-					 {{ Form::label('confirm_password', getphrase('confirm_password')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+					 {{ Form::label('confirm_password', trans('home.Confirm Password')) }}
 
 						<span class="text-red">*</span>
 
 						{{ Form::password('password_confirmation', $attributes = array('class'=>'form-control instruction-call',
 
-<<<<<<< HEAD
-								'placeholder' => __("messages.confirm_password"),
-=======
 								'placeholder' => getPhrase("confirm_password"),
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 								'ng-model'=>'password_confirmation',
 
-								'required'=> 'true', 
+								'required'=> 'true',
 
 								'ng-class'=>'{"has-error": formUsers.password_confirmation.$touched && formUsers.password.$invalid}',
 
@@ -293,17 +264,13 @@
 
 
 
-<<<<<<< HEAD
-						{{ Form::label('role', __('messages.role')) }}
-=======
 						{{ Form::label('role', getphrase('role')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						<span class="text-red">*</span>
 
-						<?php $disabled = (checkRole(getUserGrade(2))) ? '' :'disabled'; 
+						<?php $disabled = (checkRole(getUserGrade(2))) ? '' :'disabled';
 
-						
+
 
 						$selected = getRoleData('student');
 
@@ -313,15 +280,11 @@
 
 						?>
 
-<<<<<<< HEAD
-						{{Form::select('role_id', $roles, $selected, ['placeholder' => __('messages.select_role'),'class'=>'form-control', $disabled,
-=======
 						{{Form::select('role_id', $roles, $selected, ['placeholder' => getPhrase('select_role'),'class'=>'form-control', $disabled,
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'role_id',
 
-							'required'=> 'true', 
+							'required'=> 'true',
 
 							'ng-class'=>'{"has-error": formUsers.role_id.$touched && formUsers.role_id.$invalid}'
 
@@ -331,11 +294,11 @@
 
 	    					{!! getValidationMessage()!!}
 
-	    					 
+
 
 						</div>
 
-						  
+
 
 					</fieldset>
 
@@ -345,27 +308,19 @@
 
 					<fieldset class="form-group">
 
-						
 
-<<<<<<< HEAD
-						{{ Form::label('phone', __('messages.phone')) }}
-=======
-						{{ Form::label('phone', getphrase('phone')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+
+						{{ Form::label('phone', trans('home.Phone')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('phone', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 
-<<<<<<< HEAD
-						__('messages.please_enter_10-15_digit_mobile_number'),
-=======
+						{{ Form::text('phone', $value = null , $attributes = array('class'=>'form-control', 'placeholder' =>
 						getPhrase('please_enter_10-15_digit_mobile_number'),
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'phone',
 
-							'required'=> 'true', 
-							
+							'required'=> 'true',
+
 							'ng-pattern' => getRegexPattern("phone"),
 
 							'ng-class'=>'{"has-error": formUsers.phone.$touched && formUsers.phone.$invalid}',
@@ -373,7 +328,7 @@
 
 						)) }}
 
-						 
+
 
 						<div class="validation-error" ng-messages="formUsers.phone.$error" >
 
@@ -391,21 +346,13 @@
 
 						<fieldset class="form-group col-sm-6">
 
-						
 
-<<<<<<< HEAD
-						{{ Form::label('address', __('messages.billing_address')) }}
 
-					 
+						{{ Form::label('address', trans('home.Billing Address')) }}
 
-						{{ Form::textarea('address', $value = null , $attributes = array('class'=>'form-control','rows'=>3, 'cols'=>'15', 'placeholder' => __('messages.please_enter_your_address'),
-=======
-						{{ Form::label('address', getphrase('billing_address')) }}
 
-					 
 
 						{{ Form::textarea('address', $value = null , $attributes = array('class'=>'form-control','rows'=>3, 'cols'=>'15', 'placeholder' => getPhrase('please_enter_your_address'),
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 							'ng-model'=>'address',
 
@@ -417,23 +364,19 @@
 
 					<fieldset class='col-sm-6'>
 
-<<<<<<< HEAD
-						{{ Form::label('image', __('messages.image')) }}
-=======
-						{{ Form::label('image', getphrase('image')) }}
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
+						{{ Form::label('image', trans('home.Image')) }}
 
 						<div class="form-group row">
 
 							<div class="col-md-6">
 
-						
+
 
 					{!! Form::file('image', array('id'=>'image_input', 'accept'=>'.png,.jpg,.jpeg')) !!}
 
 							</div>
 
-							<?php if(isset($record) && $record) { 
+							<?php if(isset($record) && $record) {
 
 								  if($record->image!='') {
 
@@ -455,11 +398,11 @@
 
 					  </div>
 
-					
+
 
 						<div class="buttons text-center">
 
-							<button class="btn btn-lg btn-success button" 
+							<button class="btn btn-lg btn-success button"
 
 							ng-disabled='!formUsers.$valid'>{{ $button_name }}</button>
 

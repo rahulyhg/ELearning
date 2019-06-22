@@ -22,13 +22,8 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-<<<<<<< HEAD
-							<a href="{{URL_USERS_IMPORT}}" class="btn  btn-primary button" >{{ __('messages.import_excel')}}</a>
-							<a href="{{URL_USERS_ADD}}" class="btn  btn-primary button" >{{ __('messages.add_user')}}</a>
-=======
 							<a href="{{URL_USERS_IMPORT}}" class="btn  btn-primary button" >{{ getPhrase('import_excel')}}</a>
 							<a href="{{URL_USERS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('add_user')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 							 
 						</div>
 						<h1>{{ $title }}</h1>
@@ -38,19 +33,11 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-<<<<<<< HEAD
-								 	<th>{{ __('messages.name')}}</th>
-									<th>{{ __('messages.email')}}</th>
-									<th>{{ __('messages.image')}}</th>
-									<th>{{ __('messages.role')}}</th>
-									<th>{{ __('messages.action')}}</th>
-=======
 								 	<th>{{ getPhrase('name')}}</th>
 									<th>{{ getPhrase('email')}}</th>
 									<th>{{ getPhrase('image')}}</th>
 									<th>{{ getPhrase('role')}}</th>
 									<th>{{ getPhrase('action')}}</th>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 								</tr>
 							</thead>
 							 

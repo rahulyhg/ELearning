@@ -7,7 +7,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{ __('messages.question_subjects') }}</a></li>
+							<li><a href="{{URL_QUIZ_QUESTIONBANK}}">{{ getPhrase('question_subjects') }}</a></li>
 							<li><a href="{{URL_QUESTIONBANK_VIEW.$subject->slug}}">{{ $subject->subject_title }}</a></li>
 							<li>{{ $title }}</li>
 						</ol>
@@ -20,14 +20,14 @@
 				 ng-controller="questionsController">
 					<div class="panel-heading">
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_QUIZ_QUESTIONBANK}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
+							<a href="{{URL_QUIZ_QUESTIONBANK}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
 						</div>
 					<h1>{{ $title }}  </h1>
 					</div>
 					<div class="panel-body" id="app">
-					<?php $button_name = __('messages.create'); ?>
+					<?php $button_name = getPhrase('create'); ?>
 					@if ($record)
-					 <?php $button_name = __('messages.update'); ?>
+					 <?php $button_name = getPhrase('update'); ?>
 						{{ Form::model($record, 
 						array('url' => URL_QUESTIONBANK_EDIT.'/'.$record->slug, 
 						'method'=>'patch', 'files' => TRUE, 'name'=>'formQuestionBank ', 'novalidate'=>'',  'class'=>'validation-align')) }}

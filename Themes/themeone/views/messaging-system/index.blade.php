@@ -2,14 +2,6 @@
 @section('content')
 <div id="page-wrapper">
   <div class="container-fluid">
-<<<<<<< HEAD
-=======
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{URL::asset('')}}language/vi">Tiếng Việt</a></li>
-          <li><a href="{{URL::asset('')}}language/en">Tiếng Anh</a></li>
-          <li><a href="{{URL::asset('')}}language/ja">Tiếng Nhật</a></li>
-      </ul>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
  <div class="row">
                    <div class="col-lg-12">
                        <ol class="breadcrumb">
@@ -22,7 +14,6 @@
                <div class="panel panel-custom">
                    <div class="panel-heading">
                        <div class="pull-right messages-buttons">
-<<<<<<< HEAD
                            <a class="btn btn-lg btn-primary button" href="{{URL_MESSAGES}}"> {{getPhrase('inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
                            <a class="btn btn-lg btn-danger button" href="{{URL_MESSAGES_CREATE}}"> 
                            {{getPhrase('compose')}}</a>
@@ -30,16 +21,6 @@
                 
                        </div>
                        <h1>{{getPhrase('inbox')}}</h1>
-=======
-                           <a class="btn btn-lg btn-primary button" href="{{URL_MESSAGES}}"> {{ trans('home.Inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
-                           <a class="btn btn-lg btn-danger button" href="{{URL_MESSAGES_CREATE}}"> 
-                           {{trans('home.Compose')}}</a>
-
-                
-                       </div>
-{{--                       <h1>{{getPhrase('inbox')}}</h1>--}}
-                       <h1>{{trans('home.Inbox')}}</h1>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                    </div>
                    <?php $currentUserId = Auth::user()->id;?>
                    <div class="panel-body packages">
@@ -76,11 +57,7 @@
                                    </li>
                                      @endforeach
                                    @else
-<<<<<<< HEAD
                                        <p>Sorry, no messages.</p>
-=======
-                                       <p>{{ trans('home.Sorry, no messages') }}.</p>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                                    @endif
                            
 

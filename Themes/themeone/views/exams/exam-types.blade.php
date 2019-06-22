@@ -30,10 +30,10 @@
 							<thead>
 								<tr>
 									 
-									<th><b>{{ __('messages.Type')}}</b></th>
-									<th><b>{{ __('messages.description')}}</b></th>
-									<th><b>{{ __('messages.Status')}}</b></th>
-									<th><b>{{ __('messages.action')}}</b></th>
+									<th><b>{{ getPhrase('Type')}}</b></th>
+									<th><b>{{ getPhrase('description')}}</b></th>
+									<th><b>{{ getPhrase('Status')}}</b></th>
+									<th><b>{{ getPhrase('action')}}</b></th>
 								  
 								</tr>
 							</thead>
@@ -47,7 +47,7 @@
 									@else
 									<td><span class="label label-info">In Active</span></td>
 									@endif
-									<td><a href="{{URL_EDIT_EXAM_TYPE.$type->code}}" class="btn btn-primary btn-sm">{{__('messages.edit')}}</a></td>
+									<td><a href="{{URL_EDIT_EXAM_TYPE.$type->code}}" class="btn btn-primary btn-sm">{{getPhrase('edit')}}</a></td>
 								</tr>
 								@endforeach
 							</tbody>

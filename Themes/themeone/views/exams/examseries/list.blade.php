@@ -22,7 +22,7 @@
 					<div class="panel-heading">
 						
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_EXAM_SERIES_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
+							<a href="{{URL_EXAM_SERIES_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
 						</div>
 						<h1>{{ $title }}</h1>
 					</div>
@@ -31,15 +31,15 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ __('messages.title')}}</th>
-									<th>{{ __('messages.image')}}</th>
-									<th>{{ __('messages.is_paid')}}</th>
-									<th>{{ __('messages.cost')}}</th>
-									<th>{{ __('messages.validity')}}</th>
-									<th>{{ __('messages.total_exams')}}</th>
-									<th>{{ __('messages.total_questions')}}</th>
+									<th>{{ getPhrase('title')}}</th>
+									<th>{{ getPhrase('image')}}</th>
+									<th>{{ getPhrase('is_paid')}}</th>
+									<th>{{ getPhrase('cost')}}</th>
+									<th>{{ getPhrase('validity')}}</th>
+									<th>{{ getPhrase('total_exams')}}</th>
+									<th>{{ getPhrase('total_questions')}}</th>
 									
-									<th>{{ __('messages.action')}}</th>
+									<th>{{ getPhrase('action')}}</th>
 								  
 								</tr>
 							</thead>

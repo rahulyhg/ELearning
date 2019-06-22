@@ -7,12 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use Illuminate\Support\Facades\Session;
 use Yajra\Datatables\Datatables;
 use DB;
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Facades\Session;
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 
 class ParentsController extends Controller
@@ -33,7 +30,7 @@ class ParentsController extends Controller
     */
      public function index()
      {
-       
+
        $user = getUserWithSlug();
 
       if(!checkRole(getUserGrade(7)))
@@ -44,22 +41,21 @@ class ParentsController extends Controller
 
        if(!isEligible($user->slug))
         return back();
- 
+       ///////////////
+
+         if (Session::has('locale')) {
+             App::setLocale(Session::get('locale'));
+         }
+         //////////////////////////
        $data['records']      = FALSE;
        $data['user']       = $user;
-       $data['title']        = getPhrase('children');
+       $data['title']        = trans('home.Children');
        $data['active_class'] = 'children';
        $data['layout']       = getLayout();
        // return view('parent.list-users', $data);
 
-<<<<<<< HEAD
-=======
-         if (Session::has('locale')) {
-             App::setLocale(Session::get('locale'));
-         }
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $view_name = getTheme().'::parent.list-users';
-        return view($view_name, $data);     
+        return view($view_name, $data);
      }
 
      /**
@@ -121,10 +117,12 @@ class ParentsController extends Controller
 
        if(!isEligible($user->slug))
         return back();
- 
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        }
        $data['records']      = FALSE;
        $data['user']       = $user;
-       $data['title']        = getPhrase('children_analysis');
+       $data['title']        = trans('home.Analysis');
        $data['active_class'] = 'analysis';
        $data['layout']       = getLayout();
        // return view('parent.list-users', $data);

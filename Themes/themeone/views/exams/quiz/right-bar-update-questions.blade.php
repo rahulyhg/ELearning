@@ -1,14 +1,5 @@
 <div class="panel-heading">
 
-<<<<<<< HEAD
-		<h2>{{__('messages.saved_questions')}}</h2>
-
-	<div class="crearfix selected-questions-details">
-
-		<span class="pull-left">{{__('messages.saved_questions')}} (@{{savedQuestions.length}})</span>
-
-		<span class="pull-right">{{__('messages.total_marks')}}: @{{ totalMarks }}</span>
-=======
 		<h2>{{getPhrase('saved_questions')}}</h2>
 
 	<div class="crearfix selected-questions-details">
@@ -16,7 +7,6 @@
 		<span class="pull-left">{{getPhrase('saved_questions')}} (@{{savedQuestions.length}})</span>
 
 		<span class="pull-right">{{getPhrase('total_marks')}}: @{{ totalMarks }}</span>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 	</div>	
 
@@ -36,11 +26,7 @@
 
 					 				
 
-<<<<<<< HEAD
-					 				<a class="remove-all-questions text-red" style="cursor: pointer;" ng-click="removeAll()">{{__('messages.remove_all')}}</a>
-=======
 					 				<a class="remove-all-questions text-red" style="cursor: pointer;" ng-click="removeAll()">{{getPhrase('remove_all')}}</a>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 					 				<table  
 
@@ -50,19 +36,11 @@
 
 								  <tr>
 
-<<<<<<< HEAD
-									<th>{{__('messages.subject')}}</th>
-
-									<th>{{__('messages.question')}}</th>
-
-									<th>{{__('messages.marks')}}</th>	
-=======
 									<th>{{getPhrase('subject')}}</th>
 
 									<th>{{getPhrase('question')}}</th>
 
 									<th>{{getPhrase('marks')}}</th>	
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 									<th></th>	
 
@@ -94,11 +72,7 @@
 
 					 			<div class="buttons text-center" >
 
-<<<<<<< HEAD
-							<button class="btn btn-lg btn-success button">{{__('messages.update')}}</button>
-=======
 							<button class="btn btn-lg btn-success button">{{getPhrase('update')}}</button>
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
 
 						</div>
 

@@ -49,11 +49,7 @@ class QuizController extends Controller
       }
 
         $data['active_class']       = 'exams';
-<<<<<<< HEAD
-        $data['title']              = __('messages.quizzes');
-=======
         $data['title']              = getPhrase('quizzes');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
       // return view('exams.quiz.list', $data);
 
         $view_name = getTheme().'::exams.quiz.list';
@@ -103,21 +99,12 @@ class QuizController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
-<<<<<<< HEAD
-                           <li><a href="'.URL_QUIZ_UPDATE_QUESTIONS.$records->slug.'"><i class="fa fa-spinner"></i>'.__("messages.update_questions").'</a></li>
-                            <li><a href="'.URL_QUIZ_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
-                            
-                           $temp = '';
-                           if(checkRole(getUserGrade(1))) {
-                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
-=======
                            <li><a href="'.URL_QUIZ_UPDATE_QUESTIONS.$records->slug.'"><i class="fa fa-spinner"></i>'.getPhrase("update_questions").'</a></li>
                             <li><a href="'.URL_QUIZ_EDIT.'/'.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
                             
                            $temp = '';
                            if(checkRole(getUserGrade(1))) {
                     $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
                       }
                     
                     $temp .='</ul></div>';
@@ -128,11 +115,7 @@ class QuizController extends Controller
             })
         ->editColumn('is_paid', function($records)
         {
-<<<<<<< HEAD
-            return ($records->is_paid) ? '<span class="label label-primary">'.__('messages.paid') .'</span>' : '<span class="label label-success">'.__('messages.free').'</span>';
-=======
             return ($records->is_paid) ? '<span class="label label-primary">'.getPhrase('paid') .'</span>' : '<span class="label label-success">'.getPhrase('free').'</span>';
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         })
         ->editColumn('title',function($records)
         {
@@ -169,11 +152,7 @@ class QuizController extends Controller
       $data['instructions']       = array_pluck(App\Instruction::all(), 'title', 'id');
       $data['exam_types']         = App\ExamType::where('status','=',1)->get()->pluck('title','code')->toArray();
       // dd($data);
-<<<<<<< HEAD
-      $data['title']              = __('messages.create_quiz');
-=======
       $data['title']              = getPhrase('create_quiz');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
       // return view('exams.quiz.add-edit', $data);
 
           $view_name = getTheme().'::exams.quiz.add-edit';
@@ -204,11 +183,7 @@ class QuizController extends Controller
       $data['categories']       = array_pluck(QuizCategory::all(), 'category', 'id');
       $data['exam_types']         = App\ExamType::get()->pluck('title','code')->toArray();
 
-<<<<<<< HEAD
-      $data['title']            = __('messages.edit_quiz');
-=======
       $data['title']            = getPhrase('edit_quiz');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
       // return view('exams.quiz.add-edit', $data);
 
         $view_name = getTheme().'::exams.quiz.add-edit';
@@ -442,21 +417,13 @@ class QuizController extends Controller
           $record->delete();
         }
         $response['status'] = 1;
-<<<<<<< HEAD
-        $response['message'] = __('messages.record_deleted_successfully');
-=======
         $response['message'] = getPhrase('record_deleted_successfully');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
          } catch (Exception $e) {
             $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->getMessage();
           else
-<<<<<<< HEAD
-            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
-=======
             $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
          }
         return json_encode($response);
 
@@ -466,11 +433,7 @@ class QuizController extends Controller
     {
       if ($record === null) {
 
-<<<<<<< HEAD
-        flash('Ooops...!', __("messages.page_not_found"), 'error');
-=======
         flash('Ooops...!', getPhrase("page_not_found"), 'error');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         return $this->getRedirectUrl();
     }
 
@@ -597,11 +560,7 @@ class QuizController extends Controller
         
         
       $data['subjects']     = array_pluck(App\Subject::all(), 'subject_title', 'id');
-<<<<<<< HEAD
-      $data['title']        = __('messages.update_questions_for').' '.$record->title;
-=======
       $data['title']        = getPhrase('update_questions_for').' '.$record->title;
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
       // dd($data);
 
       // return view('exams.quiz.update-questions', $data);
@@ -727,11 +686,7 @@ class QuizController extends Controller
         }
 
         $data['active_class']       = 'exams';
-<<<<<<< HEAD
-        $data['title']              = __('messages.exam_types');
-=======
         $data['title']              = getPhrase('exam_types');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['exam_types']         = App\ExamType::get();
         // return view('exams.exam-types', $data);
 
@@ -749,11 +704,7 @@ class QuizController extends Controller
         }
 
         $data['active_class']       = 'exams';
-<<<<<<< HEAD
-        $data['title']              = __('messages.edit_exam_type');
-=======
         $data['title']              = getPhrase('edit_exam_type');
->>>>>>> f6e48b93de6bfc67890fc57c4996c6735aa0c7db
         $data['record']             = App\ExamType::where('code',$code)->first();
         // dd($data);
 
