@@ -16,13 +16,13 @@
 						</ol>
 					</div>
 				</div>
-								
+								 
 				<!-- /.row -->
 				<div class="panel panel-custom">
 					<div class="panel-heading">
 						
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_LMS_CONTENT_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_LMS_CONTENT_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 						</div>
 						<h1>{{ $title }}</h1>
 					</div>
@@ -31,11 +31,11 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('image')}}</th>
-									<th>{{ getPhrase('type')}}</th>
-									<th>{{ getPhrase('subject')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.image')}}</th>
+									<th>{{ __('messages.type')}}</th>
+									<th>{{ __('messages.subject')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								</tr>
 							</thead>
 							 

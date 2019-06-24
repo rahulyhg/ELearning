@@ -48,7 +48,7 @@ class MessagesController extends Controller
         $threads = Thread::forUser($currentUserId)->latest('updated_at')->paginate(getRecordsPerPage());
         // All threads that user is participating in, with new messages
         // $threads = Thread::forUserWithNewMessages($currentUserId)->latest('updated_at')->get();
-        $data['title']        = getPhrase('create_message');
+        $data['title']        = __('messages.create_message');
         $data['active_class'] = 'messages';
         $data['currentUserId']= $currentUserId;
         $data['threads'] 	  = $threads;
@@ -107,7 +107,7 @@ class MessagesController extends Controller
 
         $thread->markAsRead($userId);
 
-        $data['title']        = getPhrase('messages');
+        $data['title']        = __('messages.message');
         $data['active_class']        = 'messages';
         $data['thread'] 	= $thread;
         $data['users']  = $users;
@@ -152,7 +152,7 @@ class MessagesController extends Controller
 
         $users = $query->get();
        
-          $data['title']        = getPhrase('send_message');
+          $data['title']        = __('messages.send_message');
         $data['active_class']        = 'messages';
         // $data['currentUserId'] 	= $currentUserId;
         $data['users']  = $users;

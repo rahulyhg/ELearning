@@ -22,7 +22,7 @@
 					<div class="panel-heading">
 						
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_LMS_SERIES_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_LMS_SERIES_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 						</div>
 						<h1>{{ $title }}</h1>
 					</div>
@@ -31,14 +31,14 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('image')}}</th>
-									<th>{{ getPhrase('is_paid')}}</th>
-									<th>{{ getPhrase('cost')}}</th>
-									<th>{{ getPhrase('validity')}}</th>
-									<th>{{ getPhrase('total_items')}}</th>
-									<th>{{ getPhrase('show_in_home_page')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.image')}}</th>
+									<th>{{ __('messages.is_paid')}}</th>
+									<th>{{ __('messages.cost')}}</th>
+									<th>{{ __('messages.validity')}}</th>
+									<th>{{ __('messages.total_items')}}</th>
+									<th>{{ __('messages.show_in_home_page')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

@@ -29,10 +29,10 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ getPhrase('module')}}</th>
-									<th>{{ getPhrase('key')}}</th>
-									<th>{{ getPhrase('description')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.module')}}</th>
+									<th>{{ __('messages.key')}}</th>
+									<th>{{ __('messages.description')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								</tr>
 							</thead>
 							 

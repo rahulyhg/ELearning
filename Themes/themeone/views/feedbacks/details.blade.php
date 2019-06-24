@@ -11,7 +11,7 @@
                     <div class="col-lg-12">
                         <ol class="breadcrumb">
                             <li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-                            <li><a href="{{URL_FEEDBACKS}}">{{getPhrase('feedbacks')}}</a></li>
+                            <li><a href="{{URL_FEEDBACKS}}">{{__('messages.feedbacks')}}</a></li>
                             <li>{{$record->title}}</li>
                         </ol>
                     </div>
@@ -31,7 +31,7 @@
                                 {!!$record->description!!}
                             </div>
                             <div class="notification-footer text-center">
-                                <a type="button" href="{{URL_FEEDBACKS}}" class="btn btn-lg btn-dark button">{{getPhrase('back')}}</a>
+                                <a type="button" href="{{URL_FEEDBACKS}}" class="btn btn-lg btn-dark button">{{__('messages.back')}}</a>
                             </div>
                         </div>
                     </div>

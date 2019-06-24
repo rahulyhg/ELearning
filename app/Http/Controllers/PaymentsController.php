@@ -55,7 +55,7 @@ class PaymentsController extends Controller
 
     	$data['user']       		= $user;
     	$data['active_class']       = 'subscriptions';
-      $data['title']              = getPhrase('subscriptions_list');
+      $data['title']              = __('messages.subscriptions_list');
       $data['layout']              = getLayout();
 
       $payment = new Payment();
@@ -374,7 +374,7 @@ class PaymentsController extends Controller
         $data['active_class'] = 'feedback';
         $data['payment_data'] = json_encode($payment_data);
         $data['layout']       = getLayout();
-        $data['title']        = getPhrase('offline_payment');
+        $data['title']        = __('messages.offline_payment');
         // return view('payments.offline-payment', $data);
 
           $view_name = getTheme().'::payments.offline-payment';
@@ -866,7 +866,7 @@ class PaymentsController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __("messages.page_not_found"), 'error');
    			return $this->getRedirectUrl();
 		}
 
@@ -954,7 +954,7 @@ class PaymentsController extends Controller
 
 
           $template    = new EmailTemplate();
-          $subject  = getPhrase('offline_subscription_failed');
+          $subject  = __('messages.offline_subscription_failed');
           $content_data =  $template->sendEmailNotification('offline_subscription_failed', 
          array(   'username'      =>$user->name, 
                   'plan'          => $payment_record->plan_type,
@@ -990,7 +990,7 @@ class PaymentsController extends Controller
       $payments = Payment::all();
 
       $data['active_class']       = 'analysis';
-      $data['title']              = getPhrase('quiz_attempts');
+      $data['title']              = __('messages.quiz_attempts');
 
       $data['exam_record']        = $exam_record;
       
@@ -1023,7 +1023,7 @@ class PaymentsController extends Controller
 
 
       $data['active_class']       = 'reports';
-      $data['title']              = getPhrase('online_payments');
+      $data['title']              = __('messages.online_payments');
       $data['payments']           = (object)$this->prepareSummaryRecord('online');
       $data['payments_chart_data']= (object)$this->getPaymentStats($data['payments']);
       $data['payments_monthly_data'] = (object)$this->getPaymentMonthlyStats();
@@ -1057,19 +1057,19 @@ class PaymentsController extends Controller
        $this->updatePaymentTransactionRecords($payment->updateTransactionRecords('online'));
 
         $data['active_class']       = 'reports';
-        $data['payments_mode']      = getPhrase('online_payments');
+        $data['payments_mode']      = __('messages.online_payments');
         if($slug=='all'){
-           $data['title']              = getPhrase('all_payments');
+           $data['title']              = __('messages.all_payments');
        
         }
         elseif($slug=='success'){
-        $data['title']              = getPhrase('success_list');
+        $data['title']              = __('messages.success_list');
           }
         elseif($slug=='pending'){
-        $data['title']              = getPhrase('pending_list');
+        $data['title']              = __('messages.pending_list');
           }
        elseif($slug='cancelled'){
-           $data['title']              = getPhrase('cancelled_list');
+           $data['title']              = __('messages.cancelled_list');
          }
         $data['layout']             = getLayout();
         $data['ajax_url']           = URL_ONLINE_PAYMENT_REPORT_DETAILS_AJAX.$slug;
@@ -1178,7 +1178,7 @@ class PaymentsController extends Controller
       }
 
       $data['active_class']       = 'reports';
-      $data['title']              = getPhrase('offline_payments');
+      $data['title']              = __('messages.offline_payments');
       $data['payments']           = (object)$this->prepareSummaryRecord('offline');
 
       $data['payments_chart_data'] = (object)$this->getPaymentStats($data['payments']);
@@ -1209,19 +1209,19 @@ class PaymentsController extends Controller
 
 
         $data['active_class']       = 'reports';
-        $data['payments_mode']      = getPhrase('offline_payments');
+        $data['payments_mode']      = __('messages.offline_payments');
          if($slug=='all'){
-           $data['title']              = getPhrase('all_payments');
+           $data['title']              = __('messages.all_payments');
        
         }
         elseif($slug=='success'){
-        $data['title']              = getPhrase('success_list');
+        $data['title']              = __('messages.success_list');
           }
         elseif($slug=='pending'){
-        $data['title']              = getPhrase('pending_list');
+        $data['title']              = __('messages.pending_list');
           }
        elseif($slug='cancelled'){
-           $data['title']              = getPhrase('cancelled_list');
+           $data['title']              = __('messages.cancelled_list');
          }   
         $data['layout']             = getLayout();
         $data['ajax_url']           = URL_OFFLINE_PAYMENT_REPORT_DETAILS_AJAX.$slug;
@@ -1262,7 +1262,7 @@ class PaymentsController extends Controller
           if($records->payment_status==PAYMENT_STATUS_CANCELLED)
            $rec = '<span class="label label-danger">'.ucfirst($records->payment_status).'</span>';
           elseif($records->payment_status==PAYMENT_STATUS_PENDING) {
-            $rec = '<span class="label label-info">'.ucfirst($records->payment_status).'</span>&nbsp;<button class="btn btn-primary btn-sm" onclick="viewDetails('.$records->id.');">'.getPhrase('view_details').'</button>';
+            $rec = '<span class="label label-info">'.ucfirst($records->payment_status).'</span>&nbsp;<button class="btn btn-primary btn-sm" onclick="viewDetails('.$records->id.');">'.__('messages.view_details').'</button>';
           }
           elseif($records->payment_status==PAYMENT_STATUS_SUCCESS)
             $rec = '<span class="label label-success">'.ucfirst($records->payment_status).'</span>';
@@ -1389,8 +1389,8 @@ class PaymentsController extends Controller
       }
         
             $payment_dataset = [$payment_data->success, $payment_data->cancelled, $payment_data->pending];
-            $payment_labels = [getPhrase('success'), getPhrase('cancelled'), getPhrase('pending')];
-            $payment_dataset_labels = [getPhrase('total')];
+            $payment_labels = [__('messages.success'), __('messages.cancelled'), __('messages.pending')];
+            $payment_dataset_labels = [__('messages.total')];
 
             $payment_bgcolor = [getColor('',4),getColor('',9),getColor('',18)];
             $payment_border_color = [getColor('background',4),getColor('background',9),getColor('background',18)]; 
@@ -1403,7 +1403,7 @@ class PaymentsController extends Controller
                                         'border_color'      => $payment_border_color
                                         );
            $payments_stats['type'] = 'bar'; 
-             $payments_stats['title'] = getPhrase('overall_statistics');
+             $payments_stats['title'] = __('messages.overall_statistics');
 
            return $payments_stats;
     }
@@ -1425,7 +1425,7 @@ class PaymentsController extends Controller
 
             $payment_dataset = [];
             $payment_labels = [];
-            $payment_dataset_labels = [getPhrase('total')];
+            $payment_dataset_labels = [__('messages.total')];
             $payment_bgcolor = [];
             $payment_border_color = []; 
 
@@ -1448,7 +1448,7 @@ class PaymentsController extends Controller
                                         'border_color'      => $payment_border_color
                                         );
            $payments_stats['type'] = 'line'; 
-           $payments_stats['title'] = getPhrase('payments_reports_in').' '.getCurrencyCode(); 
+           $payments_stats['title'] = __('messages.payments_reports_in').' '.getCurrencyCode(); 
 
            return $payments_stats;
     }
@@ -1465,7 +1465,7 @@ class PaymentsController extends Controller
         return back();
       }
         $data['active_class']       = 'reports';
-        $data['title']              = getPhrase('export_payments_report');
+        $data['title']              = __('messages.export_payments_report');
         $data['layout']             = getLayout();
         $data['record']             = FALSE;
 
@@ -1709,7 +1709,7 @@ public function approvePayment(Payment $payment_record,Request $request ,$iscoup
         catch(Exception $ex)
        {
         
-        $message = getPhrase('\ncannot_send_email_to_user, please_check_your_server_settings');
+        $message = __('messages.\ncannot_send_email_to_user, please_check_your_server_settings');
         $exception = 1;
        }
 

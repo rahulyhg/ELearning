@@ -4,7 +4,7 @@
 
   {!! Form::open(array('url'=>URL_RAZORPAY_SUCCESS, 'method'=>'POST', 'id'=>'paymentform')) !!}
 
-   <button id="rzp-button1" class="btn btn-primary" style="display: none;">Pay</button>
+   <button id="rzp-button1" class="btn btn-primary" style="display: none;">{{ __('messages.pay')}}</button>
 
    <input type="hidden" name="_token" value="{!!csrf_token()!!}">    
 

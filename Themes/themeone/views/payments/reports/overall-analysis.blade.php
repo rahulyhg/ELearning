@@ -12,7 +12,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_STUDENT_ANALYSIS_BY_EXAM}}">{{getPhrase('analysis')}}</i></a> </li>
+							<li><a href="{{URL_STUDENT_ANALYSIS_BY_EXAM}}">{{__('messages.analysis')}}</i></a> </li>
 							<li>{{ $title}}</li>
 						</ol>
 					</div>
@@ -41,11 +41,11 @@
 							<thead>
 								<tr>
 								 
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('correct')}}</th>
-									<th>{{ getPhrase('wrong')}}</th>
-									<th>{{ getPhrase('not_answered')}}</th>
-									<th>{{ getPhrase('total')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.correct')}}</th>
+									<th>{{ __('messages.wrong')}}</th>
+									<th>{{ __('messages.not_answered')}}</th>
+									<th>{{ __('messages.total')}}</th>
 									 
 									
 								</tr>
@@ -88,11 +88,11 @@
 							<thead>
 								<tr>
 								 
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('spent_on_correct')}}</th>
-									<th>{{ getPhrase('spent_on_wrong')}}</th>
-									<th>{{ getPhrase('total_time')}}</th>
-									<th>{{ getPhrase('spent_time')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.spent_on_correct')}}</th>
+									<th>{{ __('messages.spent_on_wrong')}}</th>
+									<th>{{ __('messages.total_time')}}</th>
+									<th>{{ __('messages.spent_time')}}</th>
 									 
 									
 								</tr>

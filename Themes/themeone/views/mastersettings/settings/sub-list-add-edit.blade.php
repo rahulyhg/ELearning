@@ -12,7 +12,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_SETTINGS_LIST}}">{{ getPhrase('settings')}}</a> </li>
+							<li><a href="{{URL_SETTINGS_LIST}}">{{ __('messages.settings')}}</a> </li>
 							<li><a href="{{URL_SETTINGS_VIEW.$record->slug}}">{{ $record->title }}</a> </li>
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 						</ol>
@@ -35,21 +35,21 @@
 			 <div class="panel panel-custom col-lg-8 col-lg-offset-2">
 					<div class="panel-heading">
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_SETTINGS_VIEW.$record->slug}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_SETTINGS_VIEW.$record->slug}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 						</div>
 					<h1>{{ $title }}  </h1>
 					</div>
 					<div class="panel-body" ng-controller="angTopicsController">
-					<?php $button_name = getPhrase('create'); ?>
+					<?php $button_name = __('messages.create'); ?>
 					{!! Form::open(array('url' => URL_SETTINGS_ADD_SUBSETTINGS.$record->slug, 'method' => 'POST', 
 						'name'=>'formSettings ', 'files'=>'true')) !!}
 				 		
 
 					 <fieldset class="form-group">
 						
-						{{ Form::label('key', getphrase('key')) }}
+						{{ Form::label('key', __('messages.key')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('key', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('setting_key'),
+						{{ Form::text('key', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.setting_key'),
 					
 						 ))}}
 					
@@ -58,16 +58,16 @@
 
 					 <fieldset class="form-group">
 						
-						{{ Form::label('tool_tip', getphrase('tool_tip')) }}
+						{{ Form::label('tool_tip', __('messages.tool_tip')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('tool_tip', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('tool_tip'),
+						{{ Form::text('tool_tip', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.tool_tip'),
 					
 						 ))}}
 					
 					</fieldset>
 					
 					 <fieldset class="form-group">
-						{{ Form::label('type', getphrase('type')) }}
+						{{ Form::label('type', __('messages.type')) }}
 						<span class="text-red">*</span>
 						{{Form::select('type',$field_types, null, ['class'=>'form-control', 
 						'ng-model' => 'field_type' ])}}
@@ -76,7 +76,7 @@
 					 <fieldset 
 					 ng-if="field_type=='text' || field_type=='password' || field_type=='number' || field_type=='email'||  field_type=='file' "
 					 class="form-group" >
-					 {{ Form::label('type', getphrase('type')) }}
+					 {{ Form::label('type', __('messages.type')) }}
 					
 					 <input 
 					 		type="@{{field_type}}" 
@@ -89,7 +89,7 @@
 					</fieldset>
 					 <fieldset 
 					 ng-if="field_type=='checkbox' " class="form-group" >
-					 {{ Form::label('type', getphrase('type')) }}
+					 {{ Form::label('type', __('messages.type')) }}
 					
 					 <input 
 					 		type="checkbox" 
@@ -111,7 +111,7 @@
 					 ng-if="field_type=='select'"
 					 class="form-group" >
 
-					 {{ Form::label('total_options', getphrase('total_options')) }}
+					 {{ Form::label('total_options', __('messages.total_options')) }}
 					
 						 <input 
 					 		type="number" 
@@ -127,7 +127,7 @@
 
 					 <fieldset 
 					 ng-if="field_type=='textarea'" class="form-group" >
-					 {{ Form::label('description', getphrase('description')) }}
+					 {{ Form::label('description', __('messages.description')) }}
 					
 					<textarea name="value" class="form-control ckeditor" ng-model='value' rows="5" ></textarea>
 					 
@@ -145,7 +145,7 @@
 					 	<div class="col-md-12">
 						
 					<fieldset class="form-group col-md-4" >
-						{{ Form::label('option_value', getphrase('option_value') ) }} @{{option}}
+						{{ Form::label('option_value', __('messages.option_value') ) }} @{{option}}
 							<input 
 					 		type="text" 
 					 		class="form-control" 
@@ -153,7 +153,7 @@
 					 		required="true" >
 					</fieldset>
 					<fieldset class="form-group col-md-4" >
-						{{ Form::label('option_text', getphrase('option_text') ) }} @{{option}}
+						{{ Form::label('option_text', __('messages.option_text') ) }} @{{option}}
 							<input 
 					 		type="text" 
 					 		class="form-control" 
@@ -163,7 +163,7 @@
 					<fieldset class="form-group col-md-4" >
 					
                             <input type="radio" name="value" value="@{{option-1}}" id="radio@{{option}}" >
-                            <label for="radio@{{option}}"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('make_default')}} </label>
+                            <label for="radio@{{option}}"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.make_default')}} </label>
                     
 					</fieldset>
 

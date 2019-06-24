@@ -9,13 +9,13 @@
 						<ol class="breadcrumb">
 							<li><a href={{PREFIX}}><i class="mdi mdi-home"></i></a> </li>
 						 
-							<li class="active">{{getPhrase('offline_payment_form')}}</li>
+							<li class="active">{{__('messages.offline_payment_form')}}</li>
 						</ol>
 					</div>
 				</div>
 					@include('errors.errors')
 				<div class="alert alert-danger">
-  							<strong>{{getPhrase('warning')}}!</strong>  &nbsp;{{getPhrase('do_not_refresh_this_page')}}
+  							<strong>{{__('messages.warning')}}!</strong>  &nbsp;{{__('messages.do_not_refresh_this_page')}}
 					</div>
 				
 				<div class="panel panel-custom" >
@@ -24,11 +24,11 @@
 					<h1>{{ $title }} </h1>
 					</div>
 					<div class="panel-body" >
-					<?php $button_name = getPhrase('submit'); 
+					<?php $button_name = __('messages.submit'); 
 
 					?>
 					 <div class="jumbotron">
-					  <h3>{{getPhrase('offline_payment_instructions')}}</h3>
+					  <h3>{{__('messages.offline_payment_instructions')}}</h3>
 					  <?php $instructions = $paypal = getSetting('offline_payment_information', 'payment_gateways'); ?>
 					  {!!$instructions!!}
 					</div>
@@ -37,7 +37,7 @@
 					<input type="hidden" name="payment_data" value="{{$payment_data}}">
 					<div class="row">
 					 <fieldset class="form-group col-md-12">
-					 {{ Form::label('payment_details', getphrase('payment_details')) }}
+					 {{ Form::label('payment_details', __('messages.payment_details')) }}
 						<span class="text-red">*</span>
 							 <textarea name="payment_details" ng-model="payment_details"
 							 required="true" class='form-control ckeditor'  rows="5"></textarea>

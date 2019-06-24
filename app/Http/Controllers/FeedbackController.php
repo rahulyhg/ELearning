@@ -34,7 +34,7 @@ class FeedbackController extends Controller
 
         $data['active_class'] = 'feedback';
         $data['layout']       = getLayout();
-        $data['title']        = getPhrase('feed_backs');
+        $data['title']        = __('messages.feed_backs');
     	  // return view('feedbacks.list', $data);
          $view_name = getTheme().'::feedbacks.list';
         return view($view_name, $data);
@@ -69,12 +69,12 @@ class FeedbackController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                           <li><a href="'.URL_FEEDBACK_VIEW.$records->slug.'"><i class="fa fa-eye"></i>'.getPhrase("view").'</a></li>';
+                           <li><a href="'.URL_FEEDBACK_VIEW.$records->slug.'"><i class="fa fa-eye"></i>'.__("messages.view").'</a></li>';
                            
                             
                            $temp = '';
                            if(checkRole(getUserGrade(1))) {
-                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
                       }
                     
                     $temp .='</ul></div>';
@@ -114,7 +114,7 @@ class FeedbackController extends Controller
     	$data['record']         	= FALSE;
     	$data['layout']         	= getLayout();
     	$data['active_class']       = 'feedback';
-      	$data['title']              = getPhrase('give_feedback');
+      	$data['title']              = __('messages.give_feedback');
     	// return view('feedbacks.add-edit', $data);
         $view_name = getTheme().'::feedbacks.add-edit';
         return view($view_name, $data);
@@ -160,7 +160,7 @@ class FeedbackController extends Controller
     	$data['record']         	= $record;
     	$data['layout']         	= getLayout();
     	$data['active_class']       = 'feedback';
-      	$data['title']              = getPhrase('feedback_details');
+      	$data['title']              = __('messages.feedback_details');
     	// return view('feedbacks.details', $data);
       $view_name = getTheme().'::feedbacks.details';
         return view($view_name, $data);
@@ -171,7 +171,7 @@ class FeedbackController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __("messages.page_not_found"), 'error');
    			return $this->getRedirectUrl();
 		}
 
@@ -203,7 +203,7 @@ class FeedbackController extends Controller
     }
 
 	 $response['status'] = 1;
-     $response['message'] = getPhrase('deleted_successfully');
+     $response['message'] = __('messages.deleted_successfully');
         return json_encode($response);
     }
 

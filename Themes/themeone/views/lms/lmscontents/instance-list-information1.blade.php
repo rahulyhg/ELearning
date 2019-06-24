@@ -10,7 +10,7 @@
 									<p><a href="" data-toggle="modal" data-target="#author_profile">
 									{{ $master_record->author->author }} </a></p>
 									<div class="availability">
-										<span>{{getPhrase('total')}}: {{ $master_record->total_assets_count }}</span>
+										<span>{{__('messages.total')}}: {{ $master_record->total_assets_count }}</span>
 									</div>
 									
 									</div>
@@ -22,10 +22,10 @@
 						<div class="card card-green text-xs-center">
 							<div class="card-block">
 								<h4 class="card-title">{{ $master_record->total_assets_available }}</h4>
-								<p class="card-text">{{ getPhrase('available') }}</p>
+								<p class="card-text">{{ __('messages.available') }}</p>
 							</div>
 							<a class="card-footer text-muted">
-								{{ getPhrase('view_all') }}
+								{{ __('messages.view_all') }}
 							</a>
 						</div>
 					</div>
@@ -34,10 +34,10 @@
 						<div class="card card-yellow text-xs-center">
 								<div class="card-block">
 								<h4 class="card-title">{{ $master_record->total_assets_damaged }}</h4>
-								<p class="card-text">{{ getPhrase('damaged') }}</p>
+								<p class="card-text">{{ __('messages.damaged') }}</p>
 							</div>
 							<a class="card-footer text-muted">
-								{{ getPhrase('view_all') }}
+								{{ __('messages.view_all') }}
 							</a>
 						</div>
 					</div>
@@ -46,10 +46,10 @@
 						<div class="card card-red text-xs-center">
 								<div class="card-block">
 								<h4 class="card-title">{{ $master_record->total_assets_lost }}</h4>
-								<p class="card-text">{{ getPhrase('lost') }}</p>
+								<p class="card-text">{{ __('messages.lost') }}</p>
 							</div>
 							<a class="card-footer text-muted">
-								{{ getPhrase('view_all') }}
+								{{ __('messages.view_all') }}
 							</a>
 						</div>
 					</div>

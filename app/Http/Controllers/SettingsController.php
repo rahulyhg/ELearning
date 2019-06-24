@@ -34,7 +34,7 @@ class SettingsController extends Controller
         return back();
       }
         $data['active_class']       = 'master_settings';
-        $data['title']              = getPhrase('settings');
+        $data['title']              = __('messages.settings');
     	// return view('mastersettings.settings.list', $data);
 
           $view_name = getTheme().'::mastersettings.settings.list';
@@ -67,8 +67,8 @@ class SettingsController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="'.URL_SETTINGS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>
-                            <li><a href="'.URL_SETTINGS_VIEW.$records->slug.'"><i class="fa fa-eye"></i>'.getPhrase("view").'</a></li>';
+                            <li><a href="'.URL_SETTINGS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>
+                            <li><a href="'.URL_SETTINGS_VIEW.$records->slug.'"><i class="fa fa-eye"></i>'.__("messages.view").'</a></li>';
                      
                         
                     $temp = '';
@@ -103,10 +103,10 @@ class SettingsController extends Controller
     	// $data['parent_topics']      = array();
     	// $list 						= App\Subject::all();
     	// $data['subjects']			= array_pluck($list, 'subject_title', 'id');
-     //    $data['subjects'][0]        = getPhrase('select');
-     //    $data['parent_topics'][0]   = getPhrase('select');
+     //    $data['subjects'][0]        = __('messages.select');
+     //    $data['parent_topics'][0]   = __('messages.select');
         
-    	$data['title']              = getPhrase('add_setting');
+    	$data['title']              = __('messages.add_setting');
     	// return view('mastersettings.settings.add-edit', $data);
 
           $view_name = getTheme().'::mastersettings.settings.add-edit';
@@ -137,7 +137,7 @@ class SettingsController extends Controller
     	// $data['parent_topics']		= array_pluck(Settings::getTopics($record->subject_id,0),'topic_name','id');
 	   	// $data['parent_topics'][0] = 'Parent';
     	$data['active_class']       = 'master_settings';
-        $data['title']              = getPhrase('edit_settings');
+        $data['title']              = __('messages.edit_settings');
     	// return view('mastersettings.settings.add-edit', $data);
 
 
@@ -253,13 +253,13 @@ class SettingsController extends Controller
         {
             //Questions exists with the selected, so done delete the topic
             $response['status'] = 0;
-            $response['message'] = getPhrase('this_topic_question');
+            $response['message'] = __('messages.this_topic_question');
             return json_encode($response);
         }
         else {
             $record->delete();
             $response['status'] = 1;
-            $response['message'] = getPhrase('record_deleted_successfully');
+            $response['message'] = __('messages.record_deleted_successfully');
             return json_encode($response);
         }
     }
@@ -587,7 +587,7 @@ class SettingsController extends Controller
     {
       if ($record === null) {
 
-        flash('Ooops...!', getPhrase("page_not_found"), 'error');
+        flash('Ooops...!', __("messages.page_not_found"), 'error');
         return $this->getRedirectUrl();
     }
 

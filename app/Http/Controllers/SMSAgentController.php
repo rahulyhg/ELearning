@@ -28,7 +28,7 @@ class SMSAgentController extends Controller
         }
 
     	$data['active_class']       = 'sms';
-        $data['title']              = getPhrase('send_sms');
+        $data['title']              = __('messages.send_sms');
         $data['layout']             = getLayout();
         $data['record']             = FALSE;
         $data['categories']           =array('quiz_categories'=>'Quizzes', 'lms_categories'=> 'LMS');

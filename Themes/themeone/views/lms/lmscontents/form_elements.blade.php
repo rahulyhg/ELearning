@@ -3,7 +3,7 @@
 				<div class="row">
  					 <fieldset class="form-group col-md-6">
 
-						{{ Form::label('title', getphrase('title')) }}
+						{{ Form::label('title', __('messages.title')) }}
 						<span class="text-red">*</span>
 						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'C Programming',
 						'ng-model'=>'title',
@@ -24,7 +24,7 @@
 
 					 <fieldset class="form-group col-md-6">
 
-						{{ Form::label('code', getphrase('code')) }}
+						{{ Form::label('code', __('messages.code')) }}
 						<span class="text-red">*</span>
 						{{ Form::text('code', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'CNT100',
 							'ng-model'=>'code',
@@ -47,13 +47,13 @@
 
  			<div class="row">
  					<fieldset class="form-group col-md-6">
-						{{ Form::label('subject_id', getphrase('subject')) }}
+						{{ Form::label('subject_id', __('messages.subject')) }}
 						<span class="text-red">*</span>
 						{{Form::select('subject_id', $subjects, null, [ 'class'=>'form-control'])}}
 					</fieldset>
 
 					 <fieldset class="form-group  col-md-6"   >
-				   {{ Form::label('image', getphrase('image')) }}
+				   {{ Form::label('image', __('messages.image')) }}
 				         <input type="file" class="form-control" name="image"
 				          accept=".png,.jpg,.jpeg" id="image_input">
 
@@ -72,9 +72,9 @@
  
 					<div  class="row">
 				 	 <fieldset class="form-group col-md-6" >
-						{{ Form::label('content_type', getphrase('content_type')) }}
+						{{ Form::label('content_type', __('messages.content_type')) }}
 						<span class="text-red">*</span>
-						{{Form::select('content_type', $settings->content_types, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('content_type', $settings->content_types, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 						'ng-model'=>'content_type',
 							'required'=> 'true', 
 							'ng-pattern' => getRegexPattern("name"),
@@ -91,7 +91,7 @@
 					</fieldset>
 
 					 <fieldset ng-if="content_type=='url' || content_type=='iframe' || content_type=='video_url'|| content_type=='audio_url'" class="form-group col-md-6">
-							{{ Form::label('file_path', getphrase('resource_link')) }}
+							{{ Form::label('file_path', __('messages.resource_link')) }}
 							<span class="text-red">*</span>
 							{{ Form::text('file_path', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => 'Resource URL',
 								'ng-model'=>'file_path',
@@ -107,7 +107,7 @@
 
 
 					<fieldset ng-if="content_type=='file' || content_type=='video' || content_type=='audio'" class="form-group col-md-6">
-							{{ Form::label('lms_file', getphrase('lms_file')) }}
+							{{ Form::label('lms_file', __('messages.lms_file')) }}
 							<span class="text-red">*</span>
 							 <input type="file" 
 							 class="form-control" 
@@ -119,7 +119,7 @@
 						@if($record->resource_link!='')
 						<fieldset class="form-group col-md-6">
 							<label>   &nbsp;</label>
-						 {{link_to_asset(IMAGE_PATH_UPLOAD_LMS_CONTENTS.$record->resource_link, getPhrase('download'))}} 
+						 {{link_to_asset(IMAGE_PATH_UPLOAD_LMS_CONTENTS.$record->resource_link, __('messages.download'))}} 
 						 </fieldset>
 						@endif
 					@endif
@@ -128,7 +128,7 @@
 
 					<fieldset class="form-group">
 
-						{{ Form::label('description', getphrase('description')) }}
+						{{ Form::label('description', __('messages.description')) }}
 
 						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => 'Fine description')) }}
 					</fieldset>

@@ -12,7 +12,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-							<li><a href="{{URL_SETTINGS_LIST}}">{{ getPhrase('settings')}}</a>  </li>
+							<li><a href="{{URL_SETTINGS_LIST}}">{{ __('messages.settings')}}</a>  </li>
 							<li>{{ $title }}</li>
 						</ol>
 					</div>
@@ -64,7 +64,7 @@
 						  @endforeach
 
 						  @else
-							  <li class="list-group-item">{{ getPhrase('no_settings_available')}}</li>
+							  <li class="list-group-item">{{ __('messages.no_settings_available')}}</li>
 						  @endif
 						</ul>
 
@@ -73,7 +73,7 @@
 						@if(count($settings_data))
 						<div class="buttons text-center clearfix">
 							<button class="btn btn-lg btn-success button" ng-disabled='!formTopics.$valid'
-							>{{ getPhrase('update') }}</button>
+							>{{ __('messages.update') }}</button>
 						</div>
 						@endif
 							{!! Form::close() !!}

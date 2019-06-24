@@ -32,7 +32,7 @@ class NotificationsController extends Controller
       }
 
         $data['active_class']       = 'notifications';
-        $data['title']              = getPhrase('notifications');
+        $data['title']              = __('messages.notifications');
         $data['layout']              = getLayout();
     	// return view('notifications.list', $data);
 
@@ -69,11 +69,11 @@ class NotificationsController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="'.URL_ADMIN_NOTIFICATIONS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
+                            <li><a href="'.URL_ADMIN_NOTIFICATIONS_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
                             
                            $temp = '';
                            if(checkRole(getUserGrade(1))) {
-                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
                       }
                     
                     $temp .='</ul></div>';
@@ -104,7 +104,7 @@ class NotificationsController extends Controller
       }
     	$data['record']         	= FALSE;
     	$data['active_class']       = 'notifications';
-     	$data['title']              = getPhrase('add_notification');
+     	$data['title']              = __('messages.add_notification');
      	$data['layout']              = getLayout();
     	// return view('notifications.add-edit', $data);
 
@@ -132,7 +132,7 @@ class NotificationsController extends Controller
     	$data['record']       		= $record;
     	$data['active_class']     	= 'notifications';
     	$data['settings']       	= FALSE;
-      	$data['title']            	= getPhrase('edit_notification');
+      	$data['title']            	= __('messages.edit_notification');
       	$data['layout']             = getLayout();
     	// return view('notifications.add-edit', $data);
 
@@ -243,7 +243,7 @@ class NotificationsController extends Controller
         }
 
         $response['status'] = 1;
-        $response['message'] = getPhrase('record_deleted_successfully');
+        $response['message'] = __('messages.record_deleted_successfully');
         return json_encode($response);
     }
 
@@ -251,7 +251,7 @@ class NotificationsController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __("messages.page_not_found"), 'error');
    			return $this->getRedirectUrl();
 		}
 
@@ -267,7 +267,7 @@ class NotificationsController extends Controller
     {
 
         $data['active_class']       = 'notifications';
-        $data['title']              = getPhrase('notifications');
+        $data['title']              = __('messages.notifications');
         $data['layout']              = getLayout();
         $date = date('Y-m-d');
         $data['notifications']  	= Notification::where('valid_from', '<=', $date)

@@ -22,7 +22,7 @@
             <div class="row">
              
               <div class="col-md-12 text-center"> 
-                <i class="fa fa-thumbs-up fa-5x" aria-hidden="true"></i><h1>{{ getPhrase('congrats_you_account_is_successfully_subscribed_with') .' '.$plan.' '.getPhrase('plan_with_transaction_no').' '.$id}} </h1>
+                <i class="fa fa-thumbs-up fa-5x" aria-hidden="true"></i><h1>{{ __('messages.congrats_you_account_is_successfully_subscribed_with') .' '.$plan.' '.__('messages.plan_with_transaction_no').' '.$id}} </h1>
               </div>
            
             </div>

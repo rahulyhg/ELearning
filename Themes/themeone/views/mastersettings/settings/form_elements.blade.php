@@ -6,11 +6,11 @@
 
 						
 
-						{{ Form::label('title', getphrase('title')) }}
+						{{ Form::label('title', __('messages.title')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.title'),
 
 							'ng-model'=>'title',
 
@@ -40,11 +40,11 @@
 
 						
 
-						{{ Form::label('key', getphrase('key')) }}
+						{{ Form::label('key', __('messages.key')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('key', $value = null , $attributes = array('class'=>'form-control', 'placeholder' =>  getPhrase('Introduction'),
+						{{ Form::text('key', $value = null , $attributes = array('class'=>'form-control', 'placeholder' =>  __('messages.Introduction'),
 
 							'ng-model'=>'key',
 
@@ -70,7 +70,7 @@
 
 					<fieldset class='form-group'>
 
-						{{ Form::label('image', getphrase('image')) }}
+						{{ Form::label('image', __('messages.image')) }}
 
 						<div class="form-group row">
 
@@ -106,9 +106,9 @@
 
 					<fieldset class="form-group">
 
-						{{ Form::label('description', getphrase('description')) }}
+						{{ Form::label('description', __('messages.description')) }}
 
-						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => getphrase('description_of_the_topic'))) }}
+						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => __('messages.description_of_the_topic'))) }}
 
 					</fieldset>
 

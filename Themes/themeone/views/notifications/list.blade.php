@@ -22,7 +22,7 @@
 					<div class="panel-heading">
 						
 						<div class="pull-right messages-buttons">
-							<a href="{{URL_ADMIN_NOTIFICATIONS_ADD}}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="{{URL_ADMIN_NOTIFICATIONS_ADD}}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 						</div>
 					 
 						<h1>{{ $title }}</h1>
@@ -32,11 +32,11 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('start_date')}}</th>
-									<th>{{ getPhrase('end_date')}}</th>
-									<th>{{ getPhrase('url')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.start_date')}}</th>
+									<th>{{ __('messages.end_date')}}</th>
+									<th>{{ __('messages.url')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								</tr>
 							</thead>
 							 

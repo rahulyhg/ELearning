@@ -9,7 +9,7 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 						 
-							<li class="active">{{getPhrase('export_payment_records')}}</li>
+							<li class="active">{{__('messages.export_payment_records')}}</li>
 						</ol>
 					</div>
 				</div>
@@ -21,7 +21,7 @@
  <h1>{{ $title }} </h1>
 					</div>
 					<div class="panel-body" >
-					<?php $button_name = getPhrase('download_excel'); 
+					<?php $button_name = __('messages.download_excel'); 
 
 					?>
 			 
@@ -29,16 +29,16 @@
 					
 					<div class="row">
 					<fieldset class='form-group'>
-						{{ Form::label('all_records', getphrase('all_records')) }}
+						{{ Form::label('all_records', __('messages.all_records')) }}
 						<div class="form-group row">
 						<div class="col-md-3">
 							{{ Form::radio('all_records', 1, true, array('id'=>'paid', 'name'=>'all_records', 'ng-model'=>'all_records')) }}
-								<label for="paid"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('Yes')}} </label>
+								<label for="paid"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.Yes')}} </label>
 							</div>
 							<div class="col-md-3">
 							{{ Form::radio('all_records', 0, false, array('id'=>'free', 'name'=>'all_records', 'ng-model'=>'all_records')) }}
 								
-								<label for="free"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('No')}}</label> 
+								<label for="free"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.No')}}</label> 
 							</div>
 							
 						</div>
@@ -52,7 +52,7 @@
 		 	 ?>
   				 <fieldset class="form-group col-md-3">
                                      
-                        {{ Form::label('from_date', getphrase('from_date')) }}
+                        {{ Form::label('from_date', __('messages.from_date')) }}
                         <div class="input-group date" data-date="{{date('Y/m/d')}}" data-provide="datepicker" data-date-format="{{getDateFormat()}}">
                         {{ Form::text('from_date', $value = $date_from , $attributes = array('class'=>'form-control', 'placeholder' => '2015/7/17', 'id'=>'dp')) }}
                             <div class="input-group-addon">
@@ -63,7 +63,7 @@
 
   				 <fieldset class="form-group col-md-3">
                                      
-                        {{ Form::label('to_date', getphrase('to_date')) }}
+                        {{ Form::label('to_date', __('messages.to_date')) }}
                         <div class="input-group date" data-date="{{date('Y/m/d')}}" data-provide="datepicker" data-date-format="{{getDateFormat()}}">
                         {{ Form::text('to_date', $value = $date_to , $attributes = array('class'=>'form-control', 'placeholder' => '2015/7/17', 'id'=>'dp1')) }}
                             <div class="input-group-addon">
@@ -79,20 +79,20 @@
 
 					<div class="row">
 					 <fieldset class='form-group'>
-						{{ Form::label('payment_type', getphrase('payment_type')) }}
+						{{ Form::label('payment_type', __('messages.payment_type')) }}
 						<div class="form-group row">
 							<div class="col-md-4">
 							{{ Form::radio('payment_type', 'all', true, array('id'=>'free1', 'name'=>'payment_type')) }}
 								
-								<label for="free1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('all')}}</label> 
+								<label for="free1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.all')}}</label> 
 							</div>
 							<div class="col-md-4">
 							{{ Form::radio('payment_type', 'online', false, array('id'=>'paid1', 'name'=>'payment_type')) }}
-								<label for="paid1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('online')}} </label>
+								<label for="paid1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.online')}} </label>
 							</div>
 							<div class="col-md-4">
 							{{ Form::radio('payment_type', 'offline', false, array('id'=>'offline', 'name'=>'payment_type')) }}
-								<label for="offline"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('offline')}} </label>
+								<label for="offline"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.offline')}} </label>
 							</div>
 						</div>
 					</fieldset>
@@ -100,24 +100,24 @@
 
 					<div class="row">
 					 <fieldset class='form-group'>
-						{{ Form::label('payment_status', getphrase('payment_status')) }}
+						{{ Form::label('payment_status', __('messages.payment_status')) }}
 						<div class="form-group row">
 							<div class="col-md-3">
 							{{ Form::radio('payment_status', 'all', true, array('id'=>'payment_status_all', 'name'=>'payment_status')) }}
 								
-								<label for="payment_status_all"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('all')}}</label> 
+								<label for="payment_status_all"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.all')}}</label> 
 							</div>
 							<div class="col-md-3">
 							{{ Form::radio('payment_status', 'success', false, array('id'=>'payment_status_success', 'name'=>'payment_status')) }}
-								<label for="payment_status_success"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('success')}} </label>
+								<label for="payment_status_success"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.success')}} </label>
 							</div>
 							<div class="col-md-3">
 							{{ Form::radio('payment_status', 'pending', false, array('id'=>'payment_status_pending', 'name'=>'payment_status')) }}
-								<label for="payment_status_pending"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('pending')}} </label>
+								<label for="payment_status_pending"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.pending')}} </label>
 							</div>
 							<div class="col-md-3">
 							{{ Form::radio('payment_status', 'cancelled', false, array('id'=>'payment_status_cancelled', 'name'=>'payment_status')) }}
-								<label for="payment_status_cancelled"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('cancelled')}} </label>
+								<label for="payment_status_cancelled"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.cancelled')}} </label>
 							</div>
 						</div>
 					</fieldset>

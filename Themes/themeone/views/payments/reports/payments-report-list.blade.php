@@ -33,15 +33,15 @@
                         <table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>{{ getPhrase('image')}}</th>
-                                    <th>{{ getPhrase('user_name')}}</th>
-                                    <th>{{ getPhrase('item')}}</th>
-                                    <th>{{ getPhrase('plan')}}</th>
-                                    <th>{{ getPhrase('start_date')}}</th>
-                                    <th>{{ getPhrase('end_date')}}</th>
-                                    <th>{{ getPhrase('payment_gateway')}}</th>
-                                    <th>{{ getPhrase('updated_at')}}</th>
-                                    <th>{{ getPhrase('payment_status')}}</th>
+                                    <th>{{ __('messages.image')}}</th>
+                                    <th>{{ __('messages.user_name')}}</th>
+                                    <th>{{ __('messages.item')}}</th>
+                                    <th>{{ __('messages.plan')}}</th>
+                                    <th>{{ __('messages.start_date')}}</th>
+                                    <th>{{ __('messages.end_date')}}</th>
+                                    <th>{{ __('messages.payment_gateway')}}</th>
+                                    <th>{{ __('messages.updated_at')}}</th>
+                                    <th>{{ __('messages.payment_status')}}</th>
                                     
                                 </tr>
                             </thead>
@@ -61,32 +61,32 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{{getPhrase('offline_payment_details')}}</h4>
+        <h4 class="modal-title">{{__('messages.offline_payment_details')}}</h4>
       </div>
       <div class="modal-body">
         <div class="row">
            <div class="col-md-8 col-md-offset-2">
-               <p><strong>{{getPhrase('name')}}</strong> : @{{payment_record.item_name}}</p>
-               <p><strong>{{getPhrase('cost')}}</strong> : {{getCurrencyCode().' '}} @{{payment_record.cost}}</p>
-               <p><strong>{{getPhrase('coupon_applied')}}</strong> : @{{coupon_applied}}</p>
+               <p><strong>{{__('messages.name')}}</strong> : @{{payment_record.item_name}}</p>
+               <p><strong>{{__('messages.cost')}}</strong> : {{getCurrencyCode().' '}} @{{payment_record.cost}}</p>
+               <p><strong>{{__('messages.coupon_applied')}}</strong> : @{{coupon_applied}}</p>
                <p><strong> @{{payment_record.other_details.coupon_applied}}</strong></p>
                <div ng-if="other_details.is_coupon_applied==1">
-               <p><strong>{{getPhrase('discount')}}</strong> : {{getCurrencyCode().' '}}@{{other_details.discount_availed}}</p>
-               <p><strong>{{getPhrase('after_discount')}}</strong> : {{getCurrencyCode().' '}}@{{other_details.after_discount}}</p>
+               <p><strong>{{__('messages.discount')}}</strong> : {{getCurrencyCode().' '}}@{{other_details.discount_availed}}</p>
+               <p><strong>{{__('messages.after_discount')}}</strong> : {{getCurrencyCode().' '}}@{{other_details.after_discount}}</p>
                </div>
-               <p><strong>{{getPhrase('plan_type')}}</strong> : @{{payment_record.plan_type}}</p>
-               <p><strong>{{getPhrase('notes')}}</strong> :  @{{payment_record.notes}}</p>
-               <p><strong>{{getPhrase('created_at')}}</strong> : @{{payment_record.created_at}}</p>
-               <p><strong>{{getPhrase('updated_at')}}</strong> : @{{payment_record.updated_at}}</p>
-               <p><strong>{{getPhrase('comments')}}</strong> : <textarea class="form-control" name="admin_comment"></textarea></p>
+               <p><strong>{{__('messages.plan_type')}}</strong> : @{{payment_record.plan_type}}</p>
+               <p><strong>{{__('messages.notes')}}</strong> :  @{{payment_record.notes}}</p>
+               <p><strong>{{__('messages.created_at')}}</strong> : @{{payment_record.created_at}}</p>
+               <p><strong>{{__('messages.updated_at')}}</strong> : @{{payment_record.updated_at}}</p>
+               <p><strong>{{__('messages.comments')}}</strong> : <textarea class="form-control" name="admin_comment"></textarea></p>
                <input type="hidden" name="record_id" value="@{{payment_record.id}}">
            </div>
         </div>
       </div>
       <div class="modal-footer">
-      <button class="btn btn-lg btn-success button" name="submit" value="approve" >{{ getPhrase('approve') }}</button>
-      <button class="btn btn-lg btn-danger button" name="submit" value="reject" >{{ getPhrase('reject') }}</button>
-        <button type="button" class="btn btn-lg btn-default button" data-dismiss="modal">{{ getPhrase('close')}}</button>
+      <button class="btn btn-lg btn-success button" name="submit" value="approve" >{{ __('messages.approve') }}</button>
+      <button class="btn btn-lg btn-danger button" name="submit" value="reject" >{{ __('messages.reject') }}</button>
+        <button type="button" class="btn btn-lg btn-default button" data-dismiss="modal">{{ __('messages.close')}}</button>
       </div>
     </div>
 {!! Form::close() !!}

@@ -9,7 +9,7 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 						 
-							<li class="active">{{getPhrase('send_sms')}}</li>
+							<li class="active">{{__('messages.send_sms')}}</li>
 						</ol>
 					</div>
 				</div>
@@ -22,28 +22,28 @@
 					<h1>{{ $title }} </h1>
 					</div>
 					<div class="panel-body" >
-					<?php $button_name = getPhrase('send_sms'); 
+					<?php $button_name = __('messages.send_sms'); 
 
 					?>
 			 
 					{!! Form::open(array('url' => URL_SEND_SMS_NOW, 'method' => 'POST', 'name'=>'formQuiz ',  )) !!}
 					<div class="row">
 					 <fieldset class='form-group'>
-						{{ Form::label('sms_to', getphrase('sms_to')) }}
+						{{ Form::label('sms_to', __('messages.sms_to')) }}
 						<div class="form-group row">
 							
 							<div class="col-md-4">
 							{{ Form::radio('sms_to', 'student', true, array('id'=>'paid1', 'name'=>'sms_to')) }}
-								<label for="paid1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('students')}} </label>
+								<label for="paid1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.students')}} </label>
 							</div>
 							<div class="col-md-4">
 							{{ Form::radio('sms_to', 'parent', false, array('id'=>'parents', 'name'=>'sms_to')) }}
-								<label for="parents"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('parents')}} </label>
+								<label for="parents"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.parents')}} </label>
 							</div>
 							<div class="col-md-4">
 							{{ Form::radio('sms_to', 'admin',false, array('id'=>'free1', 'name'=>'sms_to')) }}
 								
-								<label for="free1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('admins')}}</label> 
+								<label for="free1"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.admins')}}</label> 
 							</div>
 						</div>
 					</fieldset>
@@ -51,15 +51,15 @@
 
 					<div class="row">
 					<fieldset class='form-group'>
-						{{ Form::label('for_category', getphrase('for_category')) }}
+						{{ Form::label('for_category', __('messages.for_category')) }}
 						<div class="form-group row">
 						<div class="col-md-4">
 							{{ Form::radio('for_category', 1, true, array('id'=>'paid', 'name'=>'for_category', 'ng-model'=>'for_category')) }}
-								<label for="paid"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('all')}} </label>
+								<label for="paid"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.all')}} </label>
 							</div>
 							<div class="col-md-4">
 							{{ Form::radio('for_category', 0, false, array('id'=>'free', 'name'=>'for_category', 'ng-model'=>'for_category')) }}
-<label for="free"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{getPhrase('selected')}}</label> 
+<label for="free"> <span class="fa-stack radio-button"> <i class="mdi mdi-check active"></i> </span> {{__('messages.selected')}}</label> 
 							</div>
 						</div>
 					</fieldset>
@@ -84,7 +84,7 @@
 
 						<div class="row">
 					<fieldset class='form-group  '>
-						{{ Form::label('message_template', getphrase('message_template')) }}
+						{{ Form::label('message_template', __('messages.message_template')) }}
 						<div class="form-group row">
 						<div class="col-md-6">
 							<textarea class="form-control" name="message"></textarea>

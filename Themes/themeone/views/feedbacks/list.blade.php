@@ -28,13 +28,13 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('image')}}</th>
-									<th>{{ getPhrase('name')}}</th>
-									<th>{{ getPhrase('subject')}}</th>
-									<th>{{ getPhrase('description')}}</th>
-									<th>{{ getPhrase('posted_on')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.image')}}</th>
+									<th>{{ __('messages.name')}}</th>
+									<th>{{ __('messages.subject')}}</th>
+									<th>{{ __('messages.description')}}</th>
+									<th>{{ __('messages.posted_on')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

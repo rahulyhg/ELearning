@@ -1,5 +1,5 @@
 <div class="panel-heading">
-		<h2>Progress Report</h2></div>
+		<h2>{{ __('messages.progress_report')}}</h2></div>
 	{{-- <div class="panel-body">
 	
 		<div id="reportChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>

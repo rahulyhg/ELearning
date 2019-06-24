@@ -13,13 +13,13 @@
      <div class="row" data-ng-repeat="i in range(total_answers) track by $index" ng-if="total_answers > 0">
      
     <fieldset class="form-group col-md-4" >
-        <label >{{__('messages.option')) }} @{{ $index+1 }}</label> <span class="text-red">*</span>
+        <label >{{__('messages.option') }} @{{ $index+1 }}</label> <span class="text-red">*</span>
         <input type="text" name="options[]" id="option_@{{ $index }}" class="form-control" placeholder="Option @{{ $index+1 }}" ng-model="answers[$index].option_value" required="true">
     </fieldset>
 
      <fieldset class="form-group col-md-4" >
         
-        <label >{{__('messages.option'))}} @{{ $index+1 }} ({{__('messages.2nd_languages'))) </label> 
+        <label >{{__('messages.option')}} @{{ $index+1 }} ({{__('messages.2nd_languages'))) </label> 
         <input type="text" name="optionsl2[]" id="optionl2_@{{ $index }}" class="form-control" placeholder="Option 2nd lang @{{ $index+1 }}" ng-model="answers[$index].optionl2_value">
         
     </fieldset>

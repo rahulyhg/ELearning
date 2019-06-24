@@ -6,7 +6,7 @@
                    <div class="col-lg-12">
                        <ol class="breadcrumb">
                            <li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-                           <li><a href="{{URL_MESSAGES}}">Messages</a> </li>
+                           <li><a href="{{URL_MESSAGES}}">{{__('messages.messages')}}</a> </li>
 
                        </ol>
                    </div>
@@ -14,13 +14,13 @@
                <div class="panel panel-custom">
                    <div class="panel-heading">
                        <div class="pull-right messages-buttons">
-                           <a class="btn btn-lg btn-primary button" href="{{URL_MESSAGES}}"> {{getPhrase('inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
+                           <a class="btn btn-lg btn-primary button" href="{{URL_MESSAGES}}"> {{__('messages.inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
                            <a class="btn btn-lg btn-danger button" href="{{URL_MESSAGES_CREATE}}"> 
-                           {{getPhrase('compose')}}</a>
+                           {{__('messages.compose')}}</a>
 
                 
                        </div>
-                       <h1>{{getPhrase('inbox')}}</h1>
+                       <h1>{{__('messages.inbox')}}</h1>
                    </div>
                    <?php $currentUserId = Auth::user()->id;?>
                    <div class="panel-body packages">
@@ -57,7 +57,7 @@
                                    </li>
                                      @endforeach
                                    @else
-                                       <p>Sorry, no messages.</p>
+                                       <p>{{__('messages.sorry_no_messages')}}</p>
                                    @endif
                            
 

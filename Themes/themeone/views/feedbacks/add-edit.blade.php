@@ -9,7 +9,7 @@
 						<ol class="breadcrumb">
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 						 
-							<li class="active">{{getPhrase('feedback_form')}}</li>
+							<li class="active">{{__('messages.feedback_form')}}</li>
 						</ol>
 					</div>
 				</div>
@@ -22,15 +22,15 @@
 					<h1>{{ $title }}  </h1>
 					</div>
 					<div class="panel-body" >
-					<?php $button_name = getPhrase('send'); ?>
+					<?php $button_name = __('messages.send'); ?>
 					 
 					{!! Form::open(array('url' => URL_FEEDBACK_SEND, 'method' => 'POST', 'name'=>'formQuiz ', 'novalidate'=>'')) !!}
 					<div class="row">
  					 <fieldset class="form-group col-md-12">
 						
-						{{ Form::label('title', getphrase('title')) }}
+						{{ Form::label('title', __('messages.title')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.title'),
 							'ng-model'=>'title', 
 							'ng-pattern'=>getRegexPattern('name'), 
 							'required'=> 'true', 
@@ -50,9 +50,9 @@
 					<div class="row">
 					<fieldset class="form-group col-md-12">
 						
-						{{ Form::label('subject', getphrase('subject')) }}
+						{{ Form::label('subject', __('messages.subject')) }}
 						<span class="text-red">*</span>
-						{{ Form::text('subject', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('subject'),
+						{{ Form::text('subject', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.subject'),
 							'ng-model'=>'subject', 
 							'required'=> 'true', 
 							'ng-class'=>'{"has-error": formQuiz.subject.$touched && formQuiz.subject.$invalid}',
@@ -70,7 +70,7 @@
 					
 					<div class="row">
 					 <fieldset class="form-group col-md-12">
-					 {{ Form::label('description', getphrase('description')) }}
+					 {{ Form::label('description', __('messages.description')) }}
 						<span class="text-red">*</span>
 							 <textarea name="description" ng-model="description"
 							 required="true" class='form-control' rows="5"></textarea>

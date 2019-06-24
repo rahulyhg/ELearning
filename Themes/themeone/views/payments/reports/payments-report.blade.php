@@ -34,7 +34,7 @@
 							@endif
 							all"
 							>
-								{{ getPhrase('payments')}}</a>
+								{{ __('messages.payments')}}</a>
 				 			</div>
 				 		</div>
 				 	</div>
@@ -59,7 +59,7 @@
 							@endif
 							success"
 							>
-								{{ getPhrase('success')}}</a>
+								{{ __('messages.success')}}</a>
 				 			</div>
 				 		</div>
 				 	</div>
@@ -84,7 +84,7 @@
 							@endif
 							pending"
 							>
-								{{ getPhrase('pending')}}</a>
+								{{ __('messages.pending')}}</a>
 				 			</div>
 				 		</div>
 				 	</div>
@@ -110,7 +110,7 @@
 							@endif
 							cancelled"
 							>
-								{{ getPhrase('cancelled')}}</a>
+								{{ __('messages.cancelled')}}</a>
 				 			</div>
 				 		</div>
 				 	</div>
@@ -120,7 +120,7 @@
 			<div class="row">
 				<div class="col-md-6">
   				  <div class="panel panel-primary dsPanel">
-				    <div class="panel-heading">{{getPhrase('payment_statistics')}}</div>
+				    <div class="panel-heading">{{__('messages.payment_statistics')}}</div>
 				    <div class="panel-body" >
 				    	<canvas id="payments_chart" width="100" height="60"></canvas>
 				    </div>
@@ -129,7 +129,7 @@
 
 				<div class="col-md-6">
   				  <div class="panel panel-primary dsPanel">
-				    <div class="panel-heading">{{getPhrase('payment_monthly_statistics')}}</div>
+				    <div class="panel-heading">{{__('messages.payment_monthly_statistics')}}</div>
 				    <div class="panel-body" >
 				    	<canvas id="payments_monthly_chart" width="100" height="60"></canvas>
 				    </div>

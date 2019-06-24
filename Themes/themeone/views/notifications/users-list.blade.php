@@ -26,7 +26,7 @@
                             <li>
                                 <a href="{{URL_NOTIFICATIONS_VIEW.$notification->slug}}">
                                     <h4>{{$notification->title}}</h4>
-                                    <p>{{$notification->short_description}}</p> <span class="posted-time">{{getPhrase('posted_on')}} : <i class="fa fa-calendar"></i> {{ $notification->updated_at}}</span> </a>
+                                    <p>{{$notification->short_description}}</p> <span class="posted-time">{{__('messages.posted_on')}} : <i class="fa fa-calendar"></i> {{ $notification->updated_at}}</span> </a>
                             </li>
                             @endforeach
                             

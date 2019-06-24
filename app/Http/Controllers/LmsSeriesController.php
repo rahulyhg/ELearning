@@ -36,7 +36,7 @@ class LmsSeriesController extends Controller
       }
 
         $data['active_class']       = 'lms';
-        $data['title']              = 'LMS'.' '.getPhrase('series');
+        $data['title']              = 'LMS'.' '.__('messages.series');
     	// return view('lms.lmsseries.list', $data);
 
         $view_name = getTheme().'::lms.lmsseries.list';
@@ -71,12 +71,12 @@ class LmsSeriesController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
-                           <li><a href="'.URL_LMS_SERIES_UPDATE_SERIES.$records->slug.'"><i class="fa fa-spinner"></i>'.getPhrase("update").' LMS'.'</a></li>
-                            <li><a href="'.URL_LMS_SERIES_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.getPhrase("edit").'</a></li>';
+                           <li><a href="'.URL_LMS_SERIES_UPDATE_SERIES.$records->slug.'"><i class="fa fa-spinner"></i>'.__("messages.update").' LMS'.'</a></li>
+                            <li><a href="'.URL_LMS_SERIES_EDIT.$records->slug.'"><i class="fa fa-pencil"></i>'.__("messages.edit").'</a></li>';
                             
                            $temp = '';
                            if(checkRole(getUserGrade(1))) {
-                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. getPhrase("delete").'</a></li>';
+                    $temp .= ' <li><a href="javascript:void(0);" onclick="deleteRecord(\''.$records->slug.'\');"><i class="fa fa-trash"></i>'. __("messages.delete").'</a></li>';
                       }
                     
                     $temp .='</ul></div>';
@@ -107,12 +107,12 @@ class LmsSeriesController extends Controller
         })
         ->editColumn('is_paid', function($records)
         {
-            return ($records->is_paid) ? '<span class="label label-primary">'.getPhrase('paid') .'</span>' : '<span class="label label-success">'.getPhrase('free').'</span>';
+            return ($records->is_paid) ? '<span class="label label-primary">'.__('messages.paid') .'</span>' : '<span class="label label-success">'.__('messages.free').'</span>';
         })
 
          ->editColumn('show_in_front', function($records)
         {
-            return ($records->show_in_front) ? '<span class="label label-success">'.getPhrase('yes') .'</span>' : '<span class="label label-info">'.getPhrase('no').'</span>';
+            return ($records->show_in_front) ? '<span class="label label-success">'.__('messages.yes') .'</span>' : '<span class="label label-info">'.__('messages.no').'</span>';
         })
         
         ->removeColumn('id')
@@ -136,7 +136,7 @@ class LmsSeriesController extends Controller
     	$data['active_class']       = 'lms';
     	$data['categories']       	= array_pluck(App\LmsCategory::all(),'category', 'id');
 
-      	$data['title']              = getPhrase('add_series');
+      	$data['title']              = __('messages.add_series');
     	// return view('lms.lmsseries.add-edit', $data);
        $view_name = getTheme().'::lms.lmsseries.add-edit';
         return view($view_name, $data);
@@ -163,7 +163,7 @@ class LmsSeriesController extends Controller
     	$data['active_class']     = 'lms';
     	$data['settings']         = FALSE;
     	$data['categories']       	= array_pluck(App\LmsCategory::all(),'category', 'id');
-    	$data['title']            = getPhrase('edit_series');
+    	$data['title']            = __('messages.edit_series');
     	// return view('lms.lmsseries.add-edit', $data);
          $view_name = getTheme().'::lms.lmsseries.add-edit';
         return view($view_name, $data);
@@ -383,7 +383,7 @@ class LmsSeriesController extends Controller
         if(!$record)
         {
           $response['status'] = 0;
-          $response['message'] = getPhrase('invalid_record');  
+          $response['message'] = __('messages.invalid_record');  
            return json_encode($response);
         }
 
@@ -392,14 +392,14 @@ class LmsSeriesController extends Controller
           $record->delete();
         }
         $response['status'] = 1;
-        $response['message'] = getPhrase('record_deleted_successfully');
+        $response['message'] = __('messages.record_deleted_successfully');
       }
       catch ( \Illuminate\Database\QueryException $e) {
                  $response['status'] = 0;
            if(getSetting('show_foreign_key_constraint','module'))
             $response['message'] =  $e->errorInfo;
            else
-            $response['message'] =  getPhrase('this_record_is_in_use_in_other_modules');
+            $response['message'] =  __('messages.this_record_is_in_use_in_other_modules');
        }
        return json_encode($response);
 
@@ -409,7 +409,7 @@ class LmsSeriesController extends Controller
     {
     	if ($record === null) {
 
-    		flash('Ooops...!', getPhrase("page_not_found"), 'error');
+    		flash('Ooops...!', __("messages.page_not_found"), 'error');
    			return $this->getRedirectUrl();
 		}
 
@@ -492,7 +492,7 @@ class LmsSeriesController extends Controller
     									'category', 'id');
 
     	// $data['categories']       	= array_pluck(QuizCategory::all(), 'category', 'id');
-    	$data['title']              = getPhrase('update_series_for').' '.$record->title;
+    	$data['title']              = __('messages.update_series_for').' '.$record->title;
     	// return view('lms.lmsseries.update-list', $data);
 
          $view_name = getTheme().'::lms.lmsseries.update-list';
@@ -542,7 +542,7 @@ class LmsSeriesController extends Controller
     public function listSeries()
     {
         $data['active_class']       = 'exams';
-        $data['title']              = getPhrase('exam_series');
+        $data['title']              = __('messages.exam_series');
         $data['series']         = LmsSeries::paginate((new App\GeneralSettings())->getPageLength());
         $data['layout']              = getLayout();
        // return view('student.exams.exam-series-list', $data);

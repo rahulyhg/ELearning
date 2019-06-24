@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <ol class="breadcrumb">
                             <li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
-                            <li><a href="{{URL_MESSAGES}}">{{getPhrase('messages')}}</a> </li>
+                            <li><a href="{{URL_MESSAGES}}">{{__('messages.messages')}}</a> </li>
 
                             <li class="active"> {{ $title }} </li>
                         </ol>
@@ -18,9 +18,9 @@
 <div class="panel panel-custom">
                     <div class="panel-heading">
                     <div class="pull-right messages-buttons">
-                            <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES}}"> {{getPhrase('inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
+                            <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES}}"> {{__('messages.inbox').'('.$count = Auth::user()->newThreadsCount().')'}} </a>
                             <a class="btn btn-lg btn-info button" href="{{URL_MESSAGES_CREATE}}"> 
-                            {{getPhrase('compose')}}</a>
+                            {{__('messages.compose')}}</a>
 
                  
                         </div>
@@ -40,20 +40,20 @@
                 $tosentUsers[$user->id] = $user->name; 
             }
         ?>
-     {!! Form::label('Select User', 'Select User', ['class' => 'control-label']) !!}
+     {!! Form::label('Select User', __('messages.select_user'), ['class' => 'control-label']) !!}
     {{Form::select('recipients[]', $tosentUsers, null, ['class'=>'form-control select2', 'name'=>'recipients[]', 'multiple'=>'true'])}}
     @endif
  
     
     <!-- Subject Form Input -->
     <div class="form-group">
-        {!! Form::label('subject', 'Subject', ['class' => 'control-label']) !!}
+        {!! Form::label('subject', __('messages.subject'), ['class' => 'control-label']) !!}
         {!! Form::text('subject', null, ['class' => 'form-control']) !!}
     </div>
 
     <!-- Message Form Input -->
     <div class="form-group">
-        {!! Form::label('message', 'Message', ['class' => 'control-label']) !!}
+        {!! Form::label('message', __('messages.messages'), ['class' => 'control-label']) !!}
         {!! Form::textarea('message', null, ['class' => 'form-control']) !!}
     </div>
 
@@ -61,7 +61,7 @@
     
     <!-- Submit Form Input -->
     <div class="text-right">
-        {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-lg']) !!}
+        {!! Form::submit(__('messages.submit'), ['class' => 'btn btn-primary btn-lg']) !!}
     </div>
 </div>
 {!! Form::close() !!}

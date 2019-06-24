@@ -25,10 +25,10 @@
               <?php $sno = 1;?>
                <table class="table table-bordered tabel-dues-details fee-details">
                <tr>
-                  <th>{{getPhrase('sno')}} </th>
-                  <th>{{ getPhrase('date')}}</th>
-                  <th>{{getPhrase('total')}}</th>
-                  <th>{{getPhrase('action')}}</th>
+                  <th>{{__('messages.sno')}} </th>
+                  <th>{{ __('messages.date')}}</th>
+                  <th>{{__('messages.total')}}</th>
+                  <th>{{__('messages.action')}}</th>
                   
                 </tr>
                   @foreach ($invoices as $invoice)
@@ -36,7 +36,7 @@
                       <td>{{ $sno++ }}</td>
                           <td>{{ $invoice->date()->toFormattedDateString() }}</td>
                           <td>{{ $invoice->total() }}</td>
-                          <td><a href="/user/invoice/{{ $invoice->id }}">{{ getPhrase('download')}}</a></td>
+                          <td><a href="/user/invoice/{{ $invoice->id }}">{{ __('messages.download')}}</a></td>
                       </tr>
                   @endforeach
               </table>

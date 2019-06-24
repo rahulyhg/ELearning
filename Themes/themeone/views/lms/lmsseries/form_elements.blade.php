@@ -8,11 +8,11 @@
 
 						
 
-						{{ Form::label('title', getphrase('title')) }}
+						{{ Form::label('title', __('messages.title')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('series_title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.series_title'),
 
 							'ng-model'=>'title', 
 
@@ -46,11 +46,11 @@
 
 					 <fieldset class="form-group col-md-6" >
 
-						{{ Form::label('lms_category_id', 'LMS Category') }}
+						{{ Form::label('lms_category_id',  __('messages.LMS_category')) }}
 
 						<span class="text-red">*</span>
 
-						{{Form::select('lms_category_id', $categories, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('lms_category_id', $categories, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 
 						'ng-model'=>'lms_category_id',
 
@@ -90,11 +90,11 @@
 
 					 <fieldset class="form-group col-md-6" >
 
-						{{ Form::label('is_paid', getphrase('is_paid')) }}
+						{{ Form::label('is_paid', __('messages.is_paid')) }}
 
 						<span class="text-red">*</span>
 
-						{{Form::select('is_paid', $payment_options, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('is_paid', $payment_options, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 
 						'ng-model'=>'is_paid',
 
@@ -134,11 +134,11 @@
 
 							
 
-							{{ Form::label('validity', getphrase('validity')) }}
+							{{ Form::label('validity', __('messages.validity')) }}
 
 							<span class="text-red">*</span>
 
-							{{ Form::number('validity', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('validity_in_days'),
+							{{ Form::number('validity', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.validity_in_days'),
 
 							'ng-model'=>'validity',
 							'string-to-number'=>'true',
@@ -169,7 +169,7 @@
 
 						
 
-						{{ Form::label('cost', getphrase('cost')) }}
+						{{ Form::label('cost', __('messages.cost')) }}
 
 						<span class="text-red">*</span>
 
@@ -209,11 +209,11 @@
 
 							
 
-							{{ Form::label('total_items', getphrase('total_items')) }}
+							{{ Form::label('total_items', __('messages.total_items')) }}
 
 							<span class="text-red">*</span>
 
-							{{ Form::text('total_items', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => getPhrase('It will be updated by adding the LMS items'))) }}
+							{{ Form::text('total_items', $value = null , $attributes = array('class'=>'form-control','readonly'=>'true' ,'placeholder' => __('messages.It will be updated by adding the LMS items'))) }}
 
 					</fieldset>
 
@@ -221,7 +221,7 @@
 
  					<fieldset class="form-group col-md-4" >
 
-				   {{ Form::label('image', getphrase('image')) }}
+				   {{ Form::label('image', __('messages.image')) }}
 
 				         <input type="file" class="form-control" name="image" 
 				          accept=".png,.jpg,.jpeg" id="image_input">
@@ -273,12 +273,12 @@
 				}
 				 ?>
 				 <fieldset class="form-group col-md-6">
-					{{ Form::label('start_date', getphrase('start_date')) }}
+					{{ Form::label('start_date', __('messages.start_date')) }}
 					{{ Form::text('start_date', $value = $date_from , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
 				</fieldset>
 
 				<fieldset class="form-group col-md-6">
-					{{ Form::label('end_date', getphrase('end_date')) }}
+					{{ Form::label('end_date', __('messages.end_date')) }}
 					{{ Form::text('end_date', $value = $date_to , $attributes = array('class'=>'input-sm form-control', 'placeholder' => '2015/7/17')) }}
 				</fieldset>
 			</div>
@@ -288,11 +288,11 @@
 
 					 <fieldset class="form-group col-md-12" >
 
-						{{ Form::label('show_in_front', getphrase('show_in_home_page')) }}
+						{{ Form::label('show_in_front', __('messages.show_in_home_page')) }}
 
 						<span class="text-red">*</span>
 
-						{{Form::select('show_in_front', $options, null, ['placeholder' => getPhrase('select'),'class'=>'form-control', 
+						{{Form::select('show_in_front', $options, null, ['placeholder' => __('messages.select'),'class'=>'form-control', 
 
 						    'ng-model'=>'show_in_front',
 
@@ -319,11 +319,11 @@
 
 						
 
-						{{ Form::label('short_description', getphrase('short_description')) }}
+						{{ Form::label('short_description', __('messages.short_description')) }}
 
 						
 
-						{{ Form::textarea('short_description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => getPhrase('short_description'))) }}
+						{{ Form::textarea('short_description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => __('messages.short_description'))) }}
 
 					</fieldset>
 
@@ -331,11 +331,11 @@
 
 						
 
-						{{ Form::label('description', getphrase('description')) }}
+						{{ Form::label('description', __('messages.description')) }}
 
 						
 
-						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => getPhrase('description'))) }}
+						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => __('messages.description'))) }}
 
 					</fieldset>
 

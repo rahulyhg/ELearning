@@ -3,6 +3,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
+
 <div id="page-wrapper">
 			<div class="container-fluid">
 				<!-- Page Heading -->
@@ -21,8 +22,7 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-							<a href="<?php echo e(URL_USERS_IMPORT); ?>" class="btn  btn-primary button" ><?php echo e(__('messages.import_excel')); ?></a>
-							<a href="<?php echo e(URL_USERS_ADD); ?>" class="btn  btn-primary button" ><?php echo e(__('messages.add_user')); ?></a>
+							<a href="<?php echo e(URL_LANGUAGES_ADD); ?>" class="btn  btn-primary button" ><?php echo e(getPhrase('create')); ?></a>
 							 
 						</div>
 						<h1><?php echo e($title); ?></h1>
@@ -32,29 +32,32 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-								 	<th><?php echo e(__('messages.name')); ?></th>
-									<th><?php echo e(__('messages.email')); ?></th>
-									<th><?php echo e(__('messages.image')); ?></th>
-									<th><?php echo e(__('messages.role')); ?></th>
-									<th><?php echo e(__('messages.action')); ?></th>
+									 
+									<th><?php echo e(getPhrase('language')); ?></th>
+									<th><?php echo e(getPhrase('code')); ?></th>
+									<th><?php echo e(getPhrase('is_rtl')); ?></th>
+									<th><?php echo e(getPhrase('default_language')); ?></th>
+							 		<th><?php echo e(getPhrase('action')); ?></th>
+								  
 								</tr>
 							</thead>
 							 
 						</table>
 						</div>
-						 
 
 					</div>
-
 				</div>
 			</div>
 			<!-- /.container-fluid -->
 		</div>
 <?php $__env->stopSection(); ?>
  
+
 <?php $__env->startSection('footer_scripts'); ?>
- <?php echo $__env->make('common.datatables', array('route'=>'users.dataTable'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
- <?php echo $__env->make('common.deletescript', array('route'=>URL_USERS_DELETE), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  
+ <?php echo $__env->make('common.datatables', array('route'=>'languages.dataTable'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <?php echo $__env->make('common.deletescript', array('route'=>URL_LANGUAGES_DELETE), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make($layout, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.admin.adminlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

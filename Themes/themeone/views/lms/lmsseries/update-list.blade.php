@@ -22,7 +22,7 @@
 
 							<li><a href="{{PREFIX}}"><i class="mdi mdi-home"></i></a> </li>
 
-							<li><a href="{{URL_LMS_SERIES}}">{{ getPhrase('lms_series')}}</a></li>
+							<li><a href="{{URL_LMS_SERIES}}">{{ __('messages.lms_series')}}</a></li>
 
 							<li class="active">{{isset($title) ? $title : ''}}</li>
 
@@ -42,7 +42,7 @@
 
 						<div class="pull-right messages-buttons">
 
-							<a href="{{URL_LMS_SERIES}}" class="btn  btn-primary button" >{{ getPhrase('list')}}</a>
+							<a href="{{URL_LMS_SERIES}}" class="btn  btn-primary button" >{{ __('messages.list')}}</a>
 
 						</div>
 
@@ -52,19 +52,19 @@
 
 					<div class="panel-body" >
 
-					<?php $button_name = getPhrase('create'); ?>
+					<?php $button_name = __('messages.create'); ?>
 
 					 		<div class="row">
 
 							<fieldset class="form-group col-md-6">
 
-								{{ Form::label('lms_categories', getphrase('select_subject')) }}
+								{{ Form::label('lms_categories', __('messages.select_subject')) }}
 
 								 
 
 								{{Form::select('lms_categories', $categories, null, ['class'=>'form-control', 'ng-model' => 'category_id', 
 
-								'placeholder' => 'Select', 'ng-change'=>'categoryChanged(category_id)' ])}}
+								'placeholder' => __('messages.select'), 'ng-change'=>'categoryChanged(category_id)' ])}}
 
 							</fieldset>
 
@@ -72,13 +72,13 @@
 
 							<fieldset class="form-group col-md-6">
 
-								{{ Form::label('file_type', getphrase('file_type')) }}
+								{{ Form::label('file_type', __('messages.file_type')) }}
 
 								 
 
 								{{Form::select('file_type', $lmssettings->content_types, null, ['class'=>'form-control', 'ng-model' => 'content_type', 
 
-								'placeholder' => getPhrase('Select')  ])}}
+								'placeholder' => __('messages.select')  ])}}
 
 							</fieldset>
 
@@ -86,7 +86,7 @@
 
 							{{-- 	<fieldset class="form-group col-md-12">
 
-								{{ Form::text('search_term', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('search_term'),
+								{{ Form::text('search_term', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.search_term'),
 
 							'ng-model'=>'search_term'
 
@@ -104,7 +104,7 @@
 
 						
 
-								<h4 ng-if="categoryItems.length>0" class="text-success">{{getPhrase('total_items')}}: @{{ categoryItems.length}} </h4>
+								<h4 ng-if="categoryItems.length>0" class="text-success">{{__('messages.total_items')}}: @{{ categoryItems.length}} </h4>
 
 
 
@@ -114,17 +114,17 @@
 
   									 
 
-									<th>{{getPhrase('title')}}</th>
+									<th>{{__('messages.title')}}</th>
 
-									<th>{{getPhrase('code')}}</th>
+									<th>{{__('messages.code')}}</th>
 
-									<th>{{getPhrase('type')}}</th>
+									<th>{{__('messages.type')}}</th>
 
 								 
 
 									 
 
-									<th>{{getPhrase('action')}}</th>	
+									<th>{{__('messages.action')}}</th>	
 
 									 
 
@@ -150,7 +150,7 @@
 
 										 
 
-										ng-click="addToBag(item);" class="btn btn-primary" >{{getPhrase('add')}}</a>
+										ng-click="addToBag(item);" class="btn btn-primary" >{{__('messages.add')}}</a>
 
 									  		
 

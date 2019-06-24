@@ -35,7 +35,7 @@ class SiteThemesController extends Controller
 
 
         $data['active_class']       = 'themes';
-        $data['title']              = getPhrase('themes');
+        $data['title']              = __('messages.themes');
     	// return view('lms.lmscategories.list', $data);
 
            $view_name = getTheme().'::site.themes.list';
@@ -65,7 +65,7 @@ class SiteThemesController extends Controller
                             <i class="mdi mdi-dots-vertical"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="'.URL_VIEW_THEME_SETTINGS.$records->slug.'"><i class="fa fa-edit"></i>'.getPhrase("update_settings").'</a></li>
+                            <li><a href="'.URL_VIEW_THEME_SETTINGS.$records->slug.'"><i class="fa fa-edit"></i>'.__("messages.update_settings").'</a></li>
                         </ul>
                     </div>';
             })
@@ -73,8 +73,8 @@ class SiteThemesController extends Controller
           ->editColumn('is_active',function ($records)
         {
         	 if($records->is_active)
-                return '<i class="fa fa-check text-success" title="'.getPhrase('enable').'"></i>';
-            return '<a href="'.URL_THEME_MAKE_DEFAULT.$records->id.'" class="btn btn-info btn-xs">'.getPhrase('set_default').'</a>';
+                return '<i class="fa fa-check text-success" title="'.__('messages.enable').'"></i>';
+            return '<a href="'.URL_THEME_MAKE_DEFAULT.$records->id.'" class="btn btn-info btn-xs">'.__('messages.set_default').'</a>';
         })
 
            ->editColumn('title',function ($records)
@@ -237,7 +237,7 @@ class SiteThemesController extends Controller
     {
       if ($record === null) {
 
-        flash('Ooops...!', getPhrase("page_not_found"), 'error');
+        flash('Ooops...!', __("messages.page_not_found"), 'error');
         return $this->getRedirectUrl();
       }
   }

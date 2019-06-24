@@ -23,7 +23,7 @@
 					<div class="panel-heading">
 						
 						<div class="pull-right messages-buttons">
-							<a href="/library/master/collection/add/{{ $master_record->slug }}" class="btn  btn-primary button" >{{ getPhrase('create')}}</a>
+							<a href="/library/master/collection/add/{{ $master_record->slug }}" class="btn  btn-primary button" >{{ __('messages.create')}}</a>
 						</div>
 						<h1>{{ $title }}</h1>
 					</div>
@@ -33,13 +33,13 @@
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>{{ getPhrase('type')}}</th>
-									<th>{{ getPhrase('image')}}</th>
-									<th>{{ getPhrase('title')}}</th>
-									<th>{{ getPhrase('author')}}</th>
-									<th>{{ getPhrase('publisher')}}</th>
-									<th>{{ getPhrase('edition')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.type')}}</th>
+									<th>{{ __('messages.image')}}</th>
+									<th>{{ __('messages.title')}}</th>
+									<th>{{ __('messages.author')}}</th>
+									<th>{{ __('messages.publisher')}}</th>
+									<th>{{ __('messages.edition')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

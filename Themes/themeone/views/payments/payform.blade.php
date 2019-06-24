@@ -27,7 +27,7 @@
                   <p>{{ $p->name}}</p>
                   <hr>
                   <p><strong>{{ $p->title }}</strong></p>
-                  <p>{{getPhrase('it_is_a').' '.ucfirst($p->type).' '.getPhrase('type')}}</p>
+                  <p>{{__('messages.it_is_a').' '.ucfirst($p->type).' '.__('messages.Type')}}</p>
                   <p>{{ $p->description}}</p>
                   <?php 
                   $url = '/subscription/subscribe/'.$p->slug;

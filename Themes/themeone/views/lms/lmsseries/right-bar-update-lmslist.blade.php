@@ -1,11 +1,11 @@
 <div class="panel-heading">
-		<h2>{{getPhrase('saved_items')}}</h2>
+		<h2>{{__('messages.saved_items')}}</h2>
 	<div ng-if="savedSeries.length>0" class="crearfix selected-questions-details">
 		 
-		<span class="pull-right">{{getPhrase('total_items')}}: @{{ savedSeries.length }}</span>
+		<span class="pull-right">{{__('messages.total_items')}}: @{{ savedSeries.length }}</span>
 	</div>
 	<div ng-if="savedSeries.length==0" class="crearfix selected-questions-details">
-		<span class="pull-left">{{getPhrase('no_data_available')}}</span>
+		<span class="pull-left">{{__('messages.no_data_available')}}</span>
 	</div>	
 	</div>
 	{!! Form::open(array('url' => URL_LMS_SERIES_UPDATE_SERIES.$record->slug, 'method' => 'POST')) !!}
@@ -15,14 +15,14 @@
 			<div class="col-md-12 clearfix">
 				<div ng-if="savedSeries!=''" class="vertical-scroll" >
 					 				
-					 				<a class="remove-all-questions text-red" ng-click="removeAll()">{{ getPhrase('remove_all')}}</a>
+					 				<a class="remove-all-questions text-red" ng-click="removeAll()">{{ __('messages.remove_all')}}</a>
 					 				<table  
 								  class="table table-hover">
 								  <thead>
 								  <tr>
-									<th>{{getPhrase('title')}}</th>
-									<th>{{getPhrase('type')}}</th>
-									<th>{{getPhrase('code')}}</th>	
+									<th>{{__('messages.title')}}</th>
+									<th>{{__('messages.type')}}</th>
+									<th>{{__('messages.code')}}</th>	
 									<th></th>	
 									</tr>
 									</thead>
@@ -38,7 +38,7 @@
 					 			</div>
 
 					 			<div class="buttons text-center" >
-							<button class="btn btn-lg btn-success button">{{getPhrase('update')}}</button>
+							<button class="btn btn-lg btn-success button">{{__('messages.update')}}</button>
 						</div>
 			</div>
 		</div>

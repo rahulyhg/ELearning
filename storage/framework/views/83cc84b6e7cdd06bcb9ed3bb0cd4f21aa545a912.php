@@ -3,7 +3,6 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
-
 <div id="page-wrapper">
 			<div class="container-fluid">
 				<!-- Page Heading -->
@@ -11,7 +10,7 @@
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
 							<li><a href="<?php echo e(PREFIX); ?>"><i class="mdi mdi-home"></i></a> </li>
-							<li><?php echo e(__('messages.quiz_categories')); ?></li>
+							<li><?php echo e($title); ?></li>
 						</ol>
 					</div>
 				</div>
@@ -22,41 +21,40 @@
 						
 						<div class="pull-right messages-buttons">
 							 
-							<a href="<?php echo e(URL_QUIZ_CATEGORY_ADD); ?>" class="btn  btn-primary button" ><?php echo e(__('messages.create')); ?></a>
+							<a href="<?php echo e(URL_USERS_IMPORT); ?>" class="btn  btn-primary button" ><?php echo e(getPhrase('import_excel')); ?></a>
+							<a href="<?php echo e(URL_USERS_ADD); ?>" class="btn  btn-primary button" ><?php echo e(getPhrase('add_user')); ?></a>
 							 
 						</div>
-						<h1><?php echo e(__('messages.quiz_categories')); ?></h1>
+						<h1><?php echo e($title); ?></h1>
 					</div>
 					<div class="panel-body packages">
 						<div> 
 						<table class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									 
-									<th><?php echo e(__('messages.category')); ?></th>
-									<th><?php echo e(__('messages.image')); ?></th>
-									<th><?php echo e(__('messages.description')); ?></th>
-									<th><?php echo e(__('messages.action')); ?></th>
-								  
+								 	<th><?php echo e(getPhrase('name')); ?></th>
+									<th><?php echo e(getPhrase('email')); ?></th>
+									<th><?php echo e(getPhrase('image')); ?></th>
+									<th><?php echo e(getPhrase('role')); ?></th>
+									<th><?php echo e(getPhrase('action')); ?></th>
 								</tr>
 							</thead>
 							 
 						</table>
 						</div>
+						 
 
 					</div>
+
 				</div>
 			</div>
 			<!-- /.container-fluid -->
 		</div>
 <?php $__env->stopSection(); ?>
  
-
 <?php $__env->startSection('footer_scripts'); ?>
-  
- <?php echo $__env->make('common.datatables', array('route'=>'quizcategories.dataTable'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
- <?php echo $__env->make('common.deletescript', array('route'=>URL_QUIZ_CATEGORY_DELETE), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
+ <?php echo $__env->make('common.datatables', array('route'=>'users.dataTable'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <?php echo $__env->make('common.deletescript', array('route'=>URL_USERS_DELETE), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin.adminlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make($layout, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

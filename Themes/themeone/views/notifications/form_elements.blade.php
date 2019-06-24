@@ -8,11 +8,11 @@
 
 						
 
-						{{ Form::label('title', getphrase('title')) }}
+						{{ Form::label('title', __('messages.title')) }}
 
 						<span class="text-red">*</span>
 
-						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => getPhrase('title'),
+						{{ Form::text('title', $value = null , $attributes = array('class'=>'form-control', 'placeholder' => __('messages.title'),
 
 							'ng-model'=>'title', 
 
@@ -48,7 +48,7 @@
 
 						
 
-						{{ Form::label('url', getphrase('url')) }}
+						{{ Form::label('url', __('messages.url')) }}
 
 						 
 
@@ -115,7 +115,7 @@
 
 
 
-                        {{ Form::label('valid_from', getphrase('valid_from')) }}
+                        {{ Form::label('valid_from', __('messages.valid_from')) }}
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-                        {{ Form::label('valid_to', getphrase('valid_to')) }}
+                        {{ Form::label('valid_to', __('messages.valid_to')) }}
 
 
 
@@ -179,11 +179,11 @@
 
 						
 
-						{{ Form::label('short_description', getphrase('short_description')) }}
+						{{ Form::label('short_description', __('messages.short_description')) }}
 
 						
 
-						{{ Form::textarea('short_description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => getPhrase('short_description'))) }}
+						{{ Form::textarea('short_description', $value = null , $attributes = array('class'=>'form-control', 'rows'=>'5', 'placeholder' => __('messages.short_description'))) }}
 
 					</fieldset>
 
@@ -191,11 +191,11 @@
 
 						
 
-						{{ Form::label('description', getphrase('description')) }}
+						{{ Form::label('description', __('messages.description')) }}
 
 						
 
-						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => getPhrase('description'))) }}
+						{{ Form::textarea('description', $value = null , $attributes = array('class'=>'form-control ckeditor', 'rows'=>'5', 'placeholder' => __('messages.description'))) }}
 
 					</fieldset>
 
