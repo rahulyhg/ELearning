@@ -42,7 +42,7 @@
                             <input type="email" class="form-control" id="email" placeholder="Your email address" required>
                         </div>
 
-                        <button class="btn btn-secondary" onclick="showSubscription('yes')">{{getPhrase('subscribe')}}</button>
+                        <button class="btn btn-secondary" onclick="showSubscription('yes')">{{__('messages.subscribe')}}</button>
 
                     </div>
 
@@ -58,7 +58,7 @@
             <div class="cs-row">
                 <div class="row">
                     <div class="col-sm-12 text-center clearfix">
-                        <h2 class="cs-section-head">{{getPhrase('practice_exams_and_exam_categories')}}</h2>
+                        <h2 class="cs-section-head">{{__('messages.practice_exams_and_exam_categories')}}</h2>
 
                         <ul class="nav nav-pills cs-nav-pills text-center">
 
@@ -71,7 +71,7 @@
                             @endforeach
 
                            @else
-                             <h4>{{getPhrase('no_practice_exams_are_available')}}</h4> 
+                             <h4>{{__('messages.no_practice_exams_are_available')}}</h4> 
 
                            @endif  
                           
@@ -119,9 +119,9 @@
 
                                 </ul>
                                 <div class="text-center mt-2">
-                                     <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="btn btn-blue btn-sm btn-radius">{{getPhrase('start_exam')}}</a>
+                                     <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="btn btn-blue btn-sm btn-radius">{{__('messages.start_exam')}}</a>
                                 </div>
-                            {{--   <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="cs-product-title pull-right">{{getPhrase('take_exam')}}</a> --}}
+                            {{--   <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="cs-product-title pull-right">{{__('messages.take_exam')}}</a> --}}
                             </div>
                         </div>
                         <!-- /Product Single Item -->
@@ -135,7 +135,7 @@
               @if(count($categories))
                 <div class="row text-center">
                     <ul class="list-inline top40">
-                        <li><a href="{{URL_VIEW_ALL_EXAM_CATEGORIES}}" class="btn btn-primary btn-shadow">{{getPhrase('Browse_all_exams')}}</a></li>
+                        <li><a href="{{URL_VIEW_ALL_EXAM_CATEGORIES}}" class="btn btn-primary btn-shadow">{{__('messages.Browse_all_exams')}}</a></li>
                     </ul>
                 </div>
                @endif 
@@ -151,7 +151,7 @@
             <div class="cs-row">
                 <div class="row">
                     <div class="col-sm-12 text-center clearfix">
-                        <h2 class="cs-section-head">LMS {{getPhrase('categories')}}</h2>
+                        <h2 class="cs-section-head">LMS {{__('messages.categories')}}</h2>
 
                         <ul class="nav nav-pills cs-nav-pills lms-cats text-center">
                            @if(isset($lms_cates))
@@ -164,7 +164,7 @@
 
                            @else
 
-                             <h4>{{getPhrase('no_categories_are_available')}}</h4> 
+                             <h4>{{__('messages.no_categories_are_available')}}</h4> 
 
                            @endif  
                           
@@ -210,7 +210,7 @@
 
                 <div class="row text-center">
                     <ul class="list-inline top40">
-                        <li><a href="{{URL_VIEW_ALL_LMS_CATEGORIES}}" class="btn btn-primary btn-shadow">{{getPhrase('Browse_all_categories')}}</a></li>
+                        <li><a href="{{URL_VIEW_ALL_LMS_CATEGORIES}}" class="btn btn-primary btn-shadow">{{__('messages.Browse_all_categories')}}</a></li>
                     </ul>
                 </div>
 
@@ -230,7 +230,7 @@
                     <!-- Info Box  Centered Single Item -->
                     <div class="cs-info-box-center">
                         <img src="{{IMAGES}}icn-cup.png" alt="" class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h4>{{getPhrase('free_exams')}}</h4>
+                        <h4>{{__('messages.free_exams')}}</h4>
                         
                     </div>
                     <!-- /Info Box Centered  Single Item -->
@@ -239,7 +239,7 @@
                     <!-- Info Box  Centered Single Item -->
                     <div class="cs-info-box-center">
                         <img src="{{IMAGES}}icn-computer.png" alt="" class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                        <h4>{{getPhrase('paid_exams')}}</h4>
+                        <h4>{{__('messages.paid_exams')}}</h4>
                         
                     </div>
                     <!-- /Info Box Centered  Single Item -->
@@ -248,7 +248,7 @@
                     <!-- Info Box  Centered Single Item -->
                     <div class="cs-info-box-center">
                         <img src="{{IMAGES}}icn-sett.png" alt="" class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                        <h4>{{getPhrase('learning_management_system')}}</h4>
+                        <h4>{{__('messages.learning_management_system')}}</h4>
                        
                     </div>
                     <!-- /Info Box Centered  Single Item -->

@@ -562,7 +562,7 @@ class QuizController extends Controller
       $data['subjects']     = array_pluck(App\Subject::all(), 'subject_title', 'id');
       $data['title']        = __('messages.update_questions_for').' '.$record->title;
       // dd($data);
-
+ 
       // return view('exams.quiz.update-questions', $data);
 
         $view_name = getTheme().'::exams.quiz.update-questions';
@@ -642,7 +642,7 @@ class QuizController extends Controller
             array_push($questions_to_update, $temp);
           }
         }
-
+        // dd($questions_to_update);
         $sections_data  = json_encode($sections_data);
 
         $total_questions = count($questions_to_update);

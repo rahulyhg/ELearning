@@ -29,7 +29,7 @@ app.controller('prepareQuestions', function( $scope, $http, httpPreConfig,$sce) 
         
         if(data === undefined)
             return;
-        $scope.removeAll();
+        $scope.removeAll(); 
         $scope.totalMarks       = 0;
 
         if(data=='')
@@ -63,12 +63,12 @@ app.controller('prepareQuestions', function( $scope, $http, httpPreConfig,$sce) 
     }
     
      $scope.subjectChanged = function(selected_number) {
-         
+        //  console.log(selected_number);
         if(selected_number=='')
             selected_number = $scope.subject_id;
         subject_id = selected_number;
         if(subject_id === undefined)
-            return;
+            return; 
         route = '{{URL_QUIZ_GET_QUESTIONS}}';  
         data= {  _method: 'post', 
                 '_token':httpPreConfig.getToken(),
@@ -340,11 +340,23 @@ $scope.removeQuestion = function(record){
             $scope.setItem('saved_questions', $scope.savedQuestions);
             $scope.setItem('total_marks', $scope.total_marks);
             $scope.subjectChanged($scope.subject_id);
+            // console.log($scope.setItem('saved_questions', $scope.savedQuestions));
             // localStorage.removeItem('saved_questions');
             // localStorage.removeItem('total_marks');
+            // console.log($scope.subject_id);
         }
-
- 
+      $scope.removeAllQuestion = function(){
+        
+        $scope.savedQuestions = [];
+        $scope.keys = 0;
+            $scope.totalMarks       = 0;
+        $scope.setItem('saved_questions', $scope.savedQuestions);
+        // $scope.addToSubjectQuestions(record);
+        $scope.subjectChanged($scope.subject_id);
+        $scope.updateFinalQuestions();
+        // console.log( $scope.savedQuestions[key]);
+        // console.log($scope.keys);
+      }
 });
 
 app.filter('cut', function () {

@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="cs-page-banner-title">{{getPhrase('contact_our_experts_now')}}</h2>
+                    <h2 class="cs-page-banner-title">{{__('messages.contact_our_experts_now')}}</h2>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
       <br>
         <div class="row btm50">
             <div class="col-md-8 cs-right-pad-lg">
-                <h4 class="cs-section-title-lg">{{getPhrase('feel_free_to_contact')}}</h4>
+                <h4 class="cs-section-title-lg">{{__('messages.feel_free_to_contact')}}</h4>
                <!-- Contact form -->
                 <div class="row">
                    {!! Form::open(array('url'=>URL_SEND_CONTACTUS, 'name'=>'user-contact' ,'id'=>'user-contact'))  !!}
@@ -48,7 +48,7 @@
                             <textarea rows="6" class="form-control" placeholder="YOUR MESSAGE *" name="message"></textarea>
                         </div>
                         <div class="form-group col-sm-12">
-                            <button type="submit" class="btn btn-primary btn-shadow">{{getPhrase('send_message')}}</button>
+                            <button type="submit" class="btn btn-primary btn-shadow">{{__('messages.send_message')}}</button>
                         </div>
 
                     {!! Form::close() !!}
@@ -57,7 +57,7 @@
             </div>
             <!-- Contact Address -->
             <div class="col-md-4">
-                <h4 class="cs-section-title-lg">{{getPhrase('our_contact_details')}}</h4>
+                <h4 class="cs-section-title-lg">{{__('messages.our_contact_details')}}</h4>
                 <!--  Icon Text -->
                 <div class="cs-icon-text">
                     <div class="media-left">
@@ -121,15 +121,15 @@
                     },
                    
                     messages: {
-                      name: "{{getPhrase('Please enter your Name')}}",
-                      message: "{{getPhrase('Please enter your Message')}}",
-                      subject: "{{getPhrase('Please enter your Subject')}}",
-                      phone: "{{getPhrase('Please enter your Phone Number')}}",
+                      name: "{{__('messages.Please enter your Name')}}",
+                      message: "{{__('messages.Please enter your Message')}}",
+                      subject: "{{__('messages.Please enter your Subject')}}",
+                      phone: "{{__('messages.Please enter your Phone Number')}}",
 
                     
                       email: {
-                        required: "{{getPhrase('Please provide a valid email')}}",
-                        email: "{{getPhrase('Please enter a valid email address')}}"
+                        required: "{{__('messages.Please provide a valid email')}}",
+                        email: "{{__('messages.Please enter a valid email address')}}"
                       }
                     },
                     
@@ -146,8 +146,8 @@
 				   $(function(){
 				            PNotify.removeAll();
 				            new PNotify({
-				                title: "{{getPhrase('congratulations')}}",
-				                text: "{{getPhrase('your_message_was_sent_our_team_will_contact_you_soon')}}",
+				                title: "{{__('messages.congratulations')}}",
+				                text: "{{__('messages.your_message_was_sent_our_team_will_contact_you_soon')}}",
 				                type: "success",
 				                delay: 4000,
 				                shadow: true,

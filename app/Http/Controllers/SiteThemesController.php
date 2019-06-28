@@ -32,7 +32,7 @@ class SiteThemesController extends Controller
         prepareBlockUserMessage();
         return back();
       }
-
+ 
 
         $data['active_class']       = 'themes';
         $data['title']              = __('messages.themes');
@@ -237,7 +237,7 @@ class SiteThemesController extends Controller
     {
       if ($record === null) {
 
-        flash('Ooops...!', __("messages.page_not_found"), 'error');
+        flash('Ooops...!', "page_not_found", 'error');
         return $this->getRedirectUrl();
       }
   }

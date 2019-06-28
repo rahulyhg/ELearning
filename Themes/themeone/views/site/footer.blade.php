@@ -9,7 +9,7 @@
                     {{-- <div class="cs-site-footer-info">
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan tium, totam rem ape aque ipsa quae ab.
                     </div> --}}
-                    <h4 class="cs-footer-title">{{getPhrase('follow_us_on')}}</h4>
+                    <h4 class="cs-footer-title">{{__('messages.follow_us_on')}}</h4>
                     <?php 
                          $current_theme  = getDefaultTheme();  
                          $face_book      =  getThemeSetting('home_page_facebook_link',$current_theme);
@@ -27,12 +27,12 @@
                         <div class="col-sm-6 col-xs-6">
                             <h4 class="cs-footer-title">Need Help?</h4>
                             <ul class="cs-footer-links">
-                                <li><a href="{{URL_VIEW_ALL_PRACTICE_EXAMS}}">{{getPhrase('practice_exams')}}</a></li>
+                                <li><a href="{{URL_VIEW_ALL_PRACTICE_EXAMS}}">{{__('messages.practice_exams')}}</a></li>
                                 <li><a href="{{URL_VIEW_ALL_LMS_CATEGORIES}}">LMS</a></li>
-                                <li><a href="{{SITE_PAGES_ABOUT_US}}">{{getPhrase('about_us')}}</a></li>
-                                <li><a href="{{URL_SITE_CONTACTUS}}">{{getPhrase('contact_us')}}</a></li>
-                                <li><a href="{{SITE_PAGES_TERMS}}">{{getPhrase('terms_and_conditions')}}</a></li>
-                                <li><a href="{{SITE_PAGES_PRIVACY}}">{{getPhrase('privacy_and_policy')}}</a></li>
+                                <li><a href="{{SITE_PAGES_ABOUT_US}}">{{__('messages.about_us')}}</a></li>
+                                <li><a href="{{URL_SITE_CONTACTUS}}">{{__('messages.contact_us')}}</a></li>
+                                <li><a href="{{SITE_PAGES_TERMS}}">{{__('messages.terms_and_conditions')}}</a></li>
+                                <li><a href="{{SITE_PAGES_PRIVACY}}">{{__('messages.privacy_and_policy')}}</a></li>
                             </ul>
                         </div>
                       
@@ -46,7 +46,7 @@
                             <input type="email" class="form-control" placeholder="Email Address" id="email1" required>
                         </div>
 
-                    <button class="btn btn-primary btn-shadow btn-block" onclick="showSubscription()" >{{getPhrase('subscribe')}}</button>
+                    <button class="btn btn-primary btn-shadow btn-block" onclick="showSubscription()" >{{__('messages.subscribe')}}</button>
                    
                 </div>
             </div>

@@ -46,7 +46,8 @@
 
 									<th>{{__('messages.marks')}}</th>	
 
-									<th></th>	
+									<th><a class="remove-all-questions text-red" style="cursor: pointer;" ng-click="removeAll()">{{__('messages.remove_all')}}</a>
+</th>	
 
 									</tr>
 
@@ -78,7 +79,7 @@
 															
 								            <span class="text-primary"><input type="text" name="add_section_names[]" value="@{{ savedQuestions[key].section_name}}">
 
-									       <span ng-if="type_exam == 'ST' "><strong><input type="text" name="add_section_times[]" value="@{{savedQuestions[key].section_time}}">( mins )</strong></span>
+									       <span ng-if="type_exam == 'ST' "><strong><input type="text" name="add_section_times[]" value="@{{savedQuestions[key].section_time}}">( {{__('messages.mins')}} )</strong></span>
 
 										</span>
 
@@ -86,7 +87,7 @@
 
 								  <thead>
 
-								  <tr>
+								  <tr >
 
 									<th>{{__('messages.subject')}}</th>
 
@@ -94,8 +95,7 @@
 
 									<th>{{__('messages.marks')}}</th>	
 
-									<th></th>	
-
+									<th><a class="remove-all-questions text-red" style="cursor: pointer;" ng-click="removeAllQuestion()">{{__('messages.remove_all')}}</a></th>	
 									</tr>
 
 									</thead>
@@ -112,7 +112,6 @@
 										<td>@{{j.marks}}</td>
 
 										<td ng-if="is_have_section==0"><a ng-click="removeQuestion(j)" style="cursor: pointer;" class="btn-outline btn-close text-red"><i class="fa fa-close"></i></a></td>
-										
 										<td ng-if="is_have_section==1"><a ng-click="removeQuestionWithKey(j, key)" style="cursor: pointer;" class="btn-outline btn-close text-red"><i class="fa fa-close"></i></a></td>
 
 										</tr>

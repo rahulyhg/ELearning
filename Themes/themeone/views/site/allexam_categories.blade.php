@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ul class="cs-filter-bar clearfix">
-                                <li class="active"><a href="#">{{$title}} {{getPhrase('exams')}}</a></li>
+                                <li class="active"><a href="#">{{$title}} {{__('messages.exams')}}</a></li>
                                 <li></li>
                             </ul>
                         </div>
@@ -80,9 +80,9 @@
 
                                 </ul>
                                 <div class="text-center mt-2">
-                                     <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="btn btn-blue btn-sm btn-radius">Start Exam</a>
+                                     <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="btn btn-blue btn-sm btn-radius">{{__('messages.start_exam')}}</a>
                                 </div>
-                            {{--   <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="cs-product-title pull-right">{{getPhrase('take_exam')}}</a> --}}
+                            {{--   <a href="{{URL_FRONTEND_START_EXAM.$quiz->slug}}" class="cs-product-title pull-right">{{__('messages.take_exam')}}</a> --}}
                             </div>
                         </div>
                         <!-- /Product Single Item -->

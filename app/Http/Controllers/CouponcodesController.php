@@ -248,7 +248,7 @@ class CouponcodesController extends Controller
 
 
         $record->save();
-        flash(__('messages.success'),__('messages.record_added_successfully'), __('messages.success'));
+        flash('success','record_added_successfully', 'success');
     	return redirect(URL_COUPONS);
     }
  
@@ -291,7 +291,7 @@ class CouponcodesController extends Controller
     {
     	if ($record === null) {
 
-    		flash(__('messages.Ooops...!'), __("messages.page_not_found"), __('messages.error'));
+    		flash('Ooops...!', "page_not_found", 'error');
    			return $this->getRedirectUrl();
 		}
 

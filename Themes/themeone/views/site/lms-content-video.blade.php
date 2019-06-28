@@ -42,7 +42,7 @@
                     </div>
 
                       <div ng-if="contents.length == 0">
-                        <p>{{getPhrase('no_contents_are_available')}}</p>
+                        <p>{{__('messages.no_contents_are_available')}}</p>
                      </div>
                   
                 
@@ -76,7 +76,7 @@
                     </div>
 
                      <div ng-if="all_contents.length == 0">
-                        <p>{{getPhrase('no_contents_are_available')}}</p>
+                        <p>{{__('messages.no_contents_are_available')}}</p>
                      </div>
 
 
@@ -102,7 +102,7 @@
                 <div class="cs-video-frame">
                     <div class="cs-video-card-content">
                         <a href="#" class="cs-video-card-title">{{$content_record->title}}<span class="cs-video-card-duration"></a>
-                        <p><span  class="cs-video-card-date">{{getPhrase('posted_on')}} {{$content_record->created_at}}</span></p>
+                        <p><span  class="cs-video-card-date">{{__('messages.posted_on')}} {{$content_record->created_at}}</span></p>
                     </div>
                     <p class="cs-video-description">
                       {!! $content_record->description !!}

@@ -31,10 +31,10 @@
 							<thead>
 								<tr>
 									 
-									<th>{{ getPhrase('theme_name')}}</th>
-									<th>{{ getPhrase('description')}}</th>
-									<th>{{ getPhrase('make_as_default_theme')}}</th>
-									<th>{{ getPhrase('action')}}</th>
+									<th>{{ __('messages.theme_name')}}</th>
+									<th>{{ __('messages.description')}}</th>
+									<th>{{ __('messages.make_as_default_theme')}}</th>
+									<th>{{ __('messages.action')}}</th>
 								  
 								</tr>
 							</thead>

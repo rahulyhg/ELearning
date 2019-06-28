@@ -20,7 +20,7 @@
 
 	                   @else
 
-	                     <h4>{{getPhrase('no_categories_are_available')}}</h4> 
+	                     <h4>{{__('messages.no_categories_are_available')}}</h4> 
 
 	               @endif 
                        
@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ul class="cs-filter-bar clearfix">
-                                <li class="active"><a href="#">{{$title}} {{getPhrase('series')}}</a></li>
+                                <li class="active"><a href="#">{{$title}} {{__('messages.series')}}</a></li>
                                 <li></li>
                             </ul>
                         </div>
@@ -59,7 +59,7 @@
                              <a href="{{URL_VIEW_LMS_CONTENTS.$series->slug}}" class="cs-product-title">{{ucfirst($series->title)}}</a>
 
                                <div class="text-center mt-2">
-                                 <a href="{{URL_VIEW_LMS_CONTENTS.$series->slug}}" class=" btn btn-blue btn-sm btn-radius">View </a>
+                                 <a href="{{URL_VIEW_LMS_CONTENTS.$series->slug}}" class=" btn btn-blue btn-sm btn-radius">{{__('messages.view')}} </a>
                             </div>
                             </div>
                             

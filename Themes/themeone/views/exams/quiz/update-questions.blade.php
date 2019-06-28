@@ -69,18 +69,9 @@
 
 							</fieldset>
 
-
-
-							 
-
 								<fieldset class="form-group col-md-6">
 
 								{{ Form::label('difficulty', __('messages.difficulty')) }}
-
-								
-
-								
-
 								<select ng-model="difficulty" class="form-control" >
 
 								<option value="">{{__('messages.select')}}</option>	
@@ -207,33 +198,26 @@
 								</fieldset>
 
 								@endif
+							{{-- <a ng-click="subjectChanged()"><i class="fa fa-refresh pull-right text-info"></i></a> --}}
 
-							
-
-								
-
-								{{-- <a ng-click="subjectChanged()"><i class="fa fa-refresh pull-right text-info"></i></a> --}}
-
-								<div class="col-md-12" ng-show="contentAvailable">
-
-
-
-								
-
+							<div class="col-md-12" ng-show="contentAvailable">
+									<!-- <div ng-repeat="question in subjectQuestions | filter: { difficulty_level:difficulty, question_type:question_type, show_in_front_end:show_in_front_end , topic_id:topic, sub_topic_id:sub_topic } | filter: question_model track by $index ">
+									<a ng-click="addQuestion(question, subject);" class="btn btn-primary" >{{__('messages.add')}}</a>
+									</div> -->
+								<!-- <a ng-click="addQuestion(question, subject);" class="btn btn-primary" >{{__('messages.add')}}</a>		 -->
 							<div ng-if="subjectQuestions!=''" class="vertical-scroll" >
-
-						
-
 								<h4 class="text-success">{{__('messages.question')}} @{{ subjectQuestions.length }} </h4>
-
-
-
 								<table  
 
 								  class="table table-hover">
-
-  									 
-
+								  <script language="JavaScript">
+									function toggle(source) {
+										checkboxes = document.getElementsByName('check2');
+										for(var i=0, n=checkboxes.length;i<n;i++) {
+											checkboxes[i].checked = source.checked;
+										}
+									}
+									</script>
 									<th >{{__('messages.subject')}}</th>
 
 									<th>{{__('messages.question')}}</th>
@@ -244,12 +228,10 @@
 
 									<th>{{__('messages.marks')}}</th>	
 
-									<th>{{__('messages.action')}}</th>	
+									<th><a ng-click="addAllQuestion(question, subject);" class="btn btn-primary" >{{__('messages.add_all')}}</a></th>	
 
-								
+									
 									<tr ng-repeat="question in subjectQuestions | filter: { difficulty_level:difficulty, question_type:question_type, show_in_front_end:show_in_front_end , topic_id:topic, sub_topic_id:sub_topic } | filter: question_model track by $index ">
-
-										 
 
 										<td>@{{subject.subject_title}}</td>
 
@@ -266,24 +248,18 @@
 
 										<td>@{{question.marks}}</td>
 
-										<td><a 
-
-										 
-
-										ng-click="addQuestion(question, subject);" class="btn btn-primary" >{{__('messages.add')}}</a>
-
-									  		
-
-										  </td>
+										<td>
+										<a ng-click="addQuestion(question, subject);" class="btn btn-primary" >{{__('messages.add')}}</a>
+										</td>
 
 										
 
 									</tr>
 
 								</table>
-
+									
 								</div>	
-
+									
 							
 
 

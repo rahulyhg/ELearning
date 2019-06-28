@@ -374,7 +374,7 @@ class ExamSeriesController extends Controller
     {
     	if ($record === null) {
 
-    		flash(__("messages.Ooops...!"), __("messages.page_not_found"), __("messages.error"));
+    		flash("Ooops...!", "page_not_found", "error");
    			return $this->getRedirectUrl();
 		}
 

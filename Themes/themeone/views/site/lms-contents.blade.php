@@ -34,7 +34,7 @@
 
                        @else
 
-                         <h4>{{getPhrase('no_categories_are_available')}}</h4> 
+                         <h4>{{__('messages.no_categories_are_available')}}</h4> 
 
                    @endif 
                        
@@ -62,15 +62,15 @@
 
                         @if($content->content_type == 'file')
 
-                           <p><a href="{{URL_DOWNLOAD_LMS_CONTENT.$content->slug}}">{{getPhrase('download_file')}}</a></p>
+                           <p><a href="{{URL_DOWNLOAD_LMS_CONTENT.$content->slug}}">{{__('messages.download_file')}}</a></p>
 
                         @elseif($content->content_type == 'url' || $content->content_type == 'video_url' || $content->content_type == 'audio_url')
                         
-                           <p><a href="{{$content->file_path}}" target="_blank">{{getPhrase('view')}}</a></p>
+                           <p><a href="{{$content->file_path}}" target="_blank">{{__('messages.view')}}</a></p>
 
                         @elseif($content->content_type == 'iframe')
                         
-                            <p><a href="{{URL_LMS_VIDEO_CONTENT.$content->slug.'/'.$lms_series->id}}" target="_blank">{{getPhrase('view')}}</a></p>
+                            <p><a href="{{URL_LMS_VIDEO_CONTENT.$content->slug.'/'.$lms_series->id}}" target="_blank">{{__('messages.view')}}</a></p>
 
                         @endif
 
